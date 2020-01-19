@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.62.2" />
+  
+  
+  
+  <title>
+    
+    Hugo Theme Yuki
+    
+  </title>
+  <link rel="canonical" href="https://wangxin-jack.github.io/">
+  
+  <link rel="alternate" type="application/rss+xml" href="https://wangxin-jack.github.io/index.xml" title="Hugo Theme Yuki">
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <link rel="stylesheet" href="https://wangxin-jack.github.io/css/base.min.b7794e36de540988c929f5b91c2250c0ee81952f43bd68f7e234d8e7e128b3ca.css" integrity="sha256-t3lONt5UCYjJKfW5HCJQwO6BlS9DvWj34jTY5&#43;Eos8o=" crossorigin="anonymous">
+  
+  
+</head>
+<body>
+  <nav class="u-background">
+  <div class="u-wrapper">
+    <ul class="Banner">
+      <li class="Banner-item Banner-item--title">
+        <a class="Banner-link u-clickable" href="https://wangxin-jack.github.io/">Hugo Theme Yuki</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://wangxin-jack.github.io/">HOME</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://wangxin-jack.github.io/post">BLOG</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://wangxin-jack.github.io/about">ABOUT</a>
+      </li>
+      
+      <li class="Banner-item">
+        <a class="Banner-link u-clickable" href="https://wangxin-jack.github.io/tags/">TAGS</a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+  <main>
+    <div class="u-wrapper">
+      <div class="u-padding">
+        
+
+
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="https://wangxin-jack.github.io/post/readme/" rel="bookmark">Clean White Theme for Hugo</a>
+  </h2>
+  
+  <time datetime="2019-01-09T00:00:00Z">
+    9 January, 2019
+  </time>
+  
+</header>
+
+  
+  <h1 id="clean-white-theme-for-hugo">Clean White Theme for Hugo</h1>
+<p>CleanWhite is a clean, elegant, but fully functional blog theme for Hugo. Here is a live <a href="https://zhaohuabing.com">demo site</a> using this theme.</p>
+<p>It is based on <a href="https://github.com/Huxpro/huxpro.github.io">huxblog Jekyll Theme</a>
+and <a href="https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll">Clean Blog Jekyll Theme</a>.</p>
+<p>These two upstream projects have done awesome jobs to create a blog theme, what I'm doing here is porting it to Hugo, of which I like the simplicity and the much faster compiling speed. Some other features which I think could be useful, such as site search with algolia and proxy for Disqus access in China, have also been built in the CleanWhite theme. Other fancy features of upstream projects are not supported by this Hugo theme, I'd like to make it as simple as possible and only focus on blog purpose, at least for now.
+While I created this theme, I followed the Hugo theme best practice and tried to make every part of the template as a replaceable partial html, so it could be much easier for you to make your customization based on it.</p>
+<h2 id="screenshots">Screenshots</h2>
+<p><strong>Home</strong>
+<img src="/img/fullscreenshot.png" alt="screenshot"></p>
+<p><strong>Post</strong>
+<img src="/img/post.png" alt="screenshot"></p>
+<p><strong>Search</strong>
+<img src="/img/sitesearch.png" alt="screenshot"></p>
+<p><strong>Disqus</strong>
+<img src="/img/disqus.png" alt="screenshot"></p>
+<p><strong>Wechat Pay &amp; Alipay</strong>
+<img src="/img/rewards.png" alt="screenshot"></p>
+<h2 id="quick-start">Quick Start</h2>
+<p>Go to the directory where you have your Hugo site and run:</p>
+<pre><code>$ mkdir themes
+$ cd themes
+$ git clone https://github.com/zhaohuabing/hugo-theme-cleanwhite.git
+</code></pre><p>If your site is already a git project, you may want to choose to add the cleanwhite theme as a submodule to avoid messing up your existing git repository.</p>
+<pre><code>$ mkdir themes
+$ git submodule add https://github.com/zhaohuabing/hugo-theme-cleanwhite.git themes/hugo-theme-cleanwhite
+</code></pre><p>Run  Hugo Build-in Server Locally</p>
+<pre><code>$ hugo serve -t  hugo-theme-cleanwhite
+</code></pre><p>Now enter <a href="http://localhost:1313"><code>localhost:1313</code></a> in the address bar of your browser.</p>
+<p>If you start from scratch, there is a working Hugo site configured with the CleanWhite theme in the <a href="https://github.com/zhaohuabing/hugo-theme-cleanwhite/tree/master/exampleSite">exampleSite</a> directory.  You can use it as a starting point for your site.</p>
+<p>For more information read the official <a href="https://gohugo.io/overview/installing/">setup guide</a> of Hugo</p>
+<h2 id="configuration">Configuration</h2>
+<p>First, let's take a look at the <a href="https://github.com/zhaohuabing/hugo-cleanwhite-theme/tree/master/exampleSite/config.toml">config.toml</a>. It will be useful to learn how to customize your site. Feel free to play around with the settings.</p>
+<h3 id="comments">Comments</h3>
+<p>The optional comments system is powered by <a href="https://disqus.com">Disqus</a>. If you want to enable comments, create an account in Disqus and write down your shortname.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">disqusShortname</span> = <span style="color:#e6db74">&#34;your-disqus-short-name&#34;</span>
+</code></pre></div><p>You can disable the comments system by leaving the <code>disqusShortname</code> empty.</p>
+<h3 id="disqus-in-china">Disqus in China</h3>
+<p>Disqus is inaccessible in China. To get it to work, we can set up a proxy with <a href="https://github.com/zhaohuabing/disqus-php-api">disqus-php-api</a> in a host which sets between the client browser and the Disqus server. The idea is that if Disqus can be reached in the guest network, the blog page will show the original Disqus comments UI, otherwise, it will downgrade and use the proxy to access the Disqus, the UI will be a little different, but the visitors can still write their comments on the page.</p>
+<p>The client side java script has already been integrated to CleanWhite them, but you need to set up a proxy server yourself.</p>
+<p>The proxy is written in php, which can be found here: <a href="https://github.com/zhaohuabing/disqus-php-api/tree/master/api">https://github.com/zhaohuabing/disqus-php-api/tree/master/api</a></p>
+<p>You need to specify  your Disqus account information in the config.php.</p>
+<pre><code>define('PUBLIC_KEY', '');
+define('SECRET_KEY', '');
+define('DISQUS_USERNAME', '');
+define('DISQUS_EMAIL', '');
+define('DISQUS_PASSWORD', '');
+define('DISQUS_WEBSITE', '');
+define('DISQUS_SHORTNAME', '');
+</code></pre><p>Set the proxy server address in the site config file of your Hugo project.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">disqus_proxy</span> = <span style="color:#e6db74">&#34;http://yourdisqusproxy.com&#34;</span>
+</code></pre></div><h3 id="site-search-with-algolia">Site Search with Algolia</h3>
+<p>Follow this <a href="https://forestry.io/blog/search-with-algolia-in-hugo/#3-create-your-index-in-algolia">tutorial</a> to create your index in Algolia. The index is just the storage of the indexing data of your site in the the cloud . The search page of CleanWhite theme will utilize this indexing data to do the search.</p>
+<p>Go to the directory where you have your Hugo site and run the following commands:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ npm init
+$ npm install atomic-algolia --save
+</code></pre></div><p>Next, open up the newly created package.json, where we’ll add an NPM script to update your index at Algolia. Find &ldquo;scripts&rdquo;, and add the following:</p>
+<pre><code class="language-josn" data-lang="josn">&quot;algolia&quot;: &quot;atomic-algolia&quot;
+</code></pre><p>Algolia index output format has already been supported by the CleanWhite theme, so you can just build your site, then you’ll find a file called algolia.json in the root, which we can use to update your index in Algolia.
+Generate index file:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ hugo
+</code></pre></div><p>Create a new file in the root of your Hugo project called .env, and add the following contents:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ALGOLIA_APP_ID<span style="color:#f92672">=</span><span style="color:#f92672">{</span><span style="color:#f92672">{</span> YOUR_APP_ID <span style="color:#f92672">}</span><span style="color:#f92672">}</span>
+ALGOLIA_ADMIN_KEY<span style="color:#f92672">=</span><span style="color:#f92672">{</span><span style="color:#f92672">{</span> YOUR_ADMIN_KEY <span style="color:#f92672">}</span><span style="color:#f92672">}</span>
+ALGOLIA_INDEX_NAME<span style="color:#f92672">=</span><span style="color:#f92672">{</span><span style="color:#f92672">{</span> YOUR_INDEX_NAME <span style="color:#f92672">}</span><span style="color:#f92672">}</span>
+ALGOLIA_INDEX_FILE<span style="color:#f92672">=</span><span style="color:#f92672">{</span><span style="color:#f92672">{</span> PATH/TO/algolia.json <span style="color:#f92672">}</span><span style="color:#f92672">}</span>
+</code></pre></div><p>Now you can push your index to Algolia by simply running:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ npm run algolia
+</code></pre></div><p>Add the following variables to your hugo site config so the search page can get access to algolia index data in the cloud:</p>
+<pre><code>algolia_search = true
+algolia_appId = {{ YOUR_APP_ID }}
+algolia_indexName = {{ YOUR_INDEX_NAME }}
+algolia_apiKey = {{ YOUR_ADMIN_KEY }}
+</code></pre><p>Open search page in your browser: http://localhost:1313/search</p>
+<h3 id="analytics">Analytics</h3>
+<p>You can optionally enable Google or Baidu Analytics. Type your tracking code in the</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">googleAnalytics</span> = <span style="color:#e6db74">&#34;UA-XXXXX-X&#34;</span>
+<span style="color:#a6e22e">ba_track_id</span>  = <span style="color:#e6db74">&#34;XXXXXXXXXXXXXXXX&#34;</span>
+</code></pre></div><p>Leave the <code>googleAnalytics</code>  or &lsquo;ba_track_id ' key empty to disable it.</p>
+<h3 id="wechat-pay--alipay-rewards">Wechat Pay &amp; Alipay Rewards</h3>
+<p>You can enable Wechat Pay &amp; Alipay to allow readers send you money. So if they like your articles, you may even get rewards from your writing. Now you must be motivated to write more.</p>
+<ul>
+<li>Enable Wechat Pay &amp; Alipay in the site config</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">reward</span> = <span style="color:#66d9ef">true</span>
+</code></pre></div><ul>
+<li>Replace the QR codes of Wechat Pay &amp; Alipay by overriding the photos in folder /static/img/reward/, otherwise the money will be sent to my accounts!</li>
+</ul>
+<h2 id="thank">Thank</h2>
+<p>Thanks for the great jobs of <a href="https://github.com/Huxpro/huxpro.github.io">huxblog Jekyll Theme</a> and <a href="https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll">Clean Blog Jekyll Theme</a> which are the the two upstream projects CleanWhite Hugo theme is based on.</p>
+<h2 id="feedback">Feedback</h2>
+<p>If you find any problems, please feel free to <a href="https://github.com/zhaohuabing/hugo-theme-cleanwhite/issues/new">raise an issue</a> or create a pull request to fix it.</p>
+<p>If it's helpful for you, I would appreciate it if you could star this repository, thanks!</p>
+
+  
+  
+
+
+
+
+
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="https://wangxin-jack.github.io/2018/06/04/introducing-the-istio-v1alpha3-routing-api/" rel="bookmark">Istio v1aplha3 routing API介绍(译文）</a>
+  </h2>
+  
+  <time datetime="2018-06-04T00:00:00Z">
+    4 June, 2018
+  </time>
+  
+</header>
+
+  
+  <p>到目前为止，Istio提供了一个简单的API来进行流量管理，该API包括了四种资源：RouteRule，DestinationPolicy，EgressRule和Ingress（直接使用了Kubernets的Ingress资源）。借助此API，用户可以轻松管理Istio服务网格中的流量。该API允许用户将请求路由到特定版本的服务，为弹性测试注入延迟和失败，添加超时和断路器等等，所有这些功能都不必更改应用程序本身的代码。</p>
+<p>虽然目前API的功能已被证明是Istio非常引人注目的一部分，但用户的反馈也表明，这个API确实有一些缺点，尤其是在使用它来管理包含数千个服务的非常大的应用程序，以及使用HTTP以外的协议时。 此外，使用Kubernetes Ingress资源来配置外部流量的方式已被证明不能满足需求。</p>
+<p>为了解决上述缺陷和其他的一些问题，Istio引入了新的流量管理API v1alpha3，新版本的API将完全取代之前的API。 尽管v1alpha3和之前的模型在本质上是基本相同的，但它并不向后兼容的，基于旧API的模型需要进行手动转换。 Istio接下来的几个版本中会提供一个新旧模型的转换工具。</p>
+<p>为了证明该非兼容升级的必要性，v1alpha3 API经历了漫长而艰苦的社区评估过程，以希望新的API能够大幅改进，并经得起时间考验。 在本文中，我们将介绍新的配置模型，并试图解释其后面的一些动机和设计原则。</p>
+<h2 id="设计原则">设计原则</h2>
+<p>路由模型的重构过程中遵循了一些关键的设计原则：</p>
+<ul>
+<li>除支持声明式（意图）配置外，也支持显式指定模型依赖的基础设施。例如，除了配置入口网关（的功能特性）之外，负责实现 入口网关功能的组件（Controller）也可以在模型指定。</li>
+<li>编写模型时应该“生产者导向”和“以Host为中心”，而不是通过组合多个规则来编写模型。 例如，所有与特定Host关联的规则被配置在一起，而不是单独配置。</li>
+<li>将路由与路由后行为清晰分开。</li>
+</ul>
+<h2 id="v1alpha3中的配置资源">v1alpha3中的配置资源</h2>
+<p>在一个典型的网格中，通常有一个或多个用于终结外部TLS链接，将流量引入网格的负载均衡器（我们称之为gateway）。 然后流量通过边车网关（sidecar gateway）流经内部服务。 应用程序使用外部服务的情况也很常见（例如访问Google Maps API），一些情况下，这些外部服务可能被直接调用；但在某些部署中，网格中所有访问外部服务的流量可能被要求强制通过专用的出口网关（Egress gateway）。 下图描绘了网关在网格中的使用情况。</p>
+<p><img src="https://img.zhaohuabing.com/in-post/2018-06-04-introducing-the-istio-v1alpha3-routing-api/gateways.svg" alt="Gateway"></p>
+<p>考虑到上述因素，<code>v1alpha3</code>引入了以下这些新的配置资源来控制进入网格，网格内部和离开网格的流量路由。</p>
+<ol>
+<li><code>Gateway</code></li>
+<li><code>VirtualService</code></li>
+<li><code>DestinationRule</code></li>
+<li><code>ServiceEntry</code></li>
+</ol>
+<p><code>VirtualService</code>，<code>DestinationRule</code>和<code>ServiceEntry</code>分别替换了原API中的<code>RouteRule</code>，<code>DestinationPolicy</code>和<code>EgressRule</code>。 <code>Gateway</code>是一个独立于平台的抽象，用于对流入专用中间设备的流量进行建模。</p>
+<p>下图描述了跨多个配置资源的控制流程。
+<img src="https://img.zhaohuabing.com/in-post/2018-06-04-introducing-the-istio-v1alpha3-routing-api/virtualservices-destrules.svg" alt="不同配置资源之间的关系"></p>
+<h3 id="gateway">Gateway</h3>
+<p><a href="https://istio.io/docs/reference/config/istio.networking.v1alpha3/#Gateway">Gateway</a>用于为HTTP / TCP流量配置负载均衡器，并不管该负载均衡器将在哪里运行。 网格中可以存在任意数量的Gateway，并且多个不同的Gateway实现可以共存。 实际上，通过在配置中指定一组工作负载（Pod）标签，可以将Gateway配置绑定到特定的工作负载，从而允许用户通过编写简单的Gateway Controller来重用现成的网络设备。</p>
+<p>对于入口流量管理，您可能会问： 为什么不直接使用Kubernetes Ingress API ？ 原因是Ingress API无法表达Istio的路由需求。 Ingress试图在不同的HTTP代理之间取一个公共的交集，因此只能支持最基本的HTTP路由，最终导致需要将代理的其他高级功能放入到注解（annotation）中，而注解的方式在多个代理之间是不兼容的，无法移植。</p>
+<p>Istio <code>Gateway</code> 通过将L4-L6配置与L7配置分离的方式克服了<code>Ingress</code>的这些缺点。 <code>Gateway</code>只用于配置L4-L6功能（例如，对外公开的端口，TLS配置），所有主流的L7代理均以统一的方式实现了这些功能。 然后，通过在<code>Gateway</code>上绑定<code>VirtualService</code>的方式，可以使用标准的Istio规则来控制进入<code>Gateway</code>的HTTP和TCP流量。</p>
+<p>例如，下面这个简单的<code>Gateway</code>配置了一个Load Balancer，以允许访问host bookinfo.com的https外部流量入mesh中：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: bookinfo-gateway
+spec:
+  servers:
+  - port:
+      number: <span style="color:#ae81ff">443</span>
+      name: https
+      protocol: HTTPS
+    hosts:
+    - bookinfo.com
+    tls:
+      mode: SIMPLE
+      serverCertificate: /tmp/tls.crt
+      privateKey: /tmp/tls.key
+</code></pre></div><p>要为进入上面的Gateway的流量配置相应的路由，必须为同一个host定义一个<code>VirtualService</code>（在下一节中描述），并使用配置中的<code>gateways</code>字段绑定到前面定义的<code>Gateway</code> 上：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: bookinfo
+spec:
+  hosts:
+    - bookinfo.com
+  gateways:
+  - bookinfo-gateway <span style="color:#75715e"># &lt;---- bind to gateway</span>
+  http:
+  - match:
+    - uri:
+        prefix: /reviews
+    route:
+    ...
+</code></pre></div><p>Gateway可以用于建模边缘代理或纯粹的内部代理，如第一张图所示。 无论在哪个位置，所有网关都可以用相同的方式进行配置和控制。</p>
+<h3 id="virtualservice">VirtualService</h3>
+<p>用一种叫做“Virtual services”的东西代替路由规则可能看起来有点奇怪，但对于它配置的内容而言，这事实上是一个更好的名称，特别是在重新设计API以解决先前模型的可扩展性问题之后。</p>
+<p>实际上，发生的变化是：在之前的模型中，需要用一组相互独立的配置规则来为特定的目的服务设置路由规则，并通过precedence字段来控制这些规则的顺序；在新的API中，则直接对（虚拟）服务进行配置，该虚拟服务的所有规则以一个有序列表的方式配置在对应的<a href="/docs/reference/config/istio.networking.v1alpha3/#VirtualService">VirtualService</a> 资源中。</p>
+<p>例如，之前在<a href="/docs/guides/bookinfo/">Bookinfo</a> 应用程序的reviews服务中有两个RouteRule资源，如下所示：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion: config.istio.io/v1alpha2
+kind: RouteRule
+metadata:
+  name: reviews-default
+spec:
+  destination:
+    name: reviews
+  precedence: <span style="color:#ae81ff">1</span>
+  route:
+  - labels:
+      version: v1
+--<span style="color:#e6db74">-</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">apiVersion: config.istio.io/v1alpha2</span>
+kind: RouteRule
+metadata:
+  name: reviews-test-v2
+spec:
+  destination:
+    name: reviews
+  precedence: <span style="color:#ae81ff">2</span>
+  match:
+    request:
+      headers:
+        cookie:
+          regex: <span style="color:#e6db74">&#34;^(.*?;)?(user=jason)(;.*)?$&#34;</span>
+  route:
+  - labels:
+      version: v2
+</code></pre></div><p>在<code>v1alph3</code>，可以在单个<code>VirtualService</code>资源中提供相同的配置：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: reviews
+spec:
+  hosts:
+    - reviews
+  http:
+  - match:
+    - headers:
+        cookie:
+          regex: <span style="color:#e6db74">&#34;^(.*?;)?(user=jason)(;.*)?$&#34;</span>
+    route:
+    - destination:
+        host: reviews
+        subset: v2
+  - route:
+    - destination:
+        host: reviews
+        subset: v1
+</code></pre></div><p>正如你所看到的， 和reviews服务相关的两个规则集中写在了一个地方。这个改变乍一看可能觉得并没有什么特别的优势， 然而，如果仔细观察这个新模型，会发现它和之前的API之间存在着根本的差异，这使得v1alpha3功能更加强大。</p>
+<p>首先，请注意<code>VirtualService</code>的目标服务是使用<code>hosts</code>字段（实际上是重复字段）指定的，然后再在每个路由的<code>destination</code>字段中指定。 这是与以前模型的重要区别。</p>
+<p><code>VirtualService</code>描述了一个或多个用户可寻址目标到网格内实际工作负载之间的映射。在上面的示例中，这两个地址是相同的，但实际上用户可寻址目标可以是任何用于定位服务的，具有可选通配符前缀或CIDR前缀的DNS名称。
+这对于应用从单体架构到微服务架构的迁移过程特别有用，单体应用被拆分为多个独立的微服务后，采用VirtaulService可以继续把多个微服务对外暴露为同一个目标地址，而不需要服务消费者进行修改以适应该变化。</p>
+<p>例如，以下规则允许服务消费者访问Bookinfo应用程序的reviews和ratings服务，就好像它们是<code>http://bookinfo.com/</code>（虚拟）服务的一部分：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: bookinfo
+spec:
+  hosts:
+    - bookinfo.com
+  http:
+  - match:
+    - uri:
+        prefix: /reviews
+    route:
+    - destination:
+        host: reviews
+  - match:
+    - uri:
+        prefix: /ratings
+    route:
+    - destination:
+        host: ratings
+  ...
+</code></pre></div><p>实际上在｀VirtualService｀中hosts部分设置只是虚拟的目的地,因此不一定是已在网格中注册的服务。这允许用户为在网格内没有可路由条目的虚拟主机的流量进行建模。 通过将<code>VirtualService</code>绑定到同一Host的<code>Gateway</code>配置（如前一节所述 ），可向网格外部暴露这些Host。</p>
+<p>除了这个重大的重构之外， <code>VirtualService</code>还包括其他一些重要的改变：</p>
+<ol>
+<li>
+<p>可以在<code>VirtualService</code>配置中表示多个匹配条件，从而减少对冗余的规则设置。</p>
+</li>
+<li>
+<p>每个服务版本都有一个名称（称为服务子集）。 属于某个子集的一组Pod/VM在<code>DestinationRule</code>定义，具体定义参见下节。</p>
+</li>
+<li>
+<p>通过使用带通配符前缀的DNS来指定<code>VirtualService</code>的host，可以创建单个规则以作用于所有匹配的服务。 例如，在Kubernetes中，在'VirtualService'中使用*.foo.svc.cluster.local作为host,可以对<code>foo</code>命名空间中的所有服务应用相同的重写规则。</p>
+</li>
+</ol>
+<h3 id="destinationrule">DestinationRule</h3>
+<p><a href="https://istio.io/docs/reference/config/istio.networking.v1alpha3/#DestinationRule">DestinationRule</a>配置将流量转发到服务时应用的策略集。 这些策略应由由服务提供者撰写，用于描述断路器，负载均衡设置，TLS设置等。
+除了下述改变外，<code>DestinationRule</code>与其前身<code>DestinationPolicy</code>大致相同。</p>
+<ol>
+<li><a href="https://istio.io/docs/reference/config/istio.networking.v1alpha3/#DestinationRule">DestinationRule</a>的<code>host</code>可以包含通配符前缀，以允许单个规则应用于多个服务。</li>
+<li><code>DestinationRule</code>定义了目的host的子集<code>subsets</code> （例如：命名版本）。 这些subset用于｀VirtualService｀的路由规则设置中，可以将流量导向服务的某些特定版本。 通过这种方式为版本命名后，可以在不同的virtual service中明确地引用这些命名版本的ubset，简化Istio代理发出的统计数据，并可以将subsets编码到SNI头中。
+为reviews服务配置策略和subsets的<code>DestinationRule</code>可能如下所示：</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: reviews
+spec:
+  host: reviews
+  trafficPolicy:
+    loadBalancer:
+      simple: RANDOM
+  subsets:
+  - name: v1
+    labels:
+      version: v1
+  - name: v2
+    labels:
+      version: v2
+    trafficPolicy:
+      loadBalancer:
+        simple: ROUND_ROBIN
+  - name: v3
+    labels:
+      version: v3
+</code></pre></div><p>注意，与<code>DestinationPolicy</code>不同的是，可在单个<code>DestinationRule</code>中指定多个策略（例如上面实例中的缺省策略和v2版本特定的策略）。</p>
+<h3 id="serviceentry">ServiceEntry</h3>
+<p><a href="https://istio.io/docs/reference/config/istio.networking.v1alpha3/#ServiceEntry">ServiceEntry</a>用于将附加条目添加到Istio内部维护的服务注册表中。
+它最常用于对访问网格外部依赖的流量进行建模，例如访问Web上的API或遗留基础设施中的服务。</p>
+<p>所有以前使用<code>EgressRule</code>进行配置的内容都可以通过<code>ServiceEntry</code>轻松完成。 例如，可以使用类似这样的配置来允许从网格内部访问一个简单的外部服务：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion: networking.istio.io/v1alpha3
+kind: ServiceEntry
+metadata:
+  name: foo-ext
+spec:
+  hosts:
+  - foo.com
+  ports:
+  - number: <span style="color:#ae81ff">80</span>
+    name: http
+    protocol: HTTP
+</code></pre></div><p>也就是说，<code>ServiceEntry</code>比它的前身具有更多的功能。首先，<code>ServiceEntry</code>不限于外部服务配置，它可以有两种类型：网格内部或网格外部。网格内部条目只是用于向网格显式添加服务，添加的服务与其他内部服务一样。采用网格内部条目，可以把原本未被网格管理的基础设施也纳入到网格中（例如，把虚机中的服务添加到基于Kubernetes的服务网格中）。网格外部条目则代表了网格外部的服务。对于这些外部服务来说，mTLS身份验证是禁用的，并且策略是在客户端执行的，而不是在像内部服务请求一样在服务器端执行策略。</p>
+<p>由于<code>ServiceEntry</code>配置只是将服务添加到网格内部的服务注册表中，因此它可以像注册表中的任何其他服务一样,与<code>VirtualService</code>和/或<code>DestinationRule</code>一起使用。例如，以下<code>DestinationRule</code>可用于启动外部服务的mTLS连接：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: foo-ext
+spec:
+  name: foo.com
+  trafficPolicy:
+    tls:
+      mode: MUTUAL
+      clientCertificate: /etc/certs/myclientcert.pem
+      privateKey: /etc/certs/client_private_key.pem
+      caCertificates: /etc/certs/rootcacerts.pem
+</code></pre></div><p>除了扩展通用性以外，<code>ServiceEntry</code>还提供了其他一些有关<code>EgressRule</code>改进，其中包括：</p>
+<ol>
+<li>一个<code>ServiceEntry</code>可以配置多个服务端点，这在之前需要采用多个<code>EgressRules</code>来实现。</li>
+<li>现在可以配置服务端点的解析模式（<code>NONE</code>，<code>STATIC</code>或<code>DNS</code>）。</li>
+<li>此外，我们正在努力解决另一个难题：目前需要通过纯文本端口访问安全的外部服务（例如<code>http://google.com:443</code>）。该问题将会在未来几周内得到解决，届时将允许从应用程序直接访问<code>https://google.com</code>。请继续关注解决此限制的Istio补丁版本（0.8.x）。</li>
+</ol>
+<h2 id="创建和删除v1alpha3路由规则">创建和删除v1alpha3路由规则</h2>
+<p>由于一个特定目的地的所有路由规则现在都存储在单个<code>VirtualService</code>资源的一个有序列表中，因此为该目的地添加新的规则不需要再创建新的<code>RouteRule</code>，而是通过更新该目的地的<code>VirtualService</code>资源来实现。</p>
+<p>旧的路由规则：</p>
+<pre><code class="language-command" data-lang="command">$ istioctl create -f my-second-rule-for-destination-abc.yaml
+</code></pre><p><code>v1alpha3</code>路由规则：</p>
+<pre><code class="language-command" data-lang="command">$ istioctl replace -f my-updated-rules-for-destination-abc.yaml
+</code></pre><p>删除路由规则也使用istioctl replace完成，当然删除最后一个路由规则除外（删除最后一个路由规则需要删除<code>VirtualService</code>）。</p>
+<p>在添加或删除引用服务版本的路由时，需要在该服务相应的<code>DestinationRule</code>更新subsets 。 正如你可能猜到的，这也是使用<code>istioctl replace</code>完成的。</p>
+<h2 id="总结">总结</h2>
+<p>Istio <code>v1alpha3</code>路由API具有比其前身更多的功能，但不幸的是新的API并不向后兼容，旧的模型升级需要一次手动转换。 Istio 0.9以后将不再支持<code>RouteRule</code>，<code>DesintationPolicy</code>和<code>EgressRule</code>这些以前的配置资源 。Kubernetes用户可以继续使用<code>Ingress</code>配置边缘负载均衡器来实现基本的路由。 但是，高级路由功能（例如，跨两个版本的流量分割）则需要使<code>用Gateway</code> ，这是一种功能更强大，Istio推荐的<code>Ingress</code>替代品。</p>
+<h2 id="致谢">致谢</h2>
+<p>感谢以下人员为新版本的路由模型重构和实现工作做出的贡献（按字母顺序）</p>
+<ul>
+<li>Frank Budinsky (IBM)</li>
+<li>Zack Butcher (Google)</li>
+<li>Greg Hanson (IBM)</li>
+<li>Costin Manolache (Google)</li>
+<li>Martin Ostrowski (Google)</li>
+<li>Shriram Rajagopalan (VMware)</li>
+<li>Louis Ryan (Google)</li>
+<li>Isaiah Snell-Feikema (IBM)</li>
+<li>Kuat Yessenov (Google)</li>
+</ul>
+<h2 id="原文">原文</h2>
+<ul>
+<li><a href="https://kubernetes.io/blog/2018/01/extensible-admission-is-beta">Introducing the Istio v1alpha3 routing API</a></li>
+</ul>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://wangxin-jack.github.io/categories/tech/" rel="tag">Tech</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://wangxin-jack.github.io/tags/istio/" rel="tag">Istio</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="https://wangxin-jack.github.io/2018/06/02/istio08/" rel="bookmark">Istio 0.8 Release发布</a>
+  </h2>
+  
+  <time datetime="2018-06-02T00:00:00Z">
+    2 June, 2018
+  </time>
+  
+</header>
+
+  
+  <blockquote>
+<p>在6月1日这一天的早上，Istio社区宣布发布0.8 Release，除了常规的故障修复和性能改进外，这个儿童节礼物里面还有什么值得期待内容呢？让我们来看一看：</p>
+</blockquote>
+<h2 id="networking">Networking</h2>
+<h3 id="改进的流量管理模型">改进的流量管理模型</h3>
+<p>0.8版本采用了新的流量管理配置模型<a href="https://istio.io/blog/2018/v1alpha3-routing/">v1alpha3 Route API</a>。新版本的模型添加了一些新的特性，并改善了之前版本模型中的可用性问题。主要的改动包括：</p>
+<h4 id="gateway">Gateway</h4>
+<p>新版本中不再使用K8s中的Ingress，转而采用Gateway来统一配置Service Mesh中的各个HTTP/TCP负载均衡器。Gateway可以是处理入口流量的Ingress Gateway，负责Service Mesh内部各个服务间通信的Sidecar Proxy，也可以是负责出口流量的Egress Gateway。</p>
+<p>Mesh中涉及到的三类Gateway: <br>
+<img src="https://img.zhaohuabing.com/in-post/2018-06-02-istio08/gateways.svg" alt="Gateway"></p>
+<p>该变化的原因是K8s中的Ingress对象功能过于简单，不能满足Istio灵活的路由规则需求。在0.8版本中，L4-L6的配置和L7的配置被分别处理，Gateway中只配置L4-L6的功能，例如暴露的端口，TLS设置。然后用户可以采用VirtualService来配置标准的Istio规则，并和Gateway进行绑定。</p>
+<h4 id="virtualservice">VirtualService</h4>
+<p>采用VirtualService代替了alpha2模型中的RouteRule。采用VirtualService有两个优势：</p>
+<p><strong>可以把一个服务相关的规则放在一起管理</strong></p>
+<p>例如下面的路由规则，发向reviews的请求流量缺省destination为v1，如果user为jason则路由到v2。在v1模型中需要采用两条规则来实现，采用VirtualService后放到一个规则下就可以实现。</p>
+<pre><code>apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: reviews
+spec:
+  hosts:
+    - reviews
+  http:
+  - match:
+    - headers:
+        cookie:
+          regex: &quot;^(.*?;)?(user=jason)(;.*)?$&quot;
+    route:
+    - destination:
+        host: reviews
+        subset: v2
+  - route:
+    - destination:
+        host: reviews
+        subset: v1
+</code></pre><p><strong>可以对外暴露一个并不存在的“虚拟服务”，然后将该“虚拟服务”映射到Istio中的Service上</strong></p>
+<p>下面规则中的bookinfo.com是对外暴露的“虚拟服务”，bookinfo.com/reviews被映射到了reviews服务，bookinfo.com/ratings被映射到了ratings服务。通过采用VirtualService，极大地增强了Istio路由规则的灵活性，有利于Legacy系统和Istio的集成。</p>
+<pre><code>apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: bookinfo
+spec:
+  hosts:
+    - bookinfo.com
+  http:
+  - match:
+    - uri:
+        prefix: /reviews
+    route:
+    - destination:
+        host: reviews
+  - match:
+    - uri:
+        prefix: /ratings
+    route:
+    - destination:
+        host: ratings
+  ...
+</code></pre><h3 id="envoy-v2">Envoy V2</h3>
+<p>控制面和数据面标准接口支持Envoy</p>
+<h3 id="用gateway代替-ingressengress">用Gateway代替 Ingress/Engress</h3>
+<p>前面已经介绍到，新的版本中不再支持将Kubernetes的Ingress和Istio路由规则一起使用。Istio 0.8支持平台无关的 Ingress/Egress Gateway,可以在Kubernetes，Cloud Foundry中和Istio路由规则无缝集成。</p>
+<h3 id="对入站端口进行限制">对入站端口进行限制</h3>
+<p>0.8版本只允许访问Pod内已声明端口的入站流量。</p>
+<h2 id="security">Security</h2>
+<h3 id="安全组件citadel">安全组件Citadel</h3>
+<p>将Istio的安全组件Istio-Auth/Istio-CA正式命名为Citadel（堡垒）。</p>
+<h3 id="跨集群支持">跨集群支持</h3>
+<p>部署在多个Cluster中的Citadel可以共享同一Root Certificate，以支持不同Cluster内的服务可以跨Cluster进行认证。</p>
+<h3 id="认证策略">认证策略</h3>
+<p>认证策略既支持Service-to-Service认证，也支持对终端用户进行认证。</p>
+<h2 id="遥测">遥测</h2>
+<p>Mixer和Pilot将上报自身的遥测数据，其上报的流程和Mesh中的普通服务相同。</p>
+<h2 id="安装">安装</h2>
+<p>按需安装部分组件：支持只安装所需的组件，如果只需要使用Istio的路由规则，可以选择只安装Pilot，而不安装Mixer和Citadel。</p>
+<h2 id="mixer">Mixer</h2>
+<p>CloudWatch：增加了一个CloudWatch插件，可以向AWS CloudWatch上报度量数据。</p>
+<h2 id="已知故障">已知故障：</h2>
+<ul>
+<li>如果Gateway绑定的VirtualService指向的是headless service，则该规则不能正常工作。</li>
+<li>0.8版本和Kubernetes1.10.2存在兼容问题，目前建议采用1.9版本。</li>
+<li>convert-networking-config工具存在故障，一个其它的namespace可能会被修改为istio-system namespace。可以在允许转换工具后手动修改文件来避免。</li>
+</ul>
+<h2 id="总结">总结</h2>
+<p>0.8版本带来的最大变化是流量配置模型的重构，重构后的模型整合了外部Gateway和内部Sidecar Proxy的路由配置。同时VirtualService的引入使路由规则的配置更为集中和灵活。</p>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://wangxin-jack.github.io/categories/tech/" rel="tag">Tech</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://wangxin-jack.github.io/tags/istio/" rel="tag">Istio</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="https://wangxin-jack.github.io/2018/05/24/set_up_my_ubuntu_desktop/" rel="bookmark">Everything about Setting Up My Ubuntu Desktop</a>
+  </h2>
+  
+  <time datetime="2018-05-24T00:00:00Z">
+    24 May, 2018
+  </time>
+  
+</header>
+
+  
+  <h2 id="generate-ssh-key-pair">Generate SSH Key Pair</h2>
+<pre><code>ssh-keygen -C &quot;zhaohuabing@gmail.com&quot;
+</code></pre><h2 id="shadowsocks">Shadowsocks</h2>
+<p>Install shadowsokcs</p>
+<pre><code>sudo apt-get install python3-pip
+
+sudo pip3 install shadowsocks
+</code></pre><p>Create config at <code>config/shadowsocks.json</code>, with the following content:</p>
+<pre><code>{
+	&quot;server&quot;:&quot;remote-shadowsocks-server-ip-addr&quot;,
+	&quot;server_port&quot;:443,
+	&quot;local_address&quot;:&quot;127.0.0.1&quot;,
+	&quot;local_port&quot;:1080,
+	&quot;password&quot;:&quot;your-passwd&quot;,
+	&quot;timeout&quot;:300,
+	&quot;method&quot;:&quot;aes-256-cfb&quot;,
+	&quot;fast_open&quot;:false,
+	&quot;workers&quot;:1
+}
+</code></pre><p>Start a local socks proxy</p>
+<pre><code>sudo sslocal -c config/shadowsocks.json -d start
+</code></pre><p>In case there is an openssl error, modify shadowsocks source file.</p>
+<pre><code>sudo vi /usr/local/lib/python3.6/dist-packages/shadowsocks/crypto/openssl.py 
+
+:%s/cleanup/reset/gc
+</code></pre><p>Convert shadowsocks socks proxy to http proxy</p>
+<pre><code>sudo apt-get install polipo
+
+echo &quot;socksParentProxy = localhost:1080&quot; | sudo tee -a /etc/polipo/config 
+sudo service polipo restart
+</code></pre><p>Http proxy now is available at port 8123</p>
+<h1 id="set-bing-wallpaper-as-desktop-background">Set bing wallpaper as desktop background</h1>
+<pre><code>sudo add-apt-repository ppa:whizzzkid/bingwallpaper
+sudo apt-get update
+sudo apt-get install bingwallpaper
+</code></pre><h1 id="use-vim-mode-in-bash">Use vim mode in bash</h1>
+<pre><code>echo 'set -o vi'&gt;&gt; ~/.bashrc
+</code></pre>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://wangxin-jack.github.io/categories/tips/" rel="tag">Tips</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://wangxin-jack.github.io/tags/ubuntu/" rel="tag">ubuntu</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="https://wangxin-jack.github.io/2018/05/23/external_system_auth/" rel="bookmark">微服务安全沉思录之三</a>
+  </h2>
+  
+  <time datetime="2018-05-23T18:00:00Z">
+    23 May, 2018
+  </time>
+  
+</header>
+
+  
+  <h2 id="外部系统访问控制">外部系统访问控制</h2>
+<p>除用户访问和微服务之间的相互访问外，外部的第三方系统也可能需要访问系统内部的微服务。例如在上一篇博客的网上商店例子中，外部的推荐服务可能需要接入系统，以获取商店的商品目录信息。相对于内部服务之间的访问而言，外部系统的访问需要进行严格的安全控制。</p>
+<h3 id="使用账号进行控制">使用账号进行控制</h3>
+<p>可以为外部系统创建一个用户账号，类似普通用户一样对外部系统的账号进行管理，并使用该账号对外部系统进行认证和权限控制。</p>
+<p>采用这种方式的问题是难以处理用户相关的敏感数据。因为外部系统自身也是微服务系统中的一个用户账号，因此该外部系统只能访问该账号自身的数据和一些不敏感的公共数据，而不能访问和用户相关的数据。例如在网上商店的例子中，外部系统可以采用该方式访问商品目录信息，但不应允许访问用户历史购买记录，用户余额等信息。</p>
+<h3 id="api-token">API Token</h3>
+<p>是一个API Token（又称API Key）可以控制对用户敏感数据的访问。微服务应用提供一个API Token的生成界面，用户登录后可以生成自己的API Token，并在第三方应用使用该API Token访问微服务的API。在这种情况下，一般只允许第三方应用访问该Token所属用户自身的数据，而不能访问其他用户的敏感私有数据。</p>
+<p>例如Github就提供了Personal API Token功能，用户可以在<a href="https://github.com/settings/tokens">Github的开发者设置界面</a>中创建Token，然后使用该Token来访问Github的API。在创建Token时，可以设置该Token可以访问用户的哪些数据，如查看Repo信息，删除Repo，查看用户信息，更新用户信息等。</p>
+<p>使用API Token来访问Github API</p>
+<pre><code>curl -u zhaohuabing:fbdf8e8862252ed0f3ba9dba4e328c01ac93aeec https://api.github.com/user
+
+</code></pre><blockquote>
+<p>不用试了,这不是我的真实API Token, just for demonstration :-)</p>
+</blockquote>
+<p>使用API Token而不是直接使用用户名/密码来访问API的好处是降低了用户密码暴露的风险，并且可以随时收回Token的权限而不用修改密码。</p>
+<p>由于API Token只能访问指定用户的数据，因此适合于用户自己开发一些脚本或小程序对应用中自己的数据进行操作。</p>
+<h3 id="oauth">OAuth</h3>
+<p>某些第三方应用需要访问不同用户的数据，或者对多个用户的数据进行整合处理，则可以考虑采用OAuth。采用OAuth，当第三方应用访问服务时，应用会提示用户授权第三方应用相应的访问权限，根据用户的授权操作结果生成用于访问的Token，以对第三方应用的操作请求进行访问控制。</p>
+<p>同样以Github为例，一些第三方应用如Travis CI，GitBook等就是通过OAuth和Github进行集成的。
+OAuth针对不同场景有不同的认证流程，一个典型的认证流程如下图所示：</p>
+<ul>
+<li>用户向OAuth客户端程序发起一个请求，OAuth客户端程序在处理该请求时发现需要访问用户在资源服务器中的数据。</li>
+<li>客户端程序将用户请求重定向到认证服务器，该请求中包含一个callback的URL。</li>
+<li>认证服务器返回授权页面，要求用户对OAuth客户端的资源请求进行授权。</li>
+<li>用户对该操作进行授权后，认证服务器将请求重定向到客户端程序的callback url，将授权码返回给客户端程序。</li>
+<li>客户端程序将授权码发送给认证服务器，请求token。</li>
+<li>认证服务器验证授权码后将token颁发给客户端程序。</li>
+<li>客户端程序采用颁发的token访问资源，完成用户请求。</li>
+</ul>
+<blockquote>
+<p>备注：</p>
+<ol>
+<li>
+<p>OAuth中按照功能区分了资源服务器和认证服务器这两个角色，在实现时这两个角色常常是同一个应用。将该流程图中的各个角色对应到Github的例子中，资源服务器和认证服务器都是Github，客户端程序是Travis CI或者GitBook，用户则是使用Travis CI或者GitBook的直接用户。</p>
+</li>
+<li>
+<p>有人可能会疑惑在该流程中为何要使用一个授权码(Authorization Code)来申请Token，而不是由认证服务器直接返回Token给客户端。OAuth这样设计的原因是在重定向到客户端Callback URL的过程中会经过用户代理（浏览器），如果直接传递Token存在被窃取的风险。采用授权码的方式，申请Token时客户端直接和认证服务器进行交互，并且认证服务期在处理客户端的Token申请请求时还会对客户端进行身份认证，避免其他人伪造客户端身份来使用认证码申请Token。
+下面是一个客户端程序采用Authorization Code来申请Token的示例，client_id和client_secret被用来验证客户端的身份。</p>
+</li>
+</ol>
+<pre><code>POST /oauth/token HTTP/1.1
+Host: authorization-server.com
+ 			
+grant_type=authorization_code
+&amp;code=xxxxxxxxxxx
+&amp;redirect_uri=https://example-app.com/redirect
+&amp;client_id=xxxxxxxxxx
+&amp;client_secret=xxxxxxxxxx
+</code></pre></blockquote>
+<p><img src="https://img.zhaohuabing.com/in-post/2018-05-23-external_system_auth/oauth_web_server_flow.png" alt="OAuth认证流程"></p>
+<!-- raw HTML omitted -->
+<p>另外在谈及OAuth时，我们需要注意微服务应用作为OAuth客户端和OAuth服务器的两种不同场景:</p>
+<p>在实现微服务自身的用户认证时，也可以采用OAuth将微服务的用户认证委托给一个第三方的认证服务提供商，例如很多应用都将用户登录和微信或者QQ的OAuth服务进行了集成。</p>
+<p>第三方应用接入和微服务自身用户认证采用OAuth的目的是不同的，前者是为了将微服务中用户的私有数据访问权限授权给第三方应用，微服务在OAuth架构中是认证和资源服务器的角色；而后者的目的是集成并利用知名认证提供服务商提供的OAuth认证服务，简化繁琐的注册操作，微服务在OAuth架构中是客户端的角色。</p>
+<p>因此在我们需要区分这两种不同的场景，以免造成误解。</p>
+<h2 id="后记">后记</h2>
+<p>前两篇文章在在公众号发布后，有朋友提到还要注意登录密码明文问题、防止重放攻击、防止时间差攻击、防止脱裤后的彩虹表攻击&hellip;。的确，安全是一个庞大的话题，本系列文章只阐述了我关于微服务架构对应用安全带来的影响的一点小小思考。在产品开发和运维中，还需要对安全进行全方面的考虑，最好遵循一些业界的最佳实践，如采用完善的防火墙对外部流量进行隔离，采用加盐hash对用户密码进行存储，采用tls进行加密传输，对用户输入进行严格检查防止sql注入，采用经过验证的通用加密算法等等。</p>
+
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://wangxin-jack.github.io/categories/tech/" rel="tag">Tech</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://wangxin-jack.github.io/tags/microservice/" rel="tag">Microservice</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://wangxin-jack.github.io/tags/security/" rel="tag">Security</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="https://wangxin-jack.github.io/2018/05/23/service_2_service_auth/" rel="bookmark">微服务安全沉思录之二</a>
+  </h2>
+  
+  <time datetime="2018-05-23T15:00:00Z">
+    23 May, 2018
+  </time>
+  
+</header>
+
+  
+  <h2 id="服务间认证与鉴权">服务间认证与鉴权</h2>
+<p>除来自用户的访问请求以外，微服务应用中的各个微服务相互之间还有大量的访问，包括下述场景：</p>
+<ul>
+<li>用户间接触发的微服务之间的相互访问<!-- raw HTML omitted -->
+例如在一个网上商店应用中，用户访问购物车微服务进行结算时，购物车微服务可能需要访问用户评级微服务获取用户的会员级别，以得到用户可以享受购物折扣。</li>
+<li>非用户触发的微服务之间的相互访问<!-- raw HTML omitted -->
+例如数据同步或者后台定时任务导致的微服务之间的相互访问。</li>
+</ul>
+<p>根据应用系统的数据敏感程度的不同，对于系统内微服务的相互访问可能有不同的安全要求。</p>
+<h3 id="对微服务之间的相互访问不进行安全控制">对微服务之间的相互访问不进行安全控制</h3>
+<p>在某些场景下，可以假设同一应用中微服务之间的相互访问都是可信的。在这种情况下，应用依赖于内部网络的防火墙及其他网络安全措施来保证安全性。在这种情况对入侵者攻击进入内部网络后没有保护措施。入侵者可以对微服务间的通信进行典型的中间人攻击，例如窃听通信内容，伪造和修改通信数据，甚至假装为一个合法的微服务进行通信。</p>
+<h3 id="采用service-account服务账号进行安全控制">采用Service Account(服务账号)进行安全控制</h3>
+<p>“内部网络中微服务之间的所有通信都是可信的”这个假设在某些场景下是不成立的，特别是在微服务中保存有用户信息这种非常重要的数据的情况下。将敏感信息直接暴露在内部攻击下的做法是非常危险的。 解决该问题的一种方案是使用服务账号来对微服务之间的相互访问进行控制。</p>
+<p>用户权限控制的一个普遍方法是使用”用户账号（User Account）”来标识一个系统用户，并对其进行身份认证和操作鉴权。类似地，可以为系统中每一个服务也创建一个账号，称为”服务账号(Service Accout)“。 该服务账号表示了微服务的身份，以用于控制该微服务对系统中其它微服务的访问权限，如可以对哪些微服务的哪些资源进行何种操作。当一个微服务访问另一个微服务时，被访问的微服务需要验证访问者的服务账号，以确定其身份和资源操作权限。</p>
+<h4 id="spifee标准">SPIFEE标准</h4>
+<p><a href="https://spiffe.io/">Secure Production Identity Framework For Everyone (SPIFFE)</a>是一套服务之间相互进行身份识别的标准，主要包含以下内容：</p>
+<ul>
+<li>SPIFFE ID标准，SPIFFE ID是服务的唯一标识，实现为统一资源标识&quot;Uniform Resource Identifier (URI)”符。</li>
+<li>SVID(SPIFFE Verifiable Identity Document)标准,将SPIFFE ID编码到一个加密的可验证文档中。</li>
+<li>颁发/撤销 SVID的一套API标准。</li>
+</ul>
+<p>SPIFFE SVID目前支持的实现方式是X.509数字证书，在x.509 SVID中，采用X.509数字证书的SAN(Subject Alternative Name)扩展字段来保存SPIFFE ID。</p>
+<h4 id="istio-auth开源实现">Istio Auth开源实现</h4>
+<p>Istio服务网格项目的Auth组件实现了SPIFFE标准，可以为网格中服务颁发符合SPIFFE SVID标准的证书，并为服务提供身份认证，细粒度的操作鉴权以及通信加密。Istio的架构如下图所示：
+<img src="https://img.zhaohuabing.com/in-post/2018-05-23-service_2_service_auth/auth.png" alt=""></p>
+<p>Istio Auth采用了Kubernetes的service account来作为服务标识，其SPIFFE ID的格式为spiffe://&lt;domain&gt;/ns/&lt;namespace&gt;/sa/&lt;serviceaccount&gt;，其中各组成部分如下：</p>
+<ul>
+<li>domain 域名</li>
+<li>namspace kubernetes service account所在的Namespace</li>
+<li>serviceaccout kubernetes中定义的service account名</li>
+</ul>
+<p>Istio Auth提供了一个用于颁发证书的CA。在服务部署时，CA监听Kubernetes API Server, 为集群中的每一个Service Account创建一对密钥和证书。当Pod创建时，Kubernetes根据该Pod关联的Service Account将密钥和证书以Kubernetes Secrets资源的方式加载为Pod的Volume，以供Envoy使用。</p>
+<p>在服务运行时，服务间的通信被Envoy接管，Envoy使用证书在服务间进行双向SSL握手验证通信双方服务的身份，并提供加密的通信通道。</p>
+<h3 id="采用用户身份进行安全控制">采用用户身份进行安全控制</h3>
+<p>采用服务账号进行服务间交互的鉴权不能控制到用户粒度的访问权限，这在某些场景下可能出现数据泄露问题。</p>
+<p>例如在网上商店应用中，用户访问购物车微服务进行结算时，购物车微服务需要访问另一个微服务中的用户历史购物数据。如果只采用服务账号对购物车微服务进行安全控制，存在用户A通过购物车微服务向后端微服务发起一个获取用户B历史购物数据请求的风险。因为后端的微服务并不能得知发起请求的是哪一个用户，因此会不加判断地返回购物车微服务请求的用户历史购物数据。</p>
+<p>解决方案是将用户信息从用户直接访问的第一个微服务向后传递到调用链上的每一个微服务，调用链上的每一个微服务都使用该用户信息对用户能访问的资源进行判断。在一个大型的微服务系统中，一个调用链可能会非常长，导致该方案的实现比较复杂。</p>
+<p>我们需要根据应用的使用场景，每个微服务中数据的敏感程度来决定选择哪一种服务间安全的实施方式。</p>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://wangxin-jack.github.io/categories/tech/" rel="tag">Tech</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://wangxin-jack.github.io/tags/microservice/" rel="tag">Microservice</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://wangxin-jack.github.io/tags/security/" rel="tag">Security</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="https://wangxin-jack.github.io/2018/05/22/user_authentication_authorization/" rel="bookmark">微服务安全沉思录之一</a>
+  </h2>
+  
+  <time datetime="2018-05-23T10:00:00Z">
+    23 May, 2018
+  </time>
+  
+</header>
+
+  
+  <blockquote>
+<p>这段时间对之前微服务安全相关的一些想法进行了进一步总结和归纳，理清了在之前文章里面没有想得太清楚的地方，例如服务间的认证与鉴权以及用户身份在服务调用链中的传递。</p>
+<p>在这一系列文章里，我将尝试分为三个部分对微服务安全进行系统阐述：用户访问认证与鉴权，服务间认证与鉴权，外部系统访问控制。</p>
+</blockquote>
+<h2 id="目录">目录</h2>
+<p>{:.no_toc}</p>
+<ul>
+<li>目录
+{:toc}</li>
+</ul>
+<h2 id="前言">前言</h2>
+<p>微服务架构的引入为软件应用带来了诸多好处：包括小开发团队，缩短开发周期，语言选择灵活性，增强服务伸缩能力等。与此同时，也引入了分布式系统的诸多复杂问题。其中一个挑战就是如何在微服务架构中实现一个灵活，安全，高效的认证和鉴权方案。</p>
+<p>相对于传统单体应用，微服务架构下的认证和鉴权涉及到场景更为复杂，涉及到用户访问微服务应用，第三方应用访问微服务应用，应用内多个微服务之间相互访问等多种场景，每种场景下的认证和鉴权方案都需要考虑到，以保证应用程序的安全性。本系列博文将就此问题进行一次比较完整的探讨。
+<img src="/https://img.zhaohuabing.com/in-post/2018-02-03-authentication-and-authorization-of-microservice/auth-scenarios.png" alt="微服务认证和鉴权涉及到的三种场景"></p>
+<!-- raw HTML omitted -->
+<h2 id="用户认证和鉴权">用户认证和鉴权</h2>
+<h3 id="用户身份认证">用户身份认证</h3>
+<p>一个完整的微服务应用是由多个相互独立的微服务进程组成的，对每个微服务的访问都需要进行用户认证。如果将用户认证的工作放到每个微服务中，存在下面一些问题：</p>
+<ul>
+<li>需要在各个微服务中重复实现这部分公共逻辑。虽然我们可以使用代码库复用部分代码，但这又会导致所有微服务对特定代码库及其版本存在依赖，影响微服务语言/框架选择的灵活性。</li>
+<li>将认证和鉴权的公共逻辑放到微服务实现中违背了单一职责原理，开发人员应重点关注微服务自身的业务逻辑。</li>
+<li>用户需要分别登录以访问系统中不同的服务。</li>
+</ul>
+<p>由于在微服务架构中以API Gateway作为对外提供服务的入口，因此可以在API Gateway处提供统一的用户认证，用户只需要登录一次，就可以访问系统中所有微服务提供的服务。</p>
+<h3 id="用户状态保持">用户状态保持</h3>
+<p>HTTP是一个无状态的协议，对服务器来说，用户的每次HTTP请求是相互独立的。互联网是一个巨大的分布式系统，HTTP协议作为互联网上的一个重要协议，在设计之初要考虑到大量应用访问的效率问题。无状态意味着服务端可以把客户端的请求根据需要发送到集群中的任何一个节点，HTTP的无状态设计对负载均衡有明显的好处，由于没有状态，用户请求可以被分发到任意一个服务器，应用也可以在靠近用户的网络边缘部署缓存服务器。对于不需要身份认证的服务，例如浏览新闻网页等，这是没有任何问题的。但HTTP成为企业应用的一个事实标准后，企业应用需要保存用户的登录状态和身份以进行更严格的权限控制。因此需要在HTTP协议基础上采用一种方式保存用户的登录状态，避免用户每发起一次请求都需要进行验证。</p>
+<p>传统方式是在服务器端采用Cookie来保存用户状态，由于在服务器是有状态的，对服务器的水平扩展有影响。在微服务架构下建议采用Token来记录用户登录状态。</p>
+<p>Token和Seesion主要的不同点是存储的地方不同。Session是集中存储在服务器中的；而Token是用户自己持有的，一般以cookie的形式存储在浏览器中。Token中保存了用户的身份信息，每次请求都会发送给服务器，服务器因此可以判断访问者的身份，并判断其对请求的资源有没有访问权限。</p>
+<p>Token用于表明用户身份，因此需要对其内容进行加密，避免被请求方或者第三者篡改。<a href="https://jwt.io">JWT(Json Web Token)</a>是一个定义Token格式的开放标准(RFC 7519),定义了Token的内容，加密方式，并提供了各种语言的lib。</p>
+<p>JWT Token的结构非常简单，包括三部分：</p>
+<ul>
+<li>Header<!-- raw HTML omitted -->
+头部包含类型,为固定值JWT。然后是JWT使用的Hash算法。</li>
+</ul>
+<pre><code>{
+  &quot;alg&quot;: &quot;HS256&quot;,
+  &quot;typ&quot;: &quot;JWT&quot;
+}
+</code></pre><ul>
+<li>Payload<!-- raw HTML omitted -->
+包含发布者，过期时间，用户名等标准信息，也可以添加用户角色，用户自定义的信息。</li>
+</ul>
+<pre><code>{
+  &quot;sub&quot;: &quot;1234567890&quot;,
+  &quot;name&quot;: &quot;John Doe&quot;,
+  &quot;admin&quot;: true
+}
+</code></pre><ul>
+<li>Signature<!-- raw HTML omitted -->
+Token颁发方的签名，用于客户端验证Token颁发方的身份，也用于服务器防止Token被篡改。
+签名算法</li>
+</ul>
+<pre><code>HMACSHA256(
+  base64UrlEncode(header) + &quot;.&quot; +
+  base64UrlEncode(payload),
+  secret)
+</code></pre><p>这三部分使用Base64编码后组合在一起，成为最终返回给客户端的Token串，每部分之间采用&rdquo;.&ldquo;分隔。下图是上面例子最终形成的Token
+<img src="https://cdn.auth0.com/content/jwt/encoded-jwt3.png" alt="xx">
+采用Token进行用户认证，服务器端不再保存用户状态，客户端每次请求时都需要将Token发送到服务器端进行身份验证。Token发送的方式<a href="https://tools.ietf.org/html/rfc6750">rfc6750</a>进行了规定，采用一个 Authorization: Bearer HHTP Header进行发送。</p>
+<pre><code>Authorization: Bearer mF_9.B5f-4.1JqM
+</code></pre><p>采用Token方式进行用户认证的基本流程如下图所示：</p>
+<ol>
+<li>用户输入用户名,密码等验证信息，向服务器发起登录请求</li>
+<li>服务器端验证用户登录信息，生成JWT token</li>
+<li>服务器端将Token返回给客户端，客户端保存在本地（一般以Cookie的方式保存）</li>
+<li>客户端向服务器端发送访问请求，请求中携带之前颁发的Token</li>
+<li>服务器端验证Token，确认用户的身份和对资源的访问权限，并进行相应的处理（拒绝或者允许访问）
+<img src="https://cdn.auth0.com/content/jwt/jwt-diagram.png" alt=""></li>
+</ol>
+<!-- raw HTML omitted -->
+<h3 id="实现单点登录">实现单点登录</h3>
+<p>单点登录的理念很简单，即用户只需要登录应用一次，就可以访问应用中所有的微服务。API Gateway提供了客户端访问微服务应用的入口，Token实现了无状态的用户认证。结合这两种技术，可以为微服务应用实现一个单点登录方案。</p>
+<p>用户的认证流程和采用Token方式认证的基本流程类似，不同之处是加入了API Gateway作为外部请求的入口。</p>
+<p>用户登录</p>
+<ol>
+<li>客户端发送登录请求到API Gateway</li>
+<li>API Gateway将登录请求转发到Security Service</li>
+<li>Security Service验证用户身份，并颁发Token</li>
+</ol>
+<p>用户请求</p>
+<ol>
+<li>客户端请求发送到API Gateway</li>
+<li>API Gateway调用的Security Service对请求中的Token进行验证，检查用户的身份</li>
+<li>如果请求中没有Token，Token过期或者Token验证非法，则拒绝用户请求。</li>
+<li>Security Service检查用户是否具有该操作权(可选，参见下一小节)</li>
+<li>如果用户具有该操作权限，则把请求发送到后端的Business Service，否则拒绝用户请求
+<img src="https://img.zhaohuabing.com/in-post/2018-05-22-user_authentication_authorization/api-gateway-sso.png" alt="采用API Gateway实现微服务应用的SSO"></li>
+</ol>
+<!-- raw HTML omitted -->
+<h3 id="用户权限控制">用户权限控制</h3>
+<p>用户权限控制有两种做法，在API Gateway处统一处理，或者在各个微服务中单独处理。</p>
+<h4 id="api-gateway处进行统一的权限控制">API Gateway处进行统一的权限控制</h4>
+<p>客户端发送的HTTP请求中包含有请求的Resource及HTTP Method。如果系统遵循REST规范，以URI资源方式对访问对象进行建模，则API Gateway可以从请求中直接截取到访问的资源及需要进行的操作，然后调用Security Service进行权限判断，根据判断结果决定用户是否有权限对该资源进行操作，并转发到后端的Business Service。</p>
+<p>假设系统中有三个角色:</p>
+<ul>
+<li>order_manager,可以查看，创建，修改，删除订单</li>
+<li>order_editor, 可以查看，创建，修改订单</li>
+<li>order_inspector，只能查看订单</li>
+</ul>
+<p>这些角色对资源的操作权限都可以映射到HTTP Verb上，如下表所示。</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Resource</th>
+<th>Verbs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>order_manager</td>
+<td>/orders</td>
+<td>&lsquo;GET&rsquo;   &lsquo;POST&rsquo;   &lsquo;PUT&rsquo;   &lsquo;DELETE&rsquo;</td>
+</tr>
+<tr>
+<td>order_editor</td>
+<td>/orders</td>
+<td>&lsquo;GET&rsquo;    &lsquo;POST&rsquo;    &lsquo;PUT&rsquo;</td>
+</tr>
+<tr>
+<td>order_inspector</td>
+<td>/orders</td>
+<td>&lsquo;GET&rsquo;</td>
+</tr>
+</tbody>
+</table>
+<p>这种实现方式在API Gateway处统一处理鉴权逻辑，各个微服务不需要考虑用户鉴权，只需要处理业务逻辑，简化了各微服务的实现。</p>
+<h4 id="由各个微服务单独进行权限控制">由各个微服务单独进行权限控制</h4>
+<p>如果微服务未严格遵循REST规范对访问对象进行建模，或者应用需要进行更细粒度的权限控制，则需要在微服务中单独对用户权限进行判断和处理。这种情况下微服务的权限控制更为灵活，但各个微服务需要单独维护用户的授权数据，实现更复杂。</p>
+<p>由于微服务进行权限判断时需要用户身份信息，该方案需要处理的另一个问题是如何把登录用户的信息从API Gateway传递到微服务中。如果是基于Http，可以采用Http header实现，如果是其他协议，则需要在消息体中增加用户身份相关的字段。</p>
+
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://wangxin-jack.github.io/categories/tech/" rel="tag">Tech</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://wangxin-jack.github.io/tags/microservice/" rel="tag">Microservice</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://wangxin-jack.github.io/tags/security/" rel="tag">Security</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="https://wangxin-jack.github.io/2018/05/23/istio-auto-injection-with-webhook/" rel="bookmark">Istio Sidecar自动注入原理</a>
+  </h2>
+  
+  <time datetime="2018-05-23T00:00:00Z">
+    23 May, 2018
+  </time>
+  
+</header>
+
+  
+  <h2 id="前言">前言</h2>
+<hr>
+<p>Kubernets 1.9版本引入了Admission Webhook(web 回调)扩展机制，通过Webhook,开发者可以非常灵活地对Kubernets API Server的功能进行扩展，在API Server创建资源时对资源进行验证或者修改。</p>
+<p>使用webhook的优势是不需要对API Server的源码进行修改和重新编译就可以扩展其功能。插入的逻辑实现为一个独立的web进程，通过参数方式传入到kubernets中，由kubernets在进行自身逻辑处理时对扩展逻辑进行回调。</p>
+<p>Istio 0.7版本就利用了Kubernets webhook实现了sidecar的自动注入。</p>
+<h2 id="什么是admission">什么是Admission</h2>
+<hr>
+<p>Admission是Kubernets中的一个术语，指的是Kubernets API Server资源请求过程中的一个阶段。如下图所示，在API Server接收到资源创建请求时，首先会对请求进行认证和鉴权，然后经过Admission处理，最后再保存到etcd。 
+<img src="https://img.zhaohuabing.com/in-post/2018-4-25-istio-auto-injection-with-webhook/admission-phase.png" alt="">
+从图中看到，Admission中有两个重要的阶段，Mutation和Validation，这两个阶段中执行的逻辑如下：</p>
+<ul>
+<li>
+<p>Mutation</p>
+<p>Mutation是英文“突变”的意思,从字面上可以知道在Mutation阶段可以对请求内容进行修改。</p>
+</li>
+<li>
+<p>Validation</p>
+<p>在Validation阶段不允许修改请求内容，但可以根据请求的内容判断是继续执行该请求还是拒绝该请求。</p>
+</li>
+</ul>
+<h2 id="admission-webhook">Admission webhook</h2>
+<hr>
+<p>通过Admission webhook,可以加入Mutation和Validation两种类型的webhook插件，这些插件和Kubernets提供的预编译的Admission插件具有相同的能力。可以想到的用途包括：</p>
+<ul>
+<li>修改资源。例如Istio就通过Admin Webhook在Pod资源中增加了Envoy sidecar容器。</li>
+<li>自定义校验逻辑，例如对资源名称有一些特殊要求。或者对自定义资源的合法性进行校验。</li>
+</ul>
+<h2 id="采用webhook自动注入istio-sidecar">采用Webhook自动注入Istio Sidecar</h2>
+<hr>
+<h3 id="kubernets版本要求">Kubernets版本要求</h3>
+<p>webhook支持需要Kubernets1.9或者更高的版本,使用下面的命令确认kube-apiserver的Admin webhook功能已启用。</p>
+<pre><code>kubectl api-versions | grep admissionregistration
+
+admissionregistration.k8s.io/v1beta1
+</code></pre><h3 id="生成sidecar-injection-webhook的密钥和证书">生成sidecar injection webhook的密钥和证书</h3>
+<p>Webhook使用数字证书向kube-apiserver进行身份认证，因此需要先使用工具生成密钥对，并向Istio CA申请数字证书。</p>
+<pre><code>./install/kubernetes/webhook-create-signed-cert.sh /
+    --service istio-sidecar-injector /
+    --namespace istio-system /
+    --secret sidecar-injector-certs
+</code></pre><h3 id="将生成的数字证书配置到webhook中">将生成的数字证书配置到webhook中</h3>
+<pre><code>cat install/kubernetes/istio-sidecar-injector.yaml | /
+     ./install/kubernetes/webhook-patch-ca-bundle.sh &gt; /
+     install/kubernetes/istio-sidecar-injector-with-ca-bundle.yaml
+</code></pre><h3 id="创建sidecar-injection-configmap">创建sidecar injection configmap</h3>
+<pre><code>kubectl apply -f install/kubernetes/istio-sidecar-injector-configmap-release.yaml
+</code></pre><h3 id="部署sidecar-injection-webhook">部署sidecar injection webhook</h3>
+<pre><code>kubectl apply -f install/kubernetes/istio-sidecar-injector-with-ca-bundle.yaml
+</code></pre><p>通过命令查看部署好的webhook injector</p>
+<pre><code>kubectl -n istio-system get deployment -listio=sidecar-injector
+Copy
+NAME                     DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+istio-sidecar-injector   1         1         1            1           1d
+```
+
+### 开启需要自动注入sidecar的namespace 
+
+```
+kubectl label namespace default istio-injection=enabled
+
+kubectl get namespace -L istio-injection
+
+NAME           STATUS    AGE       ISTIO-INJECTION
+default        Active    1h        enabled
+istio-system   Active    1h        
+kube-public    Active    1h        
+kube-system    Active    1h  
+```
+
+## 参考
+
+* [Extensible Admission is Beta](https://kubernetes.io/blog/2018/01/extensible-admission-is-beta)
+* [Installing the Istio Sidecar](https://istio.io/docs/setup/kubernetes/sidecar-injection.html)
+</code></pre>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://wangxin-jack.github.io/categories/tech/" rel="tag">Tech</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://wangxin-jack.github.io/tags/kubernetes/" rel="tag">Kubernetes</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://wangxin-jack.github.io/tags/istio/" rel="tag">Istio</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="https://wangxin-jack.github.io/2018/05/21/algolia-integration-with-jekyll/" rel="bookmark">使用Algolia为Gitpage博客提供站内搜索</a>
+  </h2>
+  
+  <time datetime="2018-05-21T11:00:00Z">
+    21 May, 2018
+  </time>
+  
+</header>
+
+  
+  <blockquote>
+<p>This series of articles are my notes of &ldquo;Bitcoin and Cryptocurrency Technologies&rdquo; online course.</p>
+</blockquote>
+<h2 id="table-of-content">Table of Content</h2>
+<p>{:.no_toc}</p>
+<ul>
+<li>Table of Content
+{:toc}</li>
+</ul>
+<h2 id="scrooge-coin-transaction">Scrooge Coin Transaction</h2>
+<p>Scrooge Coin programming assignment is a little bit tricky, the video of this lesson hasn't explained some implementation details. To help you understand the transaction data structure used in Scrooge Coin, I draw this diagram:
+<img src="https://img.zhaohuabing.com/in-post/2018-5-20-cryptocurrency_week1_scroogecoin/scroogecoin.png" alt="Scrooge Coin"></p>
+<p>Every transaction has a set of inputs and a set of outputs. An input in a transaction must use a hash pointer to refer to its corresponding output in the previous transaction, and it must be signed with the private key of the owner because the owner needs to prove he/she agrees to spend his/her coins.</p>
+<p>Every output is correlated to the public key of the receiver, which is his/her ScroogeCoin address.</p>
+<p>In the first transaction, we assume that Scrooge has created 10 coins and assigned them to himself, we don't doubt that because the system-Scroogecoin has a building rule which says that Scrooge has right to create coins.</p>
+<p>In the second transaction,  Scrooge transferred 3.9 coins to Alice and 5.9 coins to Bob. The sum of the two outputs is 0.2 less than the input because the transaction fee was 0.2 coin.</p>
+<p>In the third transaction,  there were two inputs and one output, Alice and Bob transferred 9.7 coins to mike, and the transaction fee was 0.1 coin.</p>
+<h2 id="unclaimed-transaction-outputs-pool">Unclaimed transaction outputs pool</h2>
+<p>Another trick we need to Note when doing the programming assignment is that an UTXOPool is introduced to track the unclaimed outputs (unspent coins), so we can know whether the corresponding output of an input of the transaction is available or not.</p>
+<h2 id="txhandler-java-code">TxHandler Java Code</h2>
+<pre><code>import java.security.PublicKey;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class TxHandler {
+	private UTXOPool utxoPool;
+
+	/**
+	 * Creates a public ledger whose current UTXOPool (collection of unspent
+	 * transaction outputs) is {@code utxoPool}. This should make a copy of utxoPool
+	 * by using the UTXOPool(UTXOPool uPool) constructor.
+	 */
+	public TxHandler(UTXOPool utxoPool) {
+		this.utxoPool = new UTXOPool(utxoPool);
+	}
+
+	/**
+	 * @return true if: (1) all outputs claimed by {@code tx} are in the current
+	 *         UTXO pool, (2) the signatures on each input of {@code tx} are valid,
+	 *         (3) no UTXO is claimed multiple times by {@code tx}, (4) all of
+	 *         {@code tx}s output values are non-negative, and (5) the sum of
+	 *         {@code tx}s input values is greater than or equal to the sum of its
+	 *         output values; and false otherwise.
+	 */
+	public boolean isValidTx(Transaction tx) {
+		Set&lt;UTXO&gt; claimedUTXO = new HashSet&lt;UTXO&gt;();
+		double inputSum = 0;
+		double outputSum = 0;
+
+		List&lt;Transaction.Input&gt; inputs = tx.getInputs();
+		for (int i = 0; i &lt; inputs.size(); i++) {
+			Transaction.Input input = inputs.get(i);
+
+			if (!isConsumedCoinAvailable(input)) {
+				return false;
+			}
+
+			if (!verifySignatureOfConsumeCoin(tx, i, input)) {
+				return false;
+			}
+
+			if (isCoinConsumedMultipleTimes(claimedUTXO, input)) {
+				return false;
+			}
+
+			UTXO utxo = new UTXO(input.prevTxHash, input.outputIndex);
+			Transaction.Output correspondingOutput = utxoPool.getTxOutput(utxo);
+			inputSum += correspondingOutput.value;
+
+		}
+
+		List&lt;Transaction.Output&gt; outputs = tx.getOutputs();
+		for (int i = 0; i &lt; outputs.size(); i++) {
+			Transaction.Output output = outputs.get(i);
+			if (output.value &lt;= 0) {
+				return false;
+			}
+
+			outputSum += output.value;
+		}
+
+		// Should the input value and output value be equal? Otherwise the ledger will
+		// become unbalanced.
+		// The difference between inputSum and outputSum is the transaction fee
+		if (outputSum &gt; inputSum) {
+			return false;
+		}
+
+		return true;
+	}
+
+	private boolean isCoinConsumedMultipleTimes(Set&lt;UTXO&gt; claimedUTXO, Transaction.Input input) {
+		UTXO utxo = new UTXO(input.prevTxHash, input.outputIndex);
+		return !claimedUTXO.add(utxo);
+	}
+
+	private boolean verifySignatureOfConsumeCoin(Transaction tx, int index, Transaction.Input input) {
+		UTXO utxo = new UTXO(input.prevTxHash, input.outputIndex);
+		Transaction.Output correspondingOutput = utxoPool.getTxOutput(utxo);
+		PublicKey pk = correspondingOutput.address;
+		return Crypto.verifySignature(pk, tx.getRawDataToSign(index), input.signature);
+	}
+
+	private boolean isConsumedCoinAvailable(Transaction.Input input) {
+		UTXO utxo = new UTXO(input.prevTxHash, input.outputIndex);
+		return utxoPool.contains(utxo);
+	}
+
+	/**
+	 * Handles each epoch by receiving an unordered array of proposed transactions,
+	 * checking each transaction for correctness, returning a mutually valid array
+	 * of accepted transactions, and updating the current UTXO pool as appropriate.
+	 */
+	public Transaction[] handleTxs(Transaction[] possibleTxs) {
+		List&lt;Transaction&gt; acceptedTx = new ArrayList&lt;Transaction&gt;();
+		for (int i = 0; i &lt; possibleTxs.length; i++) {
+			Transaction tx = possibleTxs[i];
+			if (isValidTx(tx)) {
+				acceptedTx.add(tx);
+
+				removeConsumedCoinsFromPool(tx);
+				addCreatedCoinsToPool(tx);
+			}
+		}
+
+		Transaction[] result = new Transaction[acceptedTx.size()];
+		acceptedTx.toArray(result);
+		return result;
+	}
+
+	private void addCreatedCoinsToPool(Transaction tx) {
+		List&lt;Transaction.Output&gt; outputs = tx.getOutputs();
+		for (int j = 0; j &lt; outputs.size(); j++) {
+			Transaction.Output output = outputs.get(j);
+			UTXO utxo = new UTXO(tx.getHash(), j);
+			utxoPool.addUTXO(utxo, output);
+		}
+	}
+
+	private void removeConsumedCoinsFromPool(Transaction tx) {
+		List&lt;Transaction.Input&gt; inputs = tx.getInputs();
+		for (int j = 0; j &lt; inputs.size(); j++) {
+			Transaction.Input input = inputs.get(j);
+			UTXO utxo = new UTXO(input.prevTxHash, input.outputIndex);
+			utxoPool.removeUTXO(utxo);
+		}
+	}
+
+}
+</code></pre><h2 id="all-the-example-codes-on-github">All the Example Codes on GitHub</h2>
+<p>I wrap the codes into a maven project, just run <code>mvn test</code> then the example codes will build and run all the test cases.</p>
+<p><a href="https://github.com/zhaohuabing/scroogecoin">Scrooge Coin example in Java</a></p>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://wangxin-jack.github.io/categories/note/" rel="tag">Note</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://wangxin-jack.github.io/tags/jekyllq/" rel="tag">Jekyll:q</a>
+    </li>
+    
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://wangxin-jack.github.io/tags/bitcoin/" rel="tag">Bitcoin</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+<article>
+  <header class="Heading">
+  <h2 class="Heading-title">
+    <a class="Heading-link u-clickable" href="https://wangxin-jack.github.io/2018/05/01/may-day-jiulonghu/" rel="bookmark">川西秘境探险</a>
+  </h2>
+  
+  <time datetime="2018-05-01T00:00:00Z">
+    1 May, 2018
+  </time>
+  
+</header>
+
+  
+  <h2 id="寻浮云牧场不遇">寻浮云牧场不遇</h2>
+<p>五一节前的一周内，几个朋友就纷纷坐不住了，一个二个不再安心上班，开始在微信群里讨论过节要到哪里耍。
+大家思来想去，最后决定还是去理县方向。因为根据多年自驾的经验，只要出了汶川，沿途都是风景。</p>
+<p>放假第一天和第二天上午老婆加班，我在家里陪女儿做作业，提前把车油加好，准备路上的衣物。第二天中午老婆上完班，我迫不及待开着小狮子就向都汶高速出发了。虽然加班耽误了一天半，但我们这次也算错峰出行了，一路上畅通无阻，心情自然也比较愉快。 开车1个多点小时就赶到了汶川，这时朋友一家刚在汶川县城吃完午饭，我们在出汶川不远，桃坪羌寨附近胜利会师了。</p>
+<p>两位领导一起协商了一下，决定先开车去通化乡的“浮云牧场”看看。“浮云牧场”是最近的一个网红酒店，在通化乡山上的一个藏寨旁边。有道是：“浮云牧场”，不放牛羊，只牧浮云和姑娘。</p>
+<p>“浮云牧场”走的是网红路线，马蜂窝，微信公众号的宣传做得好，知名度较高，房间比较紧俏，在五一期间更是一房难求，而且价格也比较感人。两位领导都持家有方，指示我们上去看看风景，然后下山再找住宿。</p>
+<p>过了桃坪羌寨大概几公里，317国道右边有一个比较明显的指路牌，往右上山，就是到浮云牧场的路。我们兴冲冲地开车上了山，此时，我们心中向往的浮云牧场是这样子的（取图自网络）：
+<img src="https://img.zhaohuabing.com/in-post/2018-05-01-may-day-jiulonghu/fuyunmuchang.jpeg" alt="">
+上山的路况还可以，但比较窄，回头弯较多，需要注意对方来车。开了将近1小时后，来到了半山腰，对面来了好几辆下山的车。由于两方相遇的路面较窄，开始堵车了。这时乘机向对方打听了山上的情况，得知酒店封路了，只有预定了房间的人才能进入浮云牧场。</p>
+<p>得知这个消息，此时我们的内心是崩溃的，已经开了一大半的山路，现在却得知不能进去。没有办法，大家商量后还是决定下山。不过“塞翁失马，焉知非福”，这次没进入浮云牧场，为第二天探秘一个新景点埋下伏笔，现在暂时不表。于是我和朋友调转车头，悻悻下山，败意而回。</p>
+<h2 id="夜宿甘堡藏寨">夜宿甘堡藏寨</h2>
+<p>下山后，大家商量晚上的住宿。我觉得桃坪羌寨靠路边，环境也一般，提议去靠近理县的甘堡藏寨。朋友因为在桃坪羌寨住过了，因此也想去另外的地方试试。于是一路向理县方向进发，由于限速较低，车辆也开始多了起来，感觉没多远的距离，开了接近1小时，6点左右来到了甘堡藏寨。</p>
+<p>最后一个靠小河边的藏家乐入住，一个标间240元，包3个人一顿晚饭，一顿早饭。我和朋友两家分别在二楼和三楼的两间房间住下。这里得表扬一下领导，每次出来耍选择的住宿都挺好，性价比高，住着也舒服。</p>
+<p>这是一个河边的小院，有三层楼，院子里面种满了各种植物和花卉，老板是个很和气的中年人，把小院收拾得很舒服。房间里挺宽敞，床上套着雪白的床单，非常干净整洁。</p>
+<p>院子里的洋槐树树冠上开满了白色的小花，配着嫩绿的树叶和攀缘的蔷薇，感觉非常的清新和惬意。
+<img src="https://img.zhaohuabing.com/in-post/2018-05-01-may-day-jiulonghu/nongjiale1.jpg" alt=""></p>
+<p>老板的三层小楼，这里的修房的材料不是砖头，而是就地取材用山上的片状岩石修砌而成的，很有特色。
+<img src="https://img.zhaohuabing.com/in-post/2018-05-01-may-day-jiulonghu/nongjiale3.jpg" alt=""></p>
+<p>窗户旁边挂着金黄色的玉米。
+<img src="https://img.zhaohuabing.com/in-post/2018-05-01-may-day-jiulonghu/nongjiale.jpg" alt=""></p>
+<p>院子里种的玫瑰花。
+<img src="https://img.zhaohuabing.com/in-post/2018-05-01-may-day-jiulonghu/rose.jpg" alt=""></p>
+<p>我们和老板闲聊，提到今天没得进到浮云牧场，老板笑道：这浮云牧场的景色我们这里到处都有，只是浮云牧场有老板投资，宣传做得好罢了。这后面山上就有草场，还有一个九龙湖，就挺好耍。我们听了，赶紧向老板仔细打听线路和路况，跃跃欲试，打算明天去探寻这个尚未开发的野景点。</p>
+<p>不一会儿，麻利的老板和老板娘就把晚餐准备好了。我们和其他客人一起围桌吃晚饭。晚餐味道不错，好些是城里平时吃不到的东西。例如有老腊肉，核桃花，和一些不知名的野菜，非常爽口开胃。我带了一瓶红酒，和朋友们一起就着这山野美味，好不畅快。</p>
+<p>晚上小朋友闹着要玩游戏，于是先一起玩了一会儿游戏，洗漱之后，便倒在床上酣然入梦。是夜，半梦半醒之间，窗外潺潺的河水声，院子里淡淡的槐花香仿佛也潜入梦来。</p>
+<h2 id="甘堡藏寨风情">甘堡藏寨风情</h2>
+<p>昨晚虽然睡得不是很熟，但藏家院子里空气清新，精神恢复得很快，我没到七点就醒了。起床和大家一起吃了早饭，早饭是烤馍，鸡蛋，咸菜和稀饭。吃完饭后，陪孩子们去寨子里逛了一下。寨子不大，半个小时就能走完，街上摆着一些小摊，售卖一些民族特色的小饰品。
+<img src="https://img.zhaohuabing.com/in-post/2018-05-01-may-day-jiulonghu/village2.jpg" alt=""></p>
+<p>两个小朋友在小摊上找自己喜欢的小饰品，摊主是一个十八九岁的小姑娘，她平时在成都读书，放假回来摆个小摊勤工俭学。最后照顾她生意，给每个小朋友买了一个十多块钱的小玩意。
+<img src="https://img.zhaohuabing.com/in-post/2018-05-01-may-day-jiulonghu/village3.jpg" alt=""></p>
+<p>寨子墙上的石板画，画的是藏族传说中的英雄人物格萨尔王。
+<img src="https://img.zhaohuabing.com/in-post/2018-05-01-may-day-jiulonghu/geshaerwang.jpg" alt=""></p>
+<h2 id="探秘九龙湖">探秘九龙湖</h2>
+<p>我逛完寨子，其余人也收拾妥当了。向老板告辞后，我们准备向九龙湖进发。细心的老板怕我们找不到地方，特意给我们画了一张地图。
+<img src="https://img.zhaohuabing.com/in-post/2018-05-01-may-day-jiulonghu/map.jpg" alt=""></p>
+<p>开车顺着河边一路上山，很快就上了盘山公路。路面是水泥的，有护栏，只是路比较窄，很对地方只能容一车通过。川西山区的路基本都是这样之字形的，回头弯很多，这种回头弯一般有30到40度的坡度。我家的小狮子是1.6的，如果速度开慢点的话，过弯时得用一档。
+<img src="https://img.zhaohuabing.com/in-post/2018-05-01-may-day-jiulonghu/road1.jpg" alt=""></p>
+<p>山路两边的风景很美，低海拔地区有很多樱桃树，核桃树以及开满了花的洋槐树。洋槐花蜜过一段时间就会上市了，很香的。我们摘了一些花带回家，杨槐花焯水后可以炒蛋，也可以和在面里面吃。
+<img src="https://img.zhaohuabing.com/in-post/2018-05-01-may-day-jiulonghu/yanghuaihua.jpg" alt=""></p>
+<p>树上结满了樱桃，别看樱桃树不高，一棵树可以产两百斤樱桃。
+<img src="https://img.zhaohuabing.com/in-post/2018-05-01-may-day-jiulonghu/cherry.jpg" alt=""></p>
+<p>再往上开，到了海拔高一点的地方，乔木就比较少了，路两边多是低矮的绿色灌木，以及不知名的小花。五月间的植物都是嫩绿嫩绿的，煞是好看。
+<img src="https://img.zhaohuabing.com/in-post/2018-05-01-may-day-jiulonghu/flower.jpg" alt="">
+<img src="https://img.zhaohuabing.com/in-post/2018-05-01-may-day-jiulonghu/flower1.jpg" alt=""></p>
+<p>看到几头牛在路边吃草，看这淡定的眼神！山路边还时不时冒出一群小黑猪，目测就是一只就十多斤重，想给它们拍张照片，飞快地钻进灌木丛里面了，只好作罢。川西山里和草原上这种猪都是这样像牛羊一样放养的。我们流着口水说这个是资格的跑山猪，味道肯定巴适！
+<img src="https://img.zhaohuabing.com/in-post/2018-05-01-may-day-jiulonghu/cattle.jpg" alt=""></p>
+<p>半山上的几户藏家。
+<img src="https://img.zhaohuabing.com/in-post/2018-05-01-may-day-jiulonghu/village1.jpg" alt=""></p>
+<p>开到最高的一个寨子后，后面的路就是土路了。向寨子里一个大姐打听了一下，大姐信誓旦旦地说这两天没下大雨，轿车开上去没问题，于是我们就继续往上开了。</p>
+<p>上土路后不久，遇到一个搭车的老爷子，他要去山顶的寺庙烧香。我们的运气也挺好，要不是老人家陪我们一起，后面我们不一定找得到地方。
+<img src="https://img.zhaohuabing.com/in-post/2018-05-01-may-day-jiulonghu/oldman.jpg" alt=""></p>
+<p>开了一段土路后，发现路比较窄，路边就是悬崖，而且没有护栏。老婆娃儿都说还是停下来走路上去算了。于是和朋友找了一个路口把车停到路边，开始走路上山。朋友停车后说，在前面几个转弯的地方，开车时脚趾拇都抓紧了。</p>
+<p>最后一段就是这种路，地面硬化程度不错，没有下雨的情况下，胆子大点的老师傅可以开上山。
+<img src="https://img.zhaohuabing.com/in-post/2018-05-01-may-day-jiulonghu/road.jpg" alt=""></p>
+<p>老爷子说这个路开车完全没得问题嘛，他看到别人都开车上去的。我们是不敢继续往前开了，他也只好下车和我们一起走。我一边走一边和老人家聊天，得知他已经高寿76了，完全看不出来，腰板硬朗，牙齿健全，走路比我们年轻人还快。老人家自豪地说他寨子阳光好，地肥沃，种什么粮食产量都高。</p>
+<p>老人家所在的寨子，地里面已经种上了玉米。
+<img src="https://img.zhaohuabing.com/in-post/2018-05-01-may-day-jiulonghu/village.jpg" alt=""></p>
+<p>我继续和老爷子边走边聊，老爷子告诉我，走山路要不紧不慢，快了容易呼吸不畅，引起高原反应。还给我介绍路边的各种植物，哪种可以食用。从聊天中得知，大爷姓何，祖上是从陕西迁移到这里的，到他这里已经是第九代了。家里有四个女儿，都在理县做生意或者打工，寨子的家里就他和老伴。他说他喜欢住在山里，一年也出不了几次山。
+看得出老爷子很高兴有人能陪他说说话，住在山里虽然空气好，但子女不在身边，老人平时估计也比较寂寞。</p>
+<p>老爷子说这种野菜煮汤喝很香。
+<img src="https://img.zhaohuabing.com/in-post/2018-05-01-may-day-jiulonghu/yecai.jpg" alt=""></p>
+<p>转过一个弯，听见路边的灌木丛中“噗噗”的声音，飞出一只长尾巴的大鸟来，老爷子说那是野鸡。太快了没能拍到照片。</p>
+<p>就这么慢慢地走了将近1小时，来到了山顶上。</p>
+<p>令人惊奇的是，虽然上山的路很陡，但山顶上却非常开阔，有一大片草坝子。从山顶上可以隐约看到对面巍峨的雪山，今天天气不是很好，能见度不高，如果是在晴天的话，肯定非常壮观。
+<img src="https://img.zhaohuabing.com/in-post/2018-05-01-may-day-jiulonghu/snowmountain.jpg" alt=""></p>
+<p>山顶搭建了一个台子和一个草房。大爷说这是举行节日的时候的临时厨房。每年有三个时间山顶的草坝上会举行锅庄舞会。这个木板上标注了山顶上望过去的几座雪山，可以看到最高的大黄峰有将近6000米高。
+<img src="https://img.zhaohuabing.com/in-post/2018-05-01-may-day-jiulonghu/snowmountain1.jpg" alt=""></p>
+<p>山顶还有一个小秋千，两个小孩在上面玩得不亦乐乎。
+<img src="https://img.zhaohuabing.com/in-post/2018-05-01-may-day-jiulonghu/swing.jpg" alt=""></p>
+<p>我对比了网上浮云牧场的图片，感觉这个山顶的雪山比浮云牧场更雄伟。这座山的风景也更好，树木，灌木，草地层次分明；而浮云牧场上山的路上很多地方是光秃秃的。</p>
+<p>到山顶后，再往前走大约500米，翻过一个小山坡就到了九龙湖，但是湖中长满了草，没有水。大爷说现在水不多，九龙湖一共有九个海子，前面的海子还比较远。此时天空飘起了小雨，由于担心下雨后下山的路湿滑不安全，我们和大爷就此告别，开始下山了。离别时，大爷热情地给我说他家在寨子里面的位置，让我们下次过来耍时再来找他。大爷钻进灌木，很快就不见了，看着他消失的背影，我心想，下次到这边来耍时，希望还能遇到这个开朗乐观的何大爷。</p>
+<p>下山的路比上山要轻松多了，大家有说有笑，很快就走到了停车的地方，一路开下山。然后走317,都汶，成灌回了成都。路上有一点小堵，但一切都很顺利，回到成都时也才6点左右。</p>
+<blockquote>
+<p>请注意：川西地区山路路况复杂，请勿根据博客内容自行前往，否则一切后果自负。</p>
+</blockquote>
+  
+  
+
+
+
+
+
+
+<footer>
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://wangxin-jack.github.io/categories/life/" rel="tag">Life</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  
+  <ul class="Tags">
+    
+    
+    <li class="Tags-item u-background">
+      <a class="Tags-link u-clickable" href="https://wangxin-jack.github.io/tags/travel/" rel="tag">Travel</a>
+    </li>
+    
+    
+  </ul>
+  
+  
+</footer>
+
+
+</article>
+<div class="Divider"></div>
+
+
+<nav>
+  
+  <a class="Pagination u-clickable" href="https://wangxin-jack.github.io/page/2/" rel="prev">« Previous</a>
+  
+  
+</nav>
+
+
+
+
+      </div>
+    </div>
+  </main>
+  
+<footer class="Footer">
+  <div class="u-wrapper">
+    <div class="u-padding">
+      Except where otherwise noted, content on this site is licensed under a a <a href="http://creativecommons.org/licenses/by/4.0/" rel="license"> Creative Commons Attribution 4.0 International License</a>.
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
