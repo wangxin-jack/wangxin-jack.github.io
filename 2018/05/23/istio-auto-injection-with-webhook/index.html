@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>
+        
+        Hugo Theme Yuki
+        
+    </title>
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+    <link rel='icon' type='image/x-icon' href="https://wangxin-jack.github.io/images/logo.png" />
+    <link rel="apple-touch-icon" href="https://wangxin-jack.github.io/images/logo.png"><link rel="stylesheet" href="https://wangxin-jack.github.io/scss/style.css">
+    
+    <link rel="stylesheet" href="https://wangxin-jack.github.io/scss/monokai-sublime.min.css">
+    <script src="https://wangxin-jack.github.io/js/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://wangxin-jack.github.io/scss/highlight.css">
+    
+    <link rel="stylesheet" href="https://wangxin-jack.github.io/scss/custom.css">
+    
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'Your Google Analytics tracking id', 'auto');
+        ga('send', 'pageview');
+    </script>
+    
+    
+    <meta name="generator" content="Hugo 0.62.2" /></head>
+
+
+<body>
+<div class="header">
+    <div class="site-logo__wrap">
+        <div id="site-button">
+            <div></div>
+        </div>
+        
+        <div class=' site-logo '>
+            <a href="https://wangxin-jack.github.io/"><img src="https://wangxin-jack.github.io/images/logo.png" /></a>
+        </div>
+    </div>
+    
+<div class=' site-nav u-font ' id="nav-bar">
+    
+    <div class="site-nav__wrap">
+        <a class="site-nav__el" href="/" >HOME</a>
+    </div>
+    
+    <div class="site-nav__wrap">
+        <a class="site-nav__el" href="/post" >BLOG</a>
+    </div>
+    
+    <div class="site-nav__wrap">
+        <a class="site-nav__el" href="/about" >ABOUT</a>
+    </div>
+    
+    <div class="site-nav__wrap">
+        <a class="site-nav__el" href="/tags/" >TAGS</a>
+    </div>
+    
+</div>
+
+</div>
+<div class="main">
+
+<div class="main-content">
+    <div class="main-content__date">
+        <h4 id="date"> 2018.05.23 00:00 </h4>
+    </div>
+    <div class="main-content__title">
+        <h1 id="title">Istio Sidecar自动注入原理</h1>
+    </div>
+    <div class="main-content__article">
+        <article id="content">
+            <h2 id="前言">前言</h2>
+<hr>
+<p>Kubernets 1.9版本引入了Admission Webhook(web 回调)扩展机制，通过Webhook,开发者可以非常灵活地对Kubernets API Server的功能进行扩展，在API Server创建资源时对资源进行验证或者修改。</p>
+<p>使用webhook的优势是不需要对API Server的源码进行修改和重新编译就可以扩展其功能。插入的逻辑实现为一个独立的web进程，通过参数方式传入到kubernets中，由kubernets在进行自身逻辑处理时对扩展逻辑进行回调。</p>
+<p>Istio 0.7版本就利用了Kubernets webhook实现了sidecar的自动注入。</p>
+<h2 id="什么是admission">什么是Admission</h2>
+<hr>
+<p>Admission是Kubernets中的一个术语，指的是Kubernets API Server资源请求过程中的一个阶段。如下图所示，在API Server接收到资源创建请求时，首先会对请求进行认证和鉴权，然后经过Admission处理，最后再保存到etcd。 
+<img src="https://img.zhaohuabing.com/in-post/2018-4-25-istio-auto-injection-with-webhook/admission-phase.png" alt="">
+从图中看到，Admission中有两个重要的阶段，Mutation和Validation，这两个阶段中执行的逻辑如下：</p>
+<ul>
+<li>
+<p>Mutation</p>
+<p>Mutation是英文“突变”的意思,从字面上可以知道在Mutation阶段可以对请求内容进行修改。</p>
+</li>
+<li>
+<p>Validation</p>
+<p>在Validation阶段不允许修改请求内容，但可以根据请求的内容判断是继续执行该请求还是拒绝该请求。</p>
+</li>
+</ul>
+<h2 id="admission-webhook">Admission webhook</h2>
+<hr>
+<p>通过Admission webhook,可以加入Mutation和Validation两种类型的webhook插件，这些插件和Kubernets提供的预编译的Admission插件具有相同的能力。可以想到的用途包括：</p>
+<ul>
+<li>修改资源。例如Istio就通过Admin Webhook在Pod资源中增加了Envoy sidecar容器。</li>
+<li>自定义校验逻辑，例如对资源名称有一些特殊要求。或者对自定义资源的合法性进行校验。</li>
+</ul>
+<h2 id="采用webhook自动注入istio-sidecar">采用Webhook自动注入Istio Sidecar</h2>
+<hr>
+<h3 id="kubernets版本要求">Kubernets版本要求</h3>
+<p>webhook支持需要Kubernets1.9或者更高的版本,使用下面的命令确认kube-apiserver的Admin webhook功能已启用。</p>
+<pre><code>kubectl api-versions | grep admissionregistration
+
+admissionregistration.k8s.io/v1beta1
+</code></pre><h3 id="生成sidecar-injection-webhook的密钥和证书">生成sidecar injection webhook的密钥和证书</h3>
+<p>Webhook使用数字证书向kube-apiserver进行身份认证，因此需要先使用工具生成密钥对，并向Istio CA申请数字证书。</p>
+<pre><code>./install/kubernetes/webhook-create-signed-cert.sh /
+    --service istio-sidecar-injector /
+    --namespace istio-system /
+    --secret sidecar-injector-certs
+</code></pre><h3 id="将生成的数字证书配置到webhook中">将生成的数字证书配置到webhook中</h3>
+<pre><code>cat install/kubernetes/istio-sidecar-injector.yaml | /
+     ./install/kubernetes/webhook-patch-ca-bundle.sh &gt; /
+     install/kubernetes/istio-sidecar-injector-with-ca-bundle.yaml
+</code></pre><h3 id="创建sidecar-injection-configmap">创建sidecar injection configmap</h3>
+<pre><code>kubectl apply -f install/kubernetes/istio-sidecar-injector-configmap-release.yaml
+</code></pre><h3 id="部署sidecar-injection-webhook">部署sidecar injection webhook</h3>
+<pre><code>kubectl apply -f install/kubernetes/istio-sidecar-injector-with-ca-bundle.yaml
+</code></pre><p>通过命令查看部署好的webhook injector</p>
+<pre><code>kubectl -n istio-system get deployment -listio=sidecar-injector
+Copy
+NAME                     DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+istio-sidecar-injector   1         1         1            1           1d
+```
+
+### 开启需要自动注入sidecar的namespace 
+
+```
+kubectl label namespace default istio-injection=enabled
+
+kubectl get namespace -L istio-injection
+
+NAME           STATUS    AGE       ISTIO-INJECTION
+default        Active    1h        enabled
+istio-system   Active    1h        
+kube-public    Active    1h        
+kube-system    Active    1h  
+```
+
+## 参考
+
+* [Extensible Admission is Beta](https://kubernetes.io/blog/2018/01/extensible-admission-is-beta)
+* [Installing the Istio Sidecar](https://istio.io/docs/setup/kubernetes/sidecar-injection.html)
+</code></pre>
+        </article>
+    </div>
+    <div class="main-content__tags u-font">
+        
+        
+        <span><a href="https://wangxin-jack.github.io/tags/kubernetes">Kubernetes</a></span>
+        
+        <span><a href="https://wangxin-jack.github.io/tags/istio">Istio</a></span>
+        
+        
+    </div>
+</div>
+<div class="main-profile">
+    <div class="main-profile__avatar">
+        
+    </div>
+    <div class="main-profile__body">
+        <div class="main-profile__author">
+            
+            <span> Author </span>
+            
+        </div>
+        <div class="main-profile__description">
+            
+            <p> Short description </p>
+            
+        </div>
+    </div>
+</div>
+<div class="main-line"></div>
+<div class="main-pn">
+    
+    <a class="previous" href="https://wangxin-jack.github.io/2018/05/21/algolia-integration-with-jekyll/">
+        <div class="pn-dec"></div>
+        <div class="pn-els">
+            <div class="pn-el__1"> 2018.05.21 11:00 </div>
+            <div class="pn-el__2"> 使用Algolia为Gitpage博客提供站内搜索 </div>
+        </div>
+    </a>
+    
+    
+    <a class="next" href="https://wangxin-jack.github.io/2018/05/22/user_authentication_authorization/">
+        <div class="pn-dec"></div>
+        <div class="pn-els">
+            <div class="pn-el__1"> 2018.05.23 10:00 </div>
+            <div class="pn-el__2"> 微服务安全沉思录之一 </div>
+        </div>
+    </a>
+    
+</div>
+
+</div>
+<div class="footer">
+    <div class="copyright-wrap">
+        <p class="copyright u-font">
+            
+            &#169;
+            2019
+            
+            <a href="https://example.com/" target="_blank">Author&#46;</a>
+            Theme <a href="https://github.com/iCyris/hugo-theme-yuki" target="_blank">yuki</a>&#46;
+            Powered by Hugo&#46;
+            
+            
+        </p>
+    </div>
+</div>
+</body>
+<script src="https://wangxin-jack.github.io/js/page.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>
+        
+        Hugo Theme Yuki
+        
+    </title>
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+    <link rel='icon' type='image/x-icon' href="https://wangxin-jack.github.io/images/logo.png" />
+    <link rel="apple-touch-icon" href="https://wangxin-jack.github.io/images/logo.png"><link rel="stylesheet" href="https://wangxin-jack.github.io/scss/style.css">
+    
+    <link rel="stylesheet" href="https://wangxin-jack.github.io/scss/monokai-sublime.min.css">
+    <script src="https://wangxin-jack.github.io/js/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://wangxin-jack.github.io/scss/highlight.css">
+    
+    <link rel="stylesheet" href="https://wangxin-jack.github.io/scss/custom.css">
+    
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'Your Google Analytics tracking id', 'auto');
+        ga('send', 'pageview');
+    </script>
+    
+    
+    <meta name="generator" content="Hugo 0.62.2" /></head>
+
+
+<body>
+<div class="header">
+    <div class="site-logo__wrap">
+        <div id="site-button">
+            <div></div>
+        </div>
+        
+        <div class=' site-logo '>
+            <a href="https://wangxin-jack.github.io/"><img src="https://wangxin-jack.github.io/images/logo.png" /></a>
+        </div>
+    </div>
+    
+<div class=' site-nav u-font ' id="nav-bar">
+    
+    <div class="site-nav__wrap">
+        <a class="site-nav__el" href="/" >HOME</a>
+    </div>
+    
+    <div class="site-nav__wrap">
+        <a class="site-nav__el" href="/post" >BLOG</a>
+    </div>
+    
+    <div class="site-nav__wrap">
+        <a class="site-nav__el" href="/about" >ABOUT</a>
+    </div>
+    
+    <div class="site-nav__wrap">
+        <a class="site-nav__el" href="/tags/" >TAGS</a>
+    </div>
+    
+</div>
+
+</div>
+<div class="main">
+
+<div class="main-content">
+    <div class="main-content__date">
+        <h4 id="date"> 2018.03.13 18:00 </h4>
+    </div>
+    <div class="main-content__title">
+        <h1 id="title">如何配置docker使用HTTP代理</h1>
+    </div>
+    <div class="main-content__article">
+        <article id="content">
+            <h2 id="ubuntu">Ubuntu</h2>
+<h3 id="设置docker使用http-proxy">设置docker使用http proxy</h3>
+<pre><code>sudo /etc/default/docker
+
+export http_proxy=&quot;http://127.0.0.1:3128/&quot;
+export https_proxy=&quot;http://127.0.0.1:3128/&quot;
+export HTTP_PROXY=&quot;http://127.0.0.1:3128/&quot;
+export HTTPS_PROXY=&quot;http://127.0.0.1:3128/&quot;
+</code></pre><h3 id="加载配置并重启docker">加载配置并重启docker</h3>
+<pre><code>sudo service docker restart
+</code></pre><h2 id="centos">CentOS</h2>
+<h3 id="设置docker使用http-proxy-1">设置docker使用http proxy</h3>
+<pre><code>sudo mkdir -p /etc/systemd/system/docker.service.d
+
+echo '
+[Service]
+Environment=&quot;HTTP_PROXY=http://proxy.foo.bar.com:80/&quot;
+' | sudo tee /etc/systemd/system/docker.service.d/http-proxy.conf
+</code></pre><h3 id="加载配置并重启docker-1">加载配置并重启docker</h3>
+<pre><code>sudo systemctl daemon-reload
+sudo systemctl restart docker
+</code></pre>
+        </article>
+    </div>
+    <div class="main-content__tags u-font">
+        
+        
+        <span><a href="https://wangxin-jack.github.io/tags/tips">Tips</a></span>
+        
+        <span><a href="https://wangxin-jack.github.io/tags/docker">Docker</a></span>
+        
+        
+    </div>
+</div>
+<div class="main-profile">
+    <div class="main-profile__avatar">
+        
+    </div>
+    <div class="main-profile__body">
+        <div class="main-profile__author">
+            
+            <span> Author </span>
+            
+        </div>
+        <div class="main-profile__description">
+            
+            <p> Short description </p>
+            
+        </div>
+    </div>
+</div>
+<div class="main-line"></div>
+<div class="main-pn">
+    
+    <a class="previous" href="https://wangxin-jack.github.io/2018/02/09/vim-tips/">
+        <div class="pn-dec"></div>
+        <div class="pn-els">
+            <div class="pn-el__1"> 2018.02.09 11:00 </div>
+            <div class="pn-el__2"> Vim Tips </div>
+        </div>
+    </a>
+    
+    
+    <a class="next" href="https://wangxin-jack.github.io/2018/03/29/what-is-service-mesh-and-istio/">
+        <div class="pn-dec"></div>
+        <div class="pn-els">
+            <div class="pn-el__1"> 2018.03.29 12:00 </div>
+            <div class="pn-el__2"> 谈谈微服务架构中的基础设施：Service Mesh与Istio </div>
+        </div>
+    </a>
+    
+</div>
+
+</div>
+<div class="footer">
+    <div class="copyright-wrap">
+        <p class="copyright u-font">
+            
+            &#169;
+            2019
+            
+            <a href="https://example.com/" target="_blank">Author&#46;</a>
+            Theme <a href="https://github.com/iCyris/hugo-theme-yuki" target="_blank">yuki</a>&#46;
+            Powered by Hugo&#46;
+            
+            
+        </p>
+    </div>
+</div>
+</body>
+<script src="https://wangxin-jack.github.io/js/page.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+

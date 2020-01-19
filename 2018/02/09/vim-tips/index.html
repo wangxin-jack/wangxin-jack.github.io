@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>
+        
+        Hugo Theme Yuki
+        
+    </title>
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+    <link rel='icon' type='image/x-icon' href="https://wangxin-jack.github.io/images/logo.png" />
+    <link rel="apple-touch-icon" href="https://wangxin-jack.github.io/images/logo.png"><link rel="stylesheet" href="https://wangxin-jack.github.io/scss/style.css">
+    
+    <link rel="stylesheet" href="https://wangxin-jack.github.io/scss/monokai-sublime.min.css">
+    <script src="https://wangxin-jack.github.io/js/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://wangxin-jack.github.io/scss/highlight.css">
+    
+    <link rel="stylesheet" href="https://wangxin-jack.github.io/scss/custom.css">
+    
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'Your Google Analytics tracking id', 'auto');
+        ga('send', 'pageview');
+    </script>
+    
+    
+    <meta name="generator" content="Hugo 0.62.2" /></head>
+
+
+<body>
+<div class="header">
+    <div class="site-logo__wrap">
+        <div id="site-button">
+            <div></div>
+        </div>
+        
+        <div class=' site-logo '>
+            <a href="https://wangxin-jack.github.io/"><img src="https://wangxin-jack.github.io/images/logo.png" /></a>
+        </div>
+    </div>
+    
+<div class=' site-nav u-font ' id="nav-bar">
+    
+    <div class="site-nav__wrap">
+        <a class="site-nav__el" href="/" >HOME</a>
+    </div>
+    
+    <div class="site-nav__wrap">
+        <a class="site-nav__el" href="/post" >BLOG</a>
+    </div>
+    
+    <div class="site-nav__wrap">
+        <a class="site-nav__el" href="/about" >ABOUT</a>
+    </div>
+    
+    <div class="site-nav__wrap">
+        <a class="site-nav__el" href="/tags/" >TAGS</a>
+    </div>
+    
+</div>
+
+</div>
+<div class="main">
+
+<div class="main-content">
+    <div class="main-content__date">
+        <h4 id="date"> 2018.02.09 11:00 </h4>
+    </div>
+    <div class="main-content__title">
+        <h1 id="title">Vim Tips</h1>
+    </div>
+    <div class="main-content__article">
+        <article id="content">
+            <h2 id="vim-graphical-cheat-sheet">vim graphical cheat sheet</h2>
+<p><img src="/https://img.zhaohuabing.com/in-post/2018-02-09-vim-tips/vi-vim-cheat-sheet.svg" alt=""></p>
+<h2 id="vim-jumps">Vim Jumps</h2>
+<ul>
+<li>^ — Move to start of line</li>
+<li>$ — Move to end of line</li>
+<li>b — Move back a word</li>
+<li>w — Move forward a word</li>
+<li>e — Move to the end of the next word</li>
+<li>Ctrl-o and Ctrl-i to go to the previous/next location you jumped to</li>
+<li>``(two backticks) jump back to where you were</li>
+<li>gi go back to the last place you inserted a text and enter insert mode</li>
+</ul>
+<h2 id="vim-navigations">Vim Navigations</h2>
+<ul>
+<li>{ and } jump paragraph back and forth</li>
+<li>Ctrl-F/B move one screen back and forth</li>
+<li>Search the word under cursor, then n/p to jump to next/previous</li>
+</ul>
+<h2 id="enable-vim-mode-in-bash">Enable Vim mode in bash</h2>
+<p>vi ~/.inputrc
+set editing-mode vi</p>
+<h2 id="enable-system-clipboard-upport">Enable system clipboard upport</h2>
+<p>See if system clipboard is supported:</p>
+<pre><code>$ vim --version | grep clipboard
+-clipboard       +iconv           +path_extra      -toolbar
++eval            +mouse_dec       +startuptime     -xterm_clipboard
+</code></pre><p>Rinstall vim as vim-gnome:</p>
+<pre><code>sudo apt-get install vim-gnome
+</code></pre><p>Select what you want using the mouse - then type to copy to clipboard:</p>
+<pre><code>&quot;+y
+</code></pre><p>To paste to vim from clipboard type:</p>
+<pre><code>&quot;+p
+</code></pre><h2 id="others">Others</h2>
+<ul>
+<li>Ex: open the current directory</li>
+<li>set number: show line number</li>
+</ul>
+        </article>
+    </div>
+    <div class="main-content__tags u-font">
+        
+        
+        <span><a href="https://wangxin-jack.github.io/tags/tips">Tips</a></span>
+        
+        <span><a href="https://wangxin-jack.github.io/tags/vim">Vim</a></span>
+        
+        
+    </div>
+</div>
+<div class="main-profile">
+    <div class="main-profile__avatar">
+        
+    </div>
+    <div class="main-profile__body">
+        <div class="main-profile__author">
+            
+            <span> Author </span>
+            
+        </div>
+        <div class="main-profile__description">
+            
+            <p> Short description </p>
+            
+        </div>
+    </div>
+</div>
+<div class="main-line"></div>
+<div class="main-pn">
+    
+    <a class="previous" href="https://wangxin-jack.github.io/2018/02/09/docker-without-sudo/">
+        <div class="pn-dec"></div>
+        <div class="pn-els">
+            <div class="pn-el__1"> 2018.02.09 10:00 </div>
+            <div class="pn-el__2"> 如何使用非root用户执行docker命令 </div>
+        </div>
+    </a>
+    
+    
+    <a class="next" href="https://wangxin-jack.github.io/2018/03/13/use-docker-behind-http-proxy/">
+        <div class="pn-dec"></div>
+        <div class="pn-els">
+            <div class="pn-el__1"> 2018.03.13 18:00 </div>
+            <div class="pn-el__2"> 如何配置docker使用HTTP代理 </div>
+        </div>
+    </a>
+    
+</div>
+
+</div>
+<div class="footer">
+    <div class="copyright-wrap">
+        <p class="copyright u-font">
+            
+            &#169;
+            2019
+            
+            <a href="https://example.com/" target="_blank">Author&#46;</a>
+            Theme <a href="https://github.com/iCyris/hugo-theme-yuki" target="_blank">yuki</a>&#46;
+            Powered by Hugo&#46;
+            
+            
+        </p>
+    </div>
+</div>
+</body>
+<script src="https://wangxin-jack.github.io/js/page.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+

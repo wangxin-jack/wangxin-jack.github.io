@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>
+        
+        Hugo Theme Yuki
+        
+    </title>
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+    <link rel='icon' type='image/x-icon' href="https://wangxin-jack.github.io/images/logo.png" />
+    <link rel="apple-touch-icon" href="https://wangxin-jack.github.io/images/logo.png"><link rel="stylesheet" href="https://wangxin-jack.github.io/scss/style.css">
+    
+    <link rel="stylesheet" href="https://wangxin-jack.github.io/scss/monokai-sublime.min.css">
+    <script src="https://wangxin-jack.github.io/js/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://wangxin-jack.github.io/scss/highlight.css">
+    
+    <link rel="stylesheet" href="https://wangxin-jack.github.io/scss/custom.css">
+    
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'Your Google Analytics tracking id', 'auto');
+        ga('send', 'pageview');
+    </script>
+    
+    
+    <meta name="generator" content="Hugo 0.62.2" /></head>
+
+
+<body>
+<div class="header">
+    <div class="site-logo__wrap">
+        <div id="site-button">
+            <div></div>
+        </div>
+        
+        <div class=' site-logo '>
+            <a href="https://wangxin-jack.github.io/"><img src="https://wangxin-jack.github.io/images/logo.png" /></a>
+        </div>
+    </div>
+    
+<div class=' site-nav u-font ' id="nav-bar">
+    
+    <div class="site-nav__wrap">
+        <a class="site-nav__el" href="/" >HOME</a>
+    </div>
+    
+    <div class="site-nav__wrap">
+        <a class="site-nav__el" href="/post" >BLOG</a>
+    </div>
+    
+    <div class="site-nav__wrap">
+        <a class="site-nav__el" href="/about" >ABOUT</a>
+    </div>
+    
+    <div class="site-nav__wrap">
+        <a class="site-nav__el" href="/tags/" >TAGS</a>
+    </div>
+    
+</div>
+
+</div>
+<div class="main">
+
+<div class="main-content">
+    <div class="main-content__date">
+        <h4 id="date"> 2018.05.21 11:00 </h4>
+    </div>
+    <div class="main-content__title">
+        <h1 id="title">使用Algolia为Gitpage博客提供站内搜索</h1>
+    </div>
+    <div class="main-content__article">
+        <article id="content">
+            <blockquote>
+<p>This series of articles are my notes of &ldquo;Bitcoin and Cryptocurrency Technologies&rdquo; online course.</p>
+</blockquote>
+<h2 id="table-of-content">Table of Content</h2>
+<p>{:.no_toc}</p>
+<ul>
+<li>Table of Content
+{:toc}</li>
+</ul>
+<h2 id="scrooge-coin-transaction">Scrooge Coin Transaction</h2>
+<p>Scrooge Coin programming assignment is a little bit tricky, the video of this lesson hasn't explained some implementation details. To help you understand the transaction data structure used in Scrooge Coin, I draw this diagram:
+<img src="https://img.zhaohuabing.com/in-post/2018-5-20-cryptocurrency_week1_scroogecoin/scroogecoin.png" alt="Scrooge Coin"></p>
+<p>Every transaction has a set of inputs and a set of outputs. An input in a transaction must use a hash pointer to refer to its corresponding output in the previous transaction, and it must be signed with the private key of the owner because the owner needs to prove he/she agrees to spend his/her coins.</p>
+<p>Every output is correlated to the public key of the receiver, which is his/her ScroogeCoin address.</p>
+<p>In the first transaction, we assume that Scrooge has created 10 coins and assigned them to himself, we don't doubt that because the system-Scroogecoin has a building rule which says that Scrooge has right to create coins.</p>
+<p>In the second transaction,  Scrooge transferred 3.9 coins to Alice and 5.9 coins to Bob. The sum of the two outputs is 0.2 less than the input because the transaction fee was 0.2 coin.</p>
+<p>In the third transaction,  there were two inputs and one output, Alice and Bob transferred 9.7 coins to mike, and the transaction fee was 0.1 coin.</p>
+<h2 id="unclaimed-transaction-outputs-pool">Unclaimed transaction outputs pool</h2>
+<p>Another trick we need to Note when doing the programming assignment is that an UTXOPool is introduced to track the unclaimed outputs (unspent coins), so we can know whether the corresponding output of an input of the transaction is available or not.</p>
+<h2 id="txhandler-java-code">TxHandler Java Code</h2>
+<pre><code>import java.security.PublicKey;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class TxHandler {
+	private UTXOPool utxoPool;
+
+	/**
+	 * Creates a public ledger whose current UTXOPool (collection of unspent
+	 * transaction outputs) is {@code utxoPool}. This should make a copy of utxoPool
+	 * by using the UTXOPool(UTXOPool uPool) constructor.
+	 */
+	public TxHandler(UTXOPool utxoPool) {
+		this.utxoPool = new UTXOPool(utxoPool);
+	}
+
+	/**
+	 * @return true if: (1) all outputs claimed by {@code tx} are in the current
+	 *         UTXO pool, (2) the signatures on each input of {@code tx} are valid,
+	 *         (3) no UTXO is claimed multiple times by {@code tx}, (4) all of
+	 *         {@code tx}s output values are non-negative, and (5) the sum of
+	 *         {@code tx}s input values is greater than or equal to the sum of its
+	 *         output values; and false otherwise.
+	 */
+	public boolean isValidTx(Transaction tx) {
+		Set&lt;UTXO&gt; claimedUTXO = new HashSet&lt;UTXO&gt;();
+		double inputSum = 0;
+		double outputSum = 0;
+
+		List&lt;Transaction.Input&gt; inputs = tx.getInputs();
+		for (int i = 0; i &lt; inputs.size(); i++) {
+			Transaction.Input input = inputs.get(i);
+
+			if (!isConsumedCoinAvailable(input)) {
+				return false;
+			}
+
+			if (!verifySignatureOfConsumeCoin(tx, i, input)) {
+				return false;
+			}
+
+			if (isCoinConsumedMultipleTimes(claimedUTXO, input)) {
+				return false;
+			}
+
+			UTXO utxo = new UTXO(input.prevTxHash, input.outputIndex);
+			Transaction.Output correspondingOutput = utxoPool.getTxOutput(utxo);
+			inputSum += correspondingOutput.value;
+
+		}
+
+		List&lt;Transaction.Output&gt; outputs = tx.getOutputs();
+		for (int i = 0; i &lt; outputs.size(); i++) {
+			Transaction.Output output = outputs.get(i);
+			if (output.value &lt;= 0) {
+				return false;
+			}
+
+			outputSum += output.value;
+		}
+
+		// Should the input value and output value be equal? Otherwise the ledger will
+		// become unbalanced.
+		// The difference between inputSum and outputSum is the transaction fee
+		if (outputSum &gt; inputSum) {
+			return false;
+		}
+
+		return true;
+	}
+
+	private boolean isCoinConsumedMultipleTimes(Set&lt;UTXO&gt; claimedUTXO, Transaction.Input input) {
+		UTXO utxo = new UTXO(input.prevTxHash, input.outputIndex);
+		return !claimedUTXO.add(utxo);
+	}
+
+	private boolean verifySignatureOfConsumeCoin(Transaction tx, int index, Transaction.Input input) {
+		UTXO utxo = new UTXO(input.prevTxHash, input.outputIndex);
+		Transaction.Output correspondingOutput = utxoPool.getTxOutput(utxo);
+		PublicKey pk = correspondingOutput.address;
+		return Crypto.verifySignature(pk, tx.getRawDataToSign(index), input.signature);
+	}
+
+	private boolean isConsumedCoinAvailable(Transaction.Input input) {
+		UTXO utxo = new UTXO(input.prevTxHash, input.outputIndex);
+		return utxoPool.contains(utxo);
+	}
+
+	/**
+	 * Handles each epoch by receiving an unordered array of proposed transactions,
+	 * checking each transaction for correctness, returning a mutually valid array
+	 * of accepted transactions, and updating the current UTXO pool as appropriate.
+	 */
+	public Transaction[] handleTxs(Transaction[] possibleTxs) {
+		List&lt;Transaction&gt; acceptedTx = new ArrayList&lt;Transaction&gt;();
+		for (int i = 0; i &lt; possibleTxs.length; i++) {
+			Transaction tx = possibleTxs[i];
+			if (isValidTx(tx)) {
+				acceptedTx.add(tx);
+
+				removeConsumedCoinsFromPool(tx);
+				addCreatedCoinsToPool(tx);
+			}
+		}
+
+		Transaction[] result = new Transaction[acceptedTx.size()];
+		acceptedTx.toArray(result);
+		return result;
+	}
+
+	private void addCreatedCoinsToPool(Transaction tx) {
+		List&lt;Transaction.Output&gt; outputs = tx.getOutputs();
+		for (int j = 0; j &lt; outputs.size(); j++) {
+			Transaction.Output output = outputs.get(j);
+			UTXO utxo = new UTXO(tx.getHash(), j);
+			utxoPool.addUTXO(utxo, output);
+		}
+	}
+
+	private void removeConsumedCoinsFromPool(Transaction tx) {
+		List&lt;Transaction.Input&gt; inputs = tx.getInputs();
+		for (int j = 0; j &lt; inputs.size(); j++) {
+			Transaction.Input input = inputs.get(j);
+			UTXO utxo = new UTXO(input.prevTxHash, input.outputIndex);
+			utxoPool.removeUTXO(utxo);
+		}
+	}
+
+}
+</code></pre><h2 id="all-the-example-codes-on-github">All the Example Codes on GitHub</h2>
+<p>I wrap the codes into a maven project, just run <code>mvn test</code> then the example codes will build and run all the test cases.</p>
+<p><a href="https://github.com/zhaohuabing/scroogecoin">Scrooge Coin example in Java</a></p>
+        </article>
+    </div>
+    <div class="main-content__tags u-font">
+        
+        
+        <span><a href="https://wangxin-jack.github.io/tags/jekyllq">Jekyll:q</a></span>
+        
+        <span><a href="https://wangxin-jack.github.io/tags/bitcoin">Bitcoin</a></span>
+        
+        
+    </div>
+</div>
+<div class="main-profile">
+    <div class="main-profile__avatar">
+        
+    </div>
+    <div class="main-profile__body">
+        <div class="main-profile__author">
+            
+            <span> Author </span>
+            
+        </div>
+        <div class="main-profile__description">
+            
+            <p> Short description </p>
+            
+        </div>
+    </div>
+</div>
+<div class="main-line"></div>
+<div class="main-pn">
+    
+    <a class="previous" href="https://wangxin-jack.github.io/2018/05/01/may-day-jiulonghu/">
+        <div class="pn-dec"></div>
+        <div class="pn-els">
+            <div class="pn-el__1"> 2018.05.01 00:00 </div>
+            <div class="pn-el__2"> 川西秘境探险 </div>
+        </div>
+    </a>
+    
+    
+    <a class="next" href="https://wangxin-jack.github.io/2018/05/23/istio-auto-injection-with-webhook/">
+        <div class="pn-dec"></div>
+        <div class="pn-els">
+            <div class="pn-el__1"> 2018.05.23 00:00 </div>
+            <div class="pn-el__2"> Istio Sidecar自动注入原理 </div>
+        </div>
+    </a>
+    
+</div>
+
+</div>
+<div class="footer">
+    <div class="copyright-wrap">
+        <p class="copyright u-font">
+            
+            &#169;
+            2019
+            
+            <a href="https://example.com/" target="_blank">Author&#46;</a>
+            Theme <a href="https://github.com/iCyris/hugo-theme-yuki" target="_blank">yuki</a>&#46;
+            Powered by Hugo&#46;
+            
+            
+        </p>
+    </div>
+</div>
+</body>
+<script src="https://wangxin-jack.github.io/js/page.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+

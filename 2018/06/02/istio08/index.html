@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>
+        
+        Hugo Theme Yuki
+        
+    </title>
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+    <link rel='icon' type='image/x-icon' href="https://wangxin-jack.github.io/images/logo.png" />
+    <link rel="apple-touch-icon" href="https://wangxin-jack.github.io/images/logo.png"><link rel="stylesheet" href="https://wangxin-jack.github.io/scss/style.css">
+    
+    <link rel="stylesheet" href="https://wangxin-jack.github.io/scss/monokai-sublime.min.css">
+    <script src="https://wangxin-jack.github.io/js/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://wangxin-jack.github.io/scss/highlight.css">
+    
+    <link rel="stylesheet" href="https://wangxin-jack.github.io/scss/custom.css">
+    
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'Your Google Analytics tracking id', 'auto');
+        ga('send', 'pageview');
+    </script>
+    
+    
+    <meta name="generator" content="Hugo 0.62.2" /></head>
+
+
+<body>
+<div class="header">
+    <div class="site-logo__wrap">
+        <div id="site-button">
+            <div></div>
+        </div>
+        
+        <div class=' site-logo '>
+            <a href="https://wangxin-jack.github.io/"><img src="https://wangxin-jack.github.io/images/logo.png" /></a>
+        </div>
+    </div>
+    
+<div class=' site-nav u-font ' id="nav-bar">
+    
+    <div class="site-nav__wrap">
+        <a class="site-nav__el" href="/" >HOME</a>
+    </div>
+    
+    <div class="site-nav__wrap">
+        <a class="site-nav__el" href="/post" >BLOG</a>
+    </div>
+    
+    <div class="site-nav__wrap">
+        <a class="site-nav__el" href="/about" >ABOUT</a>
+    </div>
+    
+    <div class="site-nav__wrap">
+        <a class="site-nav__el" href="/tags/" >TAGS</a>
+    </div>
+    
+</div>
+
+</div>
+<div class="main">
+
+<div class="main-content">
+    <div class="main-content__date">
+        <h4 id="date"> 2018.06.02 00:00 </h4>
+    </div>
+    <div class="main-content__title">
+        <h1 id="title">Istio 0.8 Release发布</h1>
+    </div>
+    <div class="main-content__article">
+        <article id="content">
+            <blockquote>
+<p>在6月1日这一天的早上，Istio社区宣布发布0.8 Release，除了常规的故障修复和性能改进外，这个儿童节礼物里面还有什么值得期待内容呢？让我们来看一看：</p>
+</blockquote>
+<h2 id="networking">Networking</h2>
+<h3 id="改进的流量管理模型">改进的流量管理模型</h3>
+<p>0.8版本采用了新的流量管理配置模型<a href="https://istio.io/blog/2018/v1alpha3-routing/">v1alpha3 Route API</a>。新版本的模型添加了一些新的特性，并改善了之前版本模型中的可用性问题。主要的改动包括：</p>
+<h4 id="gateway">Gateway</h4>
+<p>新版本中不再使用K8s中的Ingress，转而采用Gateway来统一配置Service Mesh中的各个HTTP/TCP负载均衡器。Gateway可以是处理入口流量的Ingress Gateway，负责Service Mesh内部各个服务间通信的Sidecar Proxy，也可以是负责出口流量的Egress Gateway。</p>
+<p>Mesh中涉及到的三类Gateway: <br>
+<img src="https://img.zhaohuabing.com/in-post/2018-06-02-istio08/gateways.svg" alt="Gateway"></p>
+<p>该变化的原因是K8s中的Ingress对象功能过于简单，不能满足Istio灵活的路由规则需求。在0.8版本中，L4-L6的配置和L7的配置被分别处理，Gateway中只配置L4-L6的功能，例如暴露的端口，TLS设置。然后用户可以采用VirtualService来配置标准的Istio规则，并和Gateway进行绑定。</p>
+<h4 id="virtualservice">VirtualService</h4>
+<p>采用VirtualService代替了alpha2模型中的RouteRule。采用VirtualService有两个优势：</p>
+<p><strong>可以把一个服务相关的规则放在一起管理</strong></p>
+<p>例如下面的路由规则，发向reviews的请求流量缺省destination为v1，如果user为jason则路由到v2。在v1模型中需要采用两条规则来实现，采用VirtualService后放到一个规则下就可以实现。</p>
+<pre><code>apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: reviews
+spec:
+  hosts:
+    - reviews
+  http:
+  - match:
+    - headers:
+        cookie:
+          regex: &quot;^(.*?;)?(user=jason)(;.*)?$&quot;
+    route:
+    - destination:
+        host: reviews
+        subset: v2
+  - route:
+    - destination:
+        host: reviews
+        subset: v1
+</code></pre><p><strong>可以对外暴露一个并不存在的“虚拟服务”，然后将该“虚拟服务”映射到Istio中的Service上</strong></p>
+<p>下面规则中的bookinfo.com是对外暴露的“虚拟服务”，bookinfo.com/reviews被映射到了reviews服务，bookinfo.com/ratings被映射到了ratings服务。通过采用VirtualService，极大地增强了Istio路由规则的灵活性，有利于Legacy系统和Istio的集成。</p>
+<pre><code>apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: bookinfo
+spec:
+  hosts:
+    - bookinfo.com
+  http:
+  - match:
+    - uri:
+        prefix: /reviews
+    route:
+    - destination:
+        host: reviews
+  - match:
+    - uri:
+        prefix: /ratings
+    route:
+    - destination:
+        host: ratings
+  ...
+</code></pre><h3 id="envoy-v2">Envoy V2</h3>
+<p>控制面和数据面标准接口支持Envoy</p>
+<h3 id="用gateway代替-ingressengress">用Gateway代替 Ingress/Engress</h3>
+<p>前面已经介绍到，新的版本中不再支持将Kubernetes的Ingress和Istio路由规则一起使用。Istio 0.8支持平台无关的 Ingress/Egress Gateway,可以在Kubernetes，Cloud Foundry中和Istio路由规则无缝集成。</p>
+<h3 id="对入站端口进行限制">对入站端口进行限制</h3>
+<p>0.8版本只允许访问Pod内已声明端口的入站流量。</p>
+<h2 id="security">Security</h2>
+<h3 id="安全组件citadel">安全组件Citadel</h3>
+<p>将Istio的安全组件Istio-Auth/Istio-CA正式命名为Citadel（堡垒）。</p>
+<h3 id="跨集群支持">跨集群支持</h3>
+<p>部署在多个Cluster中的Citadel可以共享同一Root Certificate，以支持不同Cluster内的服务可以跨Cluster进行认证。</p>
+<h3 id="认证策略">认证策略</h3>
+<p>认证策略既支持Service-to-Service认证，也支持对终端用户进行认证。</p>
+<h2 id="遥测">遥测</h2>
+<p>Mixer和Pilot将上报自身的遥测数据，其上报的流程和Mesh中的普通服务相同。</p>
+<h2 id="安装">安装</h2>
+<p>按需安装部分组件：支持只安装所需的组件，如果只需要使用Istio的路由规则，可以选择只安装Pilot，而不安装Mixer和Citadel。</p>
+<h2 id="mixer">Mixer</h2>
+<p>CloudWatch：增加了一个CloudWatch插件，可以向AWS CloudWatch上报度量数据。</p>
+<h2 id="已知故障">已知故障：</h2>
+<ul>
+<li>如果Gateway绑定的VirtualService指向的是headless service，则该规则不能正常工作。</li>
+<li>0.8版本和Kubernetes1.10.2存在兼容问题，目前建议采用1.9版本。</li>
+<li>convert-networking-config工具存在故障，一个其它的namespace可能会被修改为istio-system namespace。可以在允许转换工具后手动修改文件来避免。</li>
+</ul>
+<h2 id="总结">总结</h2>
+<p>0.8版本带来的最大变化是流量配置模型的重构，重构后的模型整合了外部Gateway和内部Sidecar Proxy的路由配置。同时VirtualService的引入使路由规则的配置更为集中和灵活。</p>
+        </article>
+    </div>
+    <div class="main-content__tags u-font">
+        
+        
+        <span><a href="https://wangxin-jack.github.io/tags/istio">Istio</a></span>
+        
+        
+    </div>
+</div>
+<div class="main-profile">
+    <div class="main-profile__avatar">
+        
+    </div>
+    <div class="main-profile__body">
+        <div class="main-profile__author">
+            
+            <span> Author </span>
+            
+        </div>
+        <div class="main-profile__description">
+            
+            <p> Short description </p>
+            
+        </div>
+    </div>
+</div>
+<div class="main-line"></div>
+<div class="main-pn">
+    
+    <a class="previous" href="https://wangxin-jack.github.io/2018/05/24/set_up_my_ubuntu_desktop/">
+        <div class="pn-dec"></div>
+        <div class="pn-els">
+            <div class="pn-el__1"> 2018.05.24 00:00 </div>
+            <div class="pn-el__2"> Everything about Setting Up My Ubuntu Desktop </div>
+        </div>
+    </a>
+    
+    
+    <a class="next" href="https://wangxin-jack.github.io/2018/06/04/introducing-the-istio-v1alpha3-routing-api/">
+        <div class="pn-dec"></div>
+        <div class="pn-els">
+            <div class="pn-el__1"> 2018.06.04 00:00 </div>
+            <div class="pn-el__2"> Istio v1aplha3 routing API介绍(译文） </div>
+        </div>
+    </a>
+    
+</div>
+
+</div>
+<div class="footer">
+    <div class="copyright-wrap">
+        <p class="copyright u-font">
+            
+            &#169;
+            2019
+            
+            <a href="https://example.com/" target="_blank">Author&#46;</a>
+            Theme <a href="https://github.com/iCyris/hugo-theme-yuki" target="_blank">yuki</a>&#46;
+            Powered by Hugo&#46;
+            
+            
+        </p>
+    </div>
+</div>
+</body>
+<script src="https://wangxin-jack.github.io/js/page.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
