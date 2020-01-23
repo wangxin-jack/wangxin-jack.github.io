@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Microservice on Hugo Theme Yuki</title>
-    <link>https://wangxin-jack.github.io/tags/microservice/</link>
-    <description>Recent content in Microservice on Hugo Theme Yuki</description>
+    <title>Microservice on nebular的个人博客</title>
+    <link>http://wangxin-nebular.com/tags/microservice/</link>
+    <description>Recent content in Microservice on nebular的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&lt;a rel=&#34;license noopener&#34; href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/&#34; target=&#34;_blank&#34;&gt;复制请注明来源&lt;/a&gt;</copyright>
     <lastBuildDate>Wed, 23 May 2018 18:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://wangxin-jack.github.io/tags/microservice/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://wangxin-nebular.com/tags/microservice/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>微服务安全沉思录之三</title>
-      <link>https://wangxin-jack.github.io/2018/05/23/external_system_auth/</link>
+      <link>http://wangxin-nebular.com/2018/05/23/external_system_auth/</link>
       <pubDate>Wed, 23 May 2018 18:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2018/05/23/external_system_auth/</guid>
+      <guid>http://wangxin-nebular.com/2018/05/23/external_system_auth/</guid>
       <description>外部系统访问控制 除用户访问和微服务之间的相互访问外，外部的第三方系统也可能需要访问系统内部的微服务。例如在上一篇博客的网上商店例子中，外部的推荐服务可能需要接入系统，以获取商店的商品目录信息。相对于内部服务之间的访问而言，外部系统的访问需要进行严格的安全控制。
 使用账号进行控制 可以为外部系统创建一个用户账号，类似普通用户一样对外部系统的账号进行管理，并使用该账号对外部系统进行认证和权限控制。
 采用这种方式的问题是难以处理用户相关的敏感数据。因为外部系统自身也是微服务系统中的一个用户账号，因此该外部系统只能访问该账号自身的数据和一些不敏感的公共数据，而不能访问和用户相关的数据。例如在网上商店的例子中，外部系统可以采用该方式访问商品目录信息，但不应允许访问用户历史购买记录，用户余额等信息。
@@ -36,10 +37,10 @@ OAuth 某些第三方应用需要访问不同用户的数据，或者对多个�
     
     <item>
       <title>微服务安全沉思录之二</title>
-      <link>https://wangxin-jack.github.io/2018/05/23/service_2_service_auth/</link>
+      <link>http://wangxin-nebular.com/2018/05/23/service_2_service_auth/</link>
       <pubDate>Wed, 23 May 2018 15:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2018/05/23/service_2_service_auth/</guid>
+      <guid>http://wangxin-nebular.com/2018/05/23/service_2_service_auth/</guid>
       <description>&lt;h2 id=&#34;服务间认证与鉴权&#34;&gt;服务间认证与鉴权&lt;/h2&gt;
 &lt;p&gt;除来自用户的访问请求以外，微服务应用中的各个微服务相互之间还有大量的访问，包括下述场景：&lt;/p&gt;
 &lt;ul&gt;
@@ -53,10 +54,10 @@ OAuth 某些第三方应用需要访问不同用户的数据，或者对多个�
     
     <item>
       <title>微服务安全沉思录之一</title>
-      <link>https://wangxin-jack.github.io/2018/05/22/user_authentication_authorization/</link>
+      <link>http://wangxin-nebular.com/2018/05/22/user_authentication_authorization/</link>
       <pubDate>Wed, 23 May 2018 10:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2018/05/22/user_authentication_authorization/</guid>
+      <guid>http://wangxin-nebular.com/2018/05/22/user_authentication_authorization/</guid>
       <description>这段时间对之前微服务安全相关的一些想法进行了进一步总结和归纳，理清了在之前文章里面没有想得太清楚的地方，例如服务间的认证与鉴权以及用户身份在服务调用链中的传递。
 在这一系列文章里，我将尝试分为三个部分对微服务安全进行系统阐述：用户访问认证与鉴权，服务间认证与鉴权，外部系统访问控制。
  目录 {:.no_toc}
@@ -73,10 +74,10 @@ JWT Token的结构非常简单，包括三部分：
     
     <item>
       <title>Service Mesh 和 API Gateway的关系探讨（译文）</title>
-      <link>https://wangxin-jack.github.io/2018/04/11/service-mesh-vs-api-gateway/</link>
+      <link>http://wangxin-nebular.com/2018/04/11/service-mesh-vs-api-gateway/</link>
       <pubDate>Wed, 11 Apr 2018 09:32:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2018/04/11/service-mesh-vs-api-gateway/</guid>
+      <guid>http://wangxin-nebular.com/2018/04/11/service-mesh-vs-api-gateway/</guid>
       <description>Service Mesh vs API Gateway 在前一篇关于Service Mesh的文章中,我提到了几个关于Service Mesh和API Gateway之间关系的问题，在本篇文章中，我打算就Service Mesh和API Gateway的用途进行进一步讨论。
 为了区分API Gateway和Service Mesh，让我们先分别看看两者各自的关键特征。
 API Gateway: 将服务作为被管理的API向外部暴露 使用API Gateway的主要目的是将微服务作为被管理的API暴露（给外部系统）。因此，我们在API Gateway层开发的API或者边界服务对外提供了业务功能。
@@ -97,10 +98,10 @@ API Gateway和Service Mesh实践 API Gateway和Service Mesh之间的主要不同
     
     <item>
       <title>谈谈微服务架构中的基础设施：Service Mesh与Istio</title>
-      <link>https://wangxin-jack.github.io/2018/03/29/what-is-service-mesh-and-istio/</link>
+      <link>http://wangxin-nebular.com/2018/03/29/what-is-service-mesh-and-istio/</link>
       <pubDate>Thu, 29 Mar 2018 12:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2018/03/29/what-is-service-mesh-and-istio/</guid>
+      <guid>http://wangxin-nebular.com/2018/03/29/what-is-service-mesh-and-istio/</guid>
       <description>&lt;h2 id=&#34;微服务架构的演进&#34;&gt;微服务架构的演进&lt;/h2&gt;
 &lt;p&gt;作为一种架构模式，微服务将复杂系统切分为数十乃至上百个小服务，每个服务负责实现一个独立的业务逻辑。这些小服务易于被小型的软件工程师团队所理解和修改，并带来了语言和框架选择灵活性，缩短应用开发上线时间，可根据不同的工作负载和资源要求对服务进行独立缩扩容等优势。&lt;/p&gt;
 &lt;p&gt;另一方面，当应用被拆分为多个微服务进程后，进程内的方法调用变成了了进程间的远程调用。引入了对大量服务的连接、管理和监控的复杂性。&lt;/p&gt;</description>
@@ -108,10 +109,10 @@ API Gateway和Service Mesh实践 API Gateway和Service Mesh之间的主要不同
     
     <item>
       <title>如何构建安全的微服务应用？</title>
-      <link>https://wangxin-jack.github.io/2018/05/22/user_authentication_authorization/</link>
+      <link>http://wangxin-nebular.com/2018/05/22/user_authentication_authorization/</link>
       <pubDate>Sat, 03 Feb 2018 12:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2018/05/22/user_authentication_authorization/</guid>
+      <guid>http://wangxin-nebular.com/2018/05/22/user_authentication_authorization/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;微服务架构的引入为软件应用带来了诸多好处：包括小开发团队，缩短开发周期，语言选择灵活性，增强服务伸缩能力等。与此同时，也引入了分布式系统的诸多复杂问题。其中一个挑战就是如何在微服务架构中实现一个灵活，安全，高效的认证和鉴权方案。本文将尝试就此问题进行一次比较完整的探讨。&lt;/p&gt;</description>
     </item>

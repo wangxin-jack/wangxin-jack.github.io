@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Helm on Hugo Theme Yuki</title>
-    <link>https://wangxin-jack.github.io/tags/helm/</link>
-    <description>Recent content in Helm on Hugo Theme Yuki</description>
+    <title>Helm on nebular的个人博客</title>
+    <link>http://wangxin-nebular.com/tags/helm/</link>
+    <description>Recent content in Helm on nebular的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>&lt;a rel=&#34;license noopener&#34; href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/&#34; target=&#34;_blank&#34;&gt;复制请注明来源&lt;/a&gt;</copyright>
     <lastBuildDate>Mon, 16 Apr 2018 15:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://wangxin-jack.github.io/tags/helm/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://wangxin-nebular.com/tags/helm/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Helm介绍</title>
-      <link>https://wangxin-jack.github.io/2018/04/16/using-helm-to-deploy-to-kubernetes/</link>
+      <link>http://wangxin-nebular.com/2018/04/16/using-helm-to-deploy-to-kubernetes/</link>
       <pubDate>Mon, 16 Apr 2018 15:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2018/04/16/using-helm-to-deploy-to-kubernetes/</guid>
+      <guid>http://wangxin-nebular.com/2018/04/16/using-helm-to-deploy-to-kubernetes/</guid>
       <description>前言  Helm是Kubernetes生态系统中的一个软件包管理工具。本文将介绍为何要使用Helm进行Kubernetes软件包管理，澄清Helm中使用到的相关概念，并通过一个具体的示例学习如何使用Helm打包，分发，安装，升级及回退Kubernetes应用。
 Kubernetes应用部署的挑战  让我们首先来看看Kubernetes，kubernetes提供了基于容器的应用集群管理，为容器化应用提供了部署运行、资源调度、服务发现和动态伸缩等一系列完整功能。
 kubernetes的核心设计理念是: 用户定义应用程序的规格，而kubernetes则负责按照定义的规则部署并运行应用程序，如果应用系统出现问题导致偏离了定义的规格，kubernetes负责对其进行自动修正。例如应用规格要求部署两个实例，其中一个实例异常终止了，kubernetes会检查到并重新启动一个新的实例。

@@ -1,22 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Hugo Theme Yuki</title>
-    <link>https://wangxin-jack.github.io/post/</link>
-    <description>Recent content in Posts on Hugo Theme Yuki</description>
+    <title>Posts on nebular的个人博客</title>
+    <link>http://wangxin-nebular.com/post/</link>
+    <description>Recent content in Posts on nebular的个人博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <copyright>&lt;a rel=&#34;license noopener&#34; href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/&#34; target=&#34;_blank&#34;&gt;复制请注明来源&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 19 Jan 2020 19:29:51 +0800</lastBuildDate>
     
-	<atom:link href="https://wangxin-jack.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://wangxin-nebular.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Hugo框架使用01 搭建个人博客</title>
+      <link>http://wangxin-nebular.com/post/hugo%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A801-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Sun, 19 Jan 2020 19:29:51 +0800</pubDate>
+      
+      <guid>http://wangxin-nebular.com/post/hugo%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A801-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description> 因为目前我使用的是Windows环境，所以本篇只讲Windows环境下的安装和使用
+ 软件下载 点击hugo下载 访问下载页面，这个地址可以下载到各个环境下的安装包。Windows环境就下载：hugo_0.62.2_Windows-64bit.zip，这个文件就行。如果你爱折腾，并且英文也不错的话，可以尝试按照Hugo官网下载安装教程来安装。
+安装hugo 把你下载下来的zip包解压出来，并把整个文件夹移动到安葬软件常用的目录下。我个人习惯在D盘建一个setup文件夹来统一放置我安装的软件。 下载主题 运行hugo 新建文章 </description>
+    </item>
+    
+    <item>
       <title>Clean White Theme for Hugo</title>
-      <link>https://wangxin-jack.github.io/post/readme/</link>
+      <link>http://wangxin-nebular.com/post/readme/</link>
       <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/post/readme/</guid>
+      <guid>http://wangxin-nebular.com/post/readme/</guid>
       <description>Clean White Theme for Hugo CleanWhite is a clean, elegant, but fully functional blog theme for Hugo. Here is a live demo site using this theme.
 It is based on huxblog Jekyll Theme and Clean Blog Jekyll Theme.
 These two upstream projects have done awesome jobs to create a blog theme, what I&#39;m doing here is porting it to Hugo, of which I like the simplicity and the much faster compiling speed.</description>
@@ -24,19 +36,19 @@ These two upstream projects have done awesome jobs to create a blog theme, what 
     
     <item>
       <title>Istio v1aplha3 routing API介绍(译文）</title>
-      <link>https://wangxin-jack.github.io/2018/06/04/introducing-the-istio-v1alpha3-routing-api/</link>
+      <link>http://wangxin-nebular.com/2018/06/04/introducing-the-istio-v1alpha3-routing-api/</link>
       <pubDate>Mon, 04 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2018/06/04/introducing-the-istio-v1alpha3-routing-api/</guid>
+      <guid>http://wangxin-nebular.com/2018/06/04/introducing-the-istio-v1alpha3-routing-api/</guid>
       <description>&lt;p&gt;到目前为止，Istio提供了一个简单的API来进行流量管理，该API包括了四种资源：RouteRule，DestinationPolicy，EgressRule和Ingress（直接使用了Kubernets的Ingress资源）。借助此API，用户可以轻松管理Istio服务网格中的流量。该API允许用户将请求路由到特定版本的服务，为弹性测试注入延迟和失败，添加超时和断路器等等，所有这些功能都不必更改应用程序本身的代码。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Istio 0.8 Release发布</title>
-      <link>https://wangxin-jack.github.io/2018/06/02/istio08/</link>
+      <link>http://wangxin-nebular.com/2018/06/02/istio08/</link>
       <pubDate>Sat, 02 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2018/06/02/istio08/</guid>
+      <guid>http://wangxin-nebular.com/2018/06/02/istio08/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;在6月1日这一天的早上，Istio社区宣布发布0.8 Release，除了常规的故障修复和性能改进外，这个儿童节礼物里面还有什么值得期待内容呢？让我们来看一看：&lt;/p&gt;
 &lt;/blockquote&gt;</description>
@@ -44,10 +56,10 @@ These two upstream projects have done awesome jobs to create a blog theme, what 
     
     <item>
       <title>Everything about Setting Up My Ubuntu Desktop</title>
-      <link>https://wangxin-jack.github.io/2018/05/24/set_up_my_ubuntu_desktop/</link>
+      <link>http://wangxin-nebular.com/2018/05/24/set_up_my_ubuntu_desktop/</link>
       <pubDate>Thu, 24 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2018/05/24/set_up_my_ubuntu_desktop/</guid>
+      <guid>http://wangxin-nebular.com/2018/05/24/set_up_my_ubuntu_desktop/</guid>
       <description>Generate SSH Key Pair ssh-keygen -C &amp;quot;zhaohuabing@gmail.com&amp;quot;Shadowsocks Install shadowsokcs
 sudo apt-get install python3-pipsudo pip3 install shadowsocksCreate config at config/shadowsocks.json, with the following content:
 {&amp;quot;server&amp;quot;:&amp;quot;remote-shadowsocks-server-ip-addr&amp;quot;,&amp;quot;server_port&amp;quot;:443,&amp;quot;local_address&amp;quot;:&amp;quot;127.0.0.1&amp;quot;,&amp;quot;local_port&amp;quot;:1080,&amp;quot;password&amp;quot;:&amp;quot;your-passwd&amp;quot;,&amp;quot;timeout&amp;quot;:300,&amp;quot;method&amp;quot;:&amp;quot;aes-256-cfb&amp;quot;,&amp;quot;fast_open&amp;quot;:false,&amp;quot;workers&amp;quot;:1}Start a local socks proxy
@@ -57,10 +69,10 @@ sudo vi /usr/local/lib/python3.6/dist-packages/shadowsocks/crypto/openssl.py :%s
     
     <item>
       <title>微服务安全沉思录之三</title>
-      <link>https://wangxin-jack.github.io/2018/05/23/external_system_auth/</link>
+      <link>http://wangxin-nebular.com/2018/05/23/external_system_auth/</link>
       <pubDate>Wed, 23 May 2018 18:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2018/05/23/external_system_auth/</guid>
+      <guid>http://wangxin-nebular.com/2018/05/23/external_system_auth/</guid>
       <description>外部系统访问控制 除用户访问和微服务之间的相互访问外，外部的第三方系统也可能需要访问系统内部的微服务。例如在上一篇博客的网上商店例子中，外部的推荐服务可能需要接入系统，以获取商店的商品目录信息。相对于内部服务之间的访问而言，外部系统的访问需要进行严格的安全控制。
 使用账号进行控制 可以为外部系统创建一个用户账号，类似普通用户一样对外部系统的账号进行管理，并使用该账号对外部系统进行认证和权限控制。
 采用这种方式的问题是难以处理用户相关的敏感数据。因为外部系统自身也是微服务系统中的一个用户账号，因此该外部系统只能访问该账号自身的数据和一些不敏感的公共数据，而不能访问和用户相关的数据。例如在网上商店的例子中，外部系统可以采用该方式访问商品目录信息，但不应允许访问用户历史购买记录，用户余额等信息。
@@ -80,10 +92,10 @@ OAuth 某些第三方应用需要访问不同用户的数据，或者对多个�
     
     <item>
       <title>微服务安全沉思录之二</title>
-      <link>https://wangxin-jack.github.io/2018/05/23/service_2_service_auth/</link>
+      <link>http://wangxin-nebular.com/2018/05/23/service_2_service_auth/</link>
       <pubDate>Wed, 23 May 2018 15:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2018/05/23/service_2_service_auth/</guid>
+      <guid>http://wangxin-nebular.com/2018/05/23/service_2_service_auth/</guid>
       <description>&lt;h2 id=&#34;服务间认证与鉴权&#34;&gt;服务间认证与鉴权&lt;/h2&gt;
 &lt;p&gt;除来自用户的访问请求以外，微服务应用中的各个微服务相互之间还有大量的访问，包括下述场景：&lt;/p&gt;
 &lt;ul&gt;
@@ -97,10 +109,10 @@ OAuth 某些第三方应用需要访问不同用户的数据，或者对多个�
     
     <item>
       <title>微服务安全沉思录之一</title>
-      <link>https://wangxin-jack.github.io/2018/05/22/user_authentication_authorization/</link>
+      <link>http://wangxin-nebular.com/2018/05/22/user_authentication_authorization/</link>
       <pubDate>Wed, 23 May 2018 10:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2018/05/22/user_authentication_authorization/</guid>
+      <guid>http://wangxin-nebular.com/2018/05/22/user_authentication_authorization/</guid>
       <description>这段时间对之前微服务安全相关的一些想法进行了进一步总结和归纳，理清了在之前文章里面没有想得太清楚的地方，例如服务间的认证与鉴权以及用户身份在服务调用链中的传递。
 在这一系列文章里，我将尝试分为三个部分对微服务安全进行系统阐述：用户访问认证与鉴权，服务间认证与鉴权，外部系统访问控制。
  目录 {:.no_toc}
@@ -117,10 +129,10 @@ JWT Token的结构非常简单，包括三部分：
     
     <item>
       <title>Istio Sidecar自动注入原理</title>
-      <link>https://wangxin-jack.github.io/2018/05/23/istio-auto-injection-with-webhook/</link>
+      <link>http://wangxin-nebular.com/2018/05/23/istio-auto-injection-with-webhook/</link>
       <pubDate>Wed, 23 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2018/05/23/istio-auto-injection-with-webhook/</guid>
+      <guid>http://wangxin-nebular.com/2018/05/23/istio-auto-injection-with-webhook/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;hr&gt;
 &lt;p&gt;Kubernets 1.9版本引入了Admission Webhook(web 回调)扩展机制，通过Webhook,开发者可以非常灵活地对Kubernets API Server的功能进行扩展，在API Server创建资源时对资源进行验证或者修改。&lt;/p&gt;
@@ -130,10 +142,10 @@ JWT Token的结构非常简单，包括三部分：
     
     <item>
       <title>使用Algolia为Gitpage博客提供站内搜索</title>
-      <link>https://wangxin-jack.github.io/2018/05/21/algolia-integration-with-jekyll/</link>
+      <link>http://wangxin-nebular.com/2018/05/21/algolia-integration-with-jekyll/</link>
       <pubDate>Mon, 21 May 2018 11:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2018/05/21/algolia-integration-with-jekyll/</guid>
+      <guid>http://wangxin-nebular.com/2018/05/21/algolia-integration-with-jekyll/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;This series of articles are my notes of &amp;ldquo;Bitcoin and Cryptocurrency Technologies&amp;rdquo; online course.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -150,10 +162,10 @@ JWT Token的结构非常简单，包括三部分：
     
     <item>
       <title>川西秘境探险</title>
-      <link>https://wangxin-jack.github.io/2018/05/01/may-day-jiulonghu/</link>
+      <link>http://wangxin-nebular.com/2018/05/01/may-day-jiulonghu/</link>
       <pubDate>Tue, 01 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2018/05/01/may-day-jiulonghu/</guid>
+      <guid>http://wangxin-nebular.com/2018/05/01/may-day-jiulonghu/</guid>
       <description>&lt;h2 id=&#34;寻浮云牧场不遇&#34;&gt;寻浮云牧场不遇&lt;/h2&gt;
 &lt;p&gt;五一节前的一周内，几个朋友就纷纷坐不住了，一个二个不再安心上班，开始在微信群里讨论过节要到哪里耍。
 大家思来想去，最后决定还是去理县方向。因为根据多年自驾的经验，只要出了汶川，沿途都是风景。&lt;/p&gt;</description>
@@ -161,10 +173,10 @@ JWT Token的结构非常简单，包括三部分：
     
     <item>
       <title>Helm介绍</title>
-      <link>https://wangxin-jack.github.io/2018/04/16/using-helm-to-deploy-to-kubernetes/</link>
+      <link>http://wangxin-nebular.com/2018/04/16/using-helm-to-deploy-to-kubernetes/</link>
       <pubDate>Mon, 16 Apr 2018 15:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2018/04/16/using-helm-to-deploy-to-kubernetes/</guid>
+      <guid>http://wangxin-nebular.com/2018/04/16/using-helm-to-deploy-to-kubernetes/</guid>
       <description>前言  Helm是Kubernetes生态系统中的一个软件包管理工具。本文将介绍为何要使用Helm进行Kubernetes软件包管理，澄清Helm中使用到的相关概念，并通过一个具体的示例学习如何使用Helm打包，分发，安装，升级及回退Kubernetes应用。
 Kubernetes应用部署的挑战  让我们首先来看看Kubernetes，kubernetes提供了基于容器的应用集群管理，为容器化应用提供了部署运行、资源调度、服务发现和动态伸缩等一系列完整功能。
 kubernetes的核心设计理念是: 用户定义应用程序的规格，而kubernetes则负责按照定义的规则部署并运行应用程序，如果应用系统出现问题导致偏离了定义的规格，kubernetes负责对其进行自动修正。例如应用规格要求部署两个实例，其中一个实例异常终止了，kubernetes会检查到并重新启动一个新的实例。
@@ -197,10 +209,10 @@ Helm的软件仓库，repository本质上是一个web服务器，该服务器保
     
     <item>
       <title>Service Mesh 和 API Gateway的关系探讨（译文）</title>
-      <link>https://wangxin-jack.github.io/2018/04/11/service-mesh-vs-api-gateway/</link>
+      <link>http://wangxin-nebular.com/2018/04/11/service-mesh-vs-api-gateway/</link>
       <pubDate>Wed, 11 Apr 2018 09:32:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2018/04/11/service-mesh-vs-api-gateway/</guid>
+      <guid>http://wangxin-nebular.com/2018/04/11/service-mesh-vs-api-gateway/</guid>
       <description>Service Mesh vs API Gateway 在前一篇关于Service Mesh的文章中,我提到了几个关于Service Mesh和API Gateway之间关系的问题，在本篇文章中，我打算就Service Mesh和API Gateway的用途进行进一步讨论。
 为了区分API Gateway和Service Mesh，让我们先分别看看两者各自的关键特征。
 API Gateway: 将服务作为被管理的API向外部暴露 使用API Gateway的主要目的是将微服务作为被管理的API暴露（给外部系统）。因此，我们在API Gateway层开发的API或者边界服务对外提供了业务功能。
@@ -221,10 +233,10 @@ API Gateway和Service Mesh实践 API Gateway和Service Mesh之间的主要不同
     
     <item>
       <title>谈谈微服务架构中的基础设施：Service Mesh与Istio</title>
-      <link>https://wangxin-jack.github.io/2018/03/29/what-is-service-mesh-and-istio/</link>
+      <link>http://wangxin-nebular.com/2018/03/29/what-is-service-mesh-and-istio/</link>
       <pubDate>Thu, 29 Mar 2018 12:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2018/03/29/what-is-service-mesh-and-istio/</guid>
+      <guid>http://wangxin-nebular.com/2018/03/29/what-is-service-mesh-and-istio/</guid>
       <description>&lt;h2 id=&#34;微服务架构的演进&#34;&gt;微服务架构的演进&lt;/h2&gt;
 &lt;p&gt;作为一种架构模式，微服务将复杂系统切分为数十乃至上百个小服务，每个服务负责实现一个独立的业务逻辑。这些小服务易于被小型的软件工程师团队所理解和修改，并带来了语言和框架选择灵活性，缩短应用开发上线时间，可根据不同的工作负载和资源要求对服务进行独立缩扩容等优势。&lt;/p&gt;
 &lt;p&gt;另一方面，当应用被拆分为多个微服务进程后，进程内的方法调用变成了了进程间的远程调用。引入了对大量服务的连接、管理和监控的复杂性。&lt;/p&gt;</description>
@@ -232,10 +244,10 @@ API Gateway和Service Mesh实践 API Gateway和Service Mesh之间的主要不同
     
     <item>
       <title>如何配置docker使用HTTP代理</title>
-      <link>https://wangxin-jack.github.io/2018/03/13/use-docker-behind-http-proxy/</link>
+      <link>http://wangxin-nebular.com/2018/03/13/use-docker-behind-http-proxy/</link>
       <pubDate>Tue, 13 Mar 2018 18:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2018/03/13/use-docker-behind-http-proxy/</guid>
+      <guid>http://wangxin-nebular.com/2018/03/13/use-docker-behind-http-proxy/</guid>
       <description>&lt;h2 id=&#34;ubuntu&#34;&gt;Ubuntu&lt;/h2&gt;
 &lt;h3 id=&#34;设置docker使用http-proxy&#34;&gt;设置docker使用http proxy&lt;/h3&gt;
 &lt;pre&gt;&lt;code&gt;sudo /etc/default/docker
@@ -249,20 +261,20 @@ export HTTPS_PROXY=&amp;quot;http://127.0.0.1:3128/&amp;quot;
     
     <item>
       <title>Vim Tips</title>
-      <link>https://wangxin-jack.github.io/2018/02/09/vim-tips/</link>
+      <link>http://wangxin-nebular.com/2018/02/09/vim-tips/</link>
       <pubDate>Fri, 09 Feb 2018 11:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2018/02/09/vim-tips/</guid>
+      <guid>http://wangxin-nebular.com/2018/02/09/vim-tips/</guid>
       <description>&lt;h2 id=&#34;vim-graphical-cheat-sheet&#34;&gt;vim graphical cheat sheet&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://wangxin-jack.github.io/https://img.zhaohuabing.com/in-post/2018-02-09-vim-tips/vi-vim-cheat-sheet.svg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://wangxin-nebular.com/https://img.zhaohuabing.com/in-post/2018-02-09-vim-tips/vi-vim-cheat-sheet.svg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>如何使用非root用户执行docker命令</title>
-      <link>https://wangxin-jack.github.io/2018/02/09/docker-without-sudo/</link>
+      <link>http://wangxin-nebular.com/2018/02/09/docker-without-sudo/</link>
       <pubDate>Fri, 09 Feb 2018 10:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2018/02/09/docker-without-sudo/</guid>
+      <guid>http://wangxin-nebular.com/2018/02/09/docker-without-sudo/</guid>
       <description>Add the docker group if it doesn&#39;t already exist: sudo groupadd docker
 Add the connected user &amp;ldquo;$USER&amp;rdquo; to the docker group. Change the user name to match your preferred user if you do not want to use your current user: sudo gpasswd -a $USER docker
 Either do a newgrp docker or log out/in to activate the changes to groups. </description>
@@ -270,49 +282,58 @@ Either do a newgrp docker or log out/in to activate the changes to groups. </des
     
     <item>
       <title>如何构建安全的微服务应用？</title>
-      <link>https://wangxin-jack.github.io/2018/05/22/user_authentication_authorization/</link>
+      <link>http://wangxin-nebular.com/2018/05/22/user_authentication_authorization/</link>
       <pubDate>Sat, 03 Feb 2018 12:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2018/05/22/user_authentication_authorization/</guid>
+      <guid>http://wangxin-nebular.com/2018/05/22/user_authentication_authorization/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;微服务架构的引入为软件应用带来了诸多好处：包括小开发团队，缩短开发周期，语言选择灵活性，增强服务伸缩能力等。与此同时，也引入了分布式系统的诸多复杂问题。其中一个挑战就是如何在微服务架构中实现一个灵活，安全，高效的认证和鉴权方案。本文将尝试就此问题进行一次比较完整的探讨。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Nginx开源Service Mesh组件Nginmesh安装指南</title>
-      <link>https://wangxin-jack.github.io/2018/01/02/nginmesh-install/</link>
+      <link>http://wangxin-nebular.com/2018/01/02/nginmesh-install/</link>
       <pubDate>Tue, 02 Jan 2018 12:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2018/01/02/nginmesh-install/</guid>
+      <guid>http://wangxin-nebular.com/2018/01/02/nginmesh-install/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;Nginmesh是NGINX的Service Mesh开源项目，用于Istio服务网格平台中的数据面代理。它旨在提供七层负载均衡和服务路由功能，与Istio集成作为sidecar部署，并将以“标准，可靠和安全的方式”使得服务间通信更容易。Nginmesh在今年底已经连续发布了0.2和0.3版本，提供了服务发现，请求转发，路由规则，性能指标收集等功能。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>An Example Post</title>
-      <link>https://wangxin-jack.github.io/post/hellotext/</link>
+      <link>http://wangxin-nebular.com/post/hellotext-copy/</link>
       <pubDate>Mon, 01 Jan 2018 16:01:23 +0800</pubDate>
       
-      <guid>https://wangxin-jack.github.io/post/hellotext/</guid>
+      <guid>http://wangxin-nebular.com/post/hellotext-copy/</guid>
+      <description>hello</description>
+    </item>
+    
+    <item>
+      <title>An Example Post</title>
+      <link>http://wangxin-nebular.com/post/hellotext/</link>
+      <pubDate>Mon, 01 Jan 2018 16:01:23 +0800</pubDate>
+      
+      <guid>http://wangxin-nebular.com/post/hellotext/</guid>
       <description>hello</description>
     </item>
     
     <item>
       <title>如何从外部访问Kubernetes集群中的应用？</title>
-      <link>https://wangxin-jack.github.io/2017/11/28/access-application-from-outside/</link>
+      <link>http://wangxin-nebular.com/2017/11/28/access-application-from-outside/</link>
       <pubDate>Tue, 28 Nov 2017 12:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2017/11/28/access-application-from-outside/</guid>
+      <guid>http://wangxin-nebular.com/2017/11/28/access-application-from-outside/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;我们知道，kubernetes的Cluster Network属于私有网络，只能在cluster Network内部才能访问部署的应用，那如何才能将Kubernetes集群中的应用暴露到外部网络，为外部用户提供服务呢？本文探讨了从外部网络访问kubernetes cluster中应用的几种实现方式。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>采用Istio实现灰度发布(金丝雀发布)</title>
-      <link>https://wangxin-jack.github.io/2017/11/08/istio-canary-release/</link>
+      <link>http://wangxin-nebular.com/2017/11/08/istio-canary-release/</link>
       <pubDate>Wed, 08 Nov 2017 15:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2017/11/08/istio-canary-release/</guid>
+      <guid>http://wangxin-nebular.com/2017/11/08/istio-canary-release/</guid>
       <description>灰度发布（又名金丝雀发布）介绍 当应用上线以后，运维面临的一大挑战是如何能够在不影响已上线业务的情况下进行升级。做过产品的同学都清楚，不管在发布前做过多么完备的自动化和人工测试，在发布后都会出现或多或少的故障。根据墨菲定律，可能会出错的版本发布一定会出错。
 &amp;ldquo;ANYTHING THAN CAN GO WRONG WILL GO WRONG&amp;rdquo; &amp;ndash;MURPHY&#39;S LAW
 因此我们不能寄希望于在线下测试时发现所有潜在故障。在无法百分百避免版本升级故障的情况下，需要通过一种方式进行可控的版本发布，把故障影响控制在可以接受的范围内，并可以快速回退。
@@ -332,10 +353,10 @@ apiVersion: extensions/v1beta1kind: Deploymentmetadata:name: reviews-v2spec:
     
     <item>
       <title>使用Istio实现应用流量转移</title>
-      <link>https://wangxin-jack.github.io/2017/11/07/istio-traffic-shifting/</link>
+      <link>http://wangxin-nebular.com/2017/11/07/istio-traffic-shifting/</link>
       <pubDate>Tue, 07 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2017/11/07/istio-traffic-shifting/</guid>
+      <guid>http://wangxin-nebular.com/2017/11/07/istio-traffic-shifting/</guid>
       <description>&lt;p&gt;关于Istio的更多内容请参考&lt;a href=&#34;http://istio.doczh.cn/&#34;&gt;istio中文文档&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;原文参见&lt;a href=&#34;https://istio.io/docs/tasks/traffic-management/traffic-shifting.html&#34;&gt;Traffic Shifting&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;本任务将演示如何将应用流量逐渐从旧版本的服务迁移到新版本。通过Istio，可以使用一系列不同权重的规则（10%，20%，··· 100%）将流量平缓地从旧版本服务迁移到新版本服务。&lt;/p&gt;</description>
@@ -343,10 +364,10 @@ apiVersion: extensions/v1beta1kind: Deploymentmetadata:name: reviews-v2spec:
     
     <item>
       <title>Istio及Bookinfo示例程序安装试用笔记</title>
-      <link>https://wangxin-jack.github.io/2017/11/04/istio-install_and_example/</link>
+      <link>http://wangxin-nebular.com/2017/11/04/istio-install_and_example/</link>
       <pubDate>Sat, 04 Nov 2017 12:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2017/11/04/istio-install_and_example/</guid>
+      <guid>http://wangxin-nebular.com/2017/11/04/istio-install_and_example/</guid>
       <description>&lt;h2 id=&#34;服务网格简介&#34;&gt;服务网格简介&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;服务网格&lt;/strong&gt;（Service Mesh）是为解决微服务的通信和治理而出现的一种&lt;strong&gt;架构模式&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;服务网格将服务间通讯以及与此相关的管理控制功能从业务程序中下移到一个基础设施层，从而彻底隔离了业务逻辑和服务通讯两个关注点。采用服务网格后，应用开发者只需要关注并实现应用业务逻辑。服务之间的通信，包括服务发现，通讯的可靠性，通讯的安全性，服务路由等由服务网格层进行处理，并对应用程序透明。&lt;/p&gt;</description>
@@ -354,10 +375,10 @@ apiVersion: extensions/v1beta1kind: Deploymentmetadata:name: reviews-v2spec:
     
     <item>
       <title>Welcome to Zhaohuabing Blog</title>
-      <link>https://wangxin-jack.github.io/2017/11/03/hello-world/</link>
+      <link>http://wangxin-nebular.com/2017/11/03/hello-world/</link>
       <pubDate>Sat, 04 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://wangxin-jack.github.io/2017/11/03/hello-world/</guid>
+      <guid>http://wangxin-nebular.com/2017/11/03/hello-world/</guid>
       <description> “Yeah It&#39;s on. ”
  Hello World! </description>
     </item>

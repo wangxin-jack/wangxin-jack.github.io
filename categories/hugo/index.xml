@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on nebular的个人博客</title>
+    <link>http://wangxin-nebular.com/categories/hugo/</link>
+    <description>Recent content in Hugo on nebular的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a rel=&#34;license noopener&#34; href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/&#34; target=&#34;_blank&#34;&gt;复制请注明来源&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 19 Jan 2020 19:29:51 +0800</lastBuildDate>
+    
+	<atom:link href="http://wangxin-nebular.com/categories/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo框架使用01 搭建个人博客</title>
+      <link>http://wangxin-nebular.com/post/hugo%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A801-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Sun, 19 Jan 2020 19:29:51 +0800</pubDate>
+      
+      <guid>http://wangxin-nebular.com/post/hugo%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A801-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description> 因为目前我使用的是Windows环境，所以本篇只讲Windows环境下的安装和使用
+ 软件下载 点击hugo下载 访问下载页面，这个地址可以下载到各个环境下的安装包。Windows环境就下载：hugo_0.62.2_Windows-64bit.zip，这个文件就行。如果你爱折腾，并且英文也不错的话，可以尝试按照Hugo官网下载安装教程来安装。
+安装hugo 把你下载下来的zip包解压出来，并把整个文件夹移动到安葬软件常用的目录下。我个人习惯在D盘建一个setup文件夹来统一放置我安装的软件。 下载主题 运行hugo 新建文章 </description>
+    </item>
+    
+    <item>
+      <title>Création d&#39;un nouveau thème</title>
+      <link>http://wangxin-nebular.com/posts/creation-dun-nouveau-theme/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wangxin-nebular.com/posts/creation-dun-nouveau-theme/</guid>
+      <description>Introduction Ce tutoriel vous montrera comment créer un thème simple pour Hugo. Je suppose que vous êtes familier avec HTML, la ligne de commande bash, et que vous êtes à l&#39;aise avec Markdown pour formater le contenu. Je vais expliquer comment Hugo utilise des modèles et comment vous pouvez organiser vos modèles pour créer un thème. Je ne couvrirai pas l&#39;utilisation de CSS pour styliser votre thème.
+Nous allons commencer par créer un nouveau site avec un modèle très basique.</description>
+    </item>
+    
+    <item>
+      <title>Débuter avec Hugo</title>
+      <link>http://wangxin-nebular.com/posts/debuter-avec-hugo/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wangxin-nebular.com/posts/debuter-avec-hugo/</guid>
+      <description>&lt;h2 id=&#34;étape-1-installer-hugo&#34;&gt;Étape 1. Installer Hugo&lt;/h2&gt;
+&lt;p&gt;Allez sur la page de téléchargements de
+&lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;hugo&lt;/a&gt; et téléchargez la version
+appropriée à votre système d&#39;exploitation et votre architecture.&lt;/p&gt;
+&lt;p&gt;Sauvegardez le fichier téléchargé à un endroit précis, afin de l&#39;utiliser dans
+l&#39;étape suivante.&lt;/p&gt;
+&lt;p&gt;Des informations plus complètes sont disponibles sur la page
+&lt;a href=&#34;http://wangxin-nebular.com/overview/installing/&#34;&gt;installing hugo&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Migrer vers Hugo depuis Jekyll</title>
+      <link>http://wangxin-nebular.com/posts/migrer-vers-hugo-depuis-jekyll/</link>
+      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://wangxin-nebular.com/posts/migrer-vers-hugo-depuis-jekyll/</guid>
+      <description>&lt;h2 id=&#34;déplacez-le-contenu-statique-vers-static&#34;&gt;Déplacez le contenu statique vers &lt;code&gt;static&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Jekyll a une règle comme quoi tout répertoire qui ne commence pas par &lt;code&gt;_&lt;/code&gt; sera
+copié tel-quel dans le répertoire &lt;code&gt;_site&lt;/code&gt;. Hugo garde tout le contenu statique
+dans le répertoire &lt;code&gt;static&lt;/code&gt;. Vous devez donc déplacer tout ce type de contenu
+là-dedans. Avec Jekylll, l&#39;arborescence ressemblant à ceci :&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;▾ &amp;lt;root&amp;gt;/
+    ▾ images/
+        logo.png
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
