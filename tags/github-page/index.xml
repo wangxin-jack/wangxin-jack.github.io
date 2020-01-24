@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>github page on nebular的个人博客</title>
+    <link>http://wangxin-nebular.com/tags/github-page/</link>
+    <description>Recent content in github page on nebular的个人博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a rel=&#34;license noopener&#34; href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/&#34; target=&#34;_blank&#34;&gt;复制请注明来源&lt;/a&gt;</copyright>
+    <lastBuildDate>Fri, 24 Jan 2020 09:17:20 +0800</lastBuildDate>
+    
+	<atom:link href="http://wangxin-nebular.com/tags/github-page/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo&#43;githubPage搭建个人网站</title>
+      <link>http://wangxin-nebular.com/post/hugo&#43;githubpage%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/</link>
+      <pubDate>Fri, 24 Jan 2020 09:17:20 +0800</pubDate>
+      
+      <guid>http://wangxin-nebular.com/post/hugo&#43;githubpage%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/</guid>
+      <description>本文主要介绍如何把本地搭建好的hugo项目，布置到github page上，让全球人访问。
+ 准备Hugo 如果不清楚如何配置一个本地hugo项目，请看我的Hugo专题中的Hugo框架使用01 搭建本地个人博客，这篇文章介绍了如何一步一步搭建本地Hugo项目。这里就不重复说明了。
+准备github page 登陆/注册github账户 登陆这里就不讲了。如果没有github账户的话就需要先去注册github账户，这里注册的时候，有一个类似输入验证码的步骤，这里需要翻墙才可以。不过我使用google浏览器，没有翻墙也可以验证。
+创建一个github page的资源库 新建一个资源库，需要注意以下几点：
+ 资源库的名字必须是你的用户名.github.io，如果你的用户名是zhangsan，那么你这个资源库的名字就是 zhangsan.github.io 创建的时候，把创建README.md一起勾选上。 github 只为每个账户提供了一个可供访问的github page资源库。如果想有多个，就需要创建多个github账户。 如果你的资源库地址填错了，那么修改一下资源库的名字，或者删除这个资源库，再重新创建一个就行。  创建一个index.html文件 上一步完成后，其实就可以访问了，等一会儿之后，使用 http://你的用户名.github.io 就可以访问，如果没有访问到，就把http改为https重新访问。这里会访问到readme.md文件中的内容。如果还是不能访问的话，就直接进行下一步。
+但是正经的来说，github page是提供一个静态网站供我们访问。所以，在github资源库中新建一个index.html文件，在文件中输入一个“hello world”的字符串就行。然后保存提交。 访问github page 在浏览器中输入 http://你的用户名.github.io 就可以访问你的网站，如果访问不到，就把http改为https重新访问。如果这样都访问不到的话，你需要检查一下你的资源库名字是否拼写正确了。以及你的网址是否拼写正确了。
+把hugo布置到到github page上 生成静态网站文件 以上都准备完成后，我们只需要把hugo项目布置到githubpage上就行。但是github只支持静态网站，所以我们要把本地的hugo项目，转换成静态网页。使用cmd命令行或powershell进入到你的hugo项目的根目录，执行下面这条命令，就可以使用hugo生成静态网页。
+hugo --theme=主题名 --baseUrl=&amp;quot;你的github访问地址&amp;quot; --buildDrafts hugo --theme=hugo-theme-yuki --baseUrl=&amp;quot;https://zhangsan.github.io/&amp;quot; --buildDrafts  如果你的项目配置文件中配置了baseUrl，这里就只需要执行这个命令就可以。
+hugo --theme=主题名 --buildDrafts hugo --theme=hugo-theme-yuki --buildDrafts  执行完后，生成的静态文件就会出现在，hugo项目的public目录下。
+把静态文件上传到github 现在只要把public目录下的所有文件上传到你的github资源库中就行完成了。不太清楚的同学，使用git bash顺序执行下面这几条命令即可，一条一条的执行。
+git init git remote add origin https://github.com/你的用户名/你的用户名.github.io git pull origin master git add * git commit -m &amp;quot;first commit&amp;quot; git push origin master  这样就可以把本地和远程仓库建立连接，并把本地生成的文件提交到远程仓库中。等过一会儿后，再访问一下你的github page页面。就可以看到你的个人博客了。</description>
+    </item>
+    
+  </channel>
+</rss>

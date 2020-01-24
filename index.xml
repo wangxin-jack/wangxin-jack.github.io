@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a rel=&#34;license noopener&#34; href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/&#34; target=&#34;_blank&#34;&gt;复制请注明来源&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 19 Jan 2020 19:29:51 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jan 2020 09:17:20 +0800</lastBuildDate>
     
 	<atom:link href="http://wangxin-nebular.com/index.xml" rel="self" type="application/rss+xml" />
     
@@ -34,14 +34,43 @@ We&#39;ll start with creating a new site with a very basic template.</descriptio
     </item>
     
     <item>
-      <title>Hugo框架使用01 搭建个人博客</title>
+      <title>Hugo&#43;githubPage搭建个人网站</title>
+      <link>http://wangxin-nebular.com/post/hugo&#43;githubpage%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/</link>
+      <pubDate>Fri, 24 Jan 2020 09:17:20 +0800</pubDate>
+      
+      <guid>http://wangxin-nebular.com/post/hugo&#43;githubpage%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/</guid>
+      <description>本文主要介绍如何把本地搭建好的hugo项目，布置到github page上，让全球人访问。
+ 准备Hugo 如果不清楚如何配置一个本地hugo项目，请看我的Hugo专题中的Hugo框架使用01 搭建本地个人博客，这篇文章介绍了如何一步一步搭建本地Hugo项目。这里就不重复说明了。
+准备github page 登陆/注册github账户 登陆这里就不讲了。如果没有github账户的话就需要先去注册github账户，这里注册的时候，有一个类似输入验证码的步骤，这里需要翻墙才可以。不过我使用google浏览器，没有翻墙也可以验证。
+创建一个github page的资源库 新建一个资源库，需要注意以下几点：
+ 资源库的名字必须是你的用户名.github.io，如果你的用户名是zhangsan，那么你这个资源库的名字就是 zhangsan.github.io 创建的时候，把创建README.md一起勾选上。 github 只为每个账户提供了一个可供访问的github page资源库。如果想有多个，就需要创建多个github账户。 如果你的资源库地址填错了，那么修改一下资源库的名字，或者删除这个资源库，再重新创建一个就行。  创建一个index.html文件 上一步完成后，其实就可以访问了，等一会儿之后，使用 http://你的用户名.github.io 就可以访问，如果没有访问到，就把http改为https重新访问。这里会访问到readme.md文件中的内容。如果还是不能访问的话，就直接进行下一步。
+但是正经的来说，github page是提供一个静态网站供我们访问。所以，在github资源库中新建一个index.html文件，在文件中输入一个“hello world”的字符串就行。然后保存提交。 访问github page 在浏览器中输入 http://你的用户名.github.io 就可以访问你的网站，如果访问不到，就把http改为https重新访问。如果这样都访问不到的话，你需要检查一下你的资源库名字是否拼写正确了。以及你的网址是否拼写正确了。
+把hugo布置到到github page上 生成静态网站文件 以上都准备完成后，我们只需要把hugo项目布置到githubpage上就行。但是github只支持静态网站，所以我们要把本地的hugo项目，转换成静态网页。使用cmd命令行或powershell进入到你的hugo项目的根目录，执行下面这条命令，就可以使用hugo生成静态网页。
+hugo --theme=主题名 --baseUrl=&amp;quot;你的github访问地址&amp;quot; --buildDrafts hugo --theme=hugo-theme-yuki --baseUrl=&amp;quot;https://zhangsan.github.io/&amp;quot; --buildDrafts  如果你的项目配置文件中配置了baseUrl，这里就只需要执行这个命令就可以。
+hugo --theme=主题名 --buildDrafts hugo --theme=hugo-theme-yuki --buildDrafts  执行完后，生成的静态文件就会出现在，hugo项目的public目录下。
+把静态文件上传到github 现在只要把public目录下的所有文件上传到你的github资源库中就行完成了。不太清楚的同学，使用git bash顺序执行下面这几条命令即可，一条一条的执行。
+git init git remote add origin https://github.com/你的用户名/你的用户名.github.io git pull origin master git add * git commit -m &amp;quot;first commit&amp;quot; git push origin master  这样就可以把本地和远程仓库建立连接，并把本地生成的文件提交到远程仓库中。等过一会儿后，再访问一下你的github page页面。就可以看到你的个人博客了。</description>
+    </item>
+    
+    <item>
+      <title>Hugo框架使用01 搭建本地个人博客</title>
       <link>http://wangxin-nebular.com/post/hugo%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A801-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Sun, 19 Jan 2020 19:29:51 +0800</pubDate>
       
       <guid>http://wangxin-nebular.com/post/hugo%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A801-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
-      <description> 因为目前我使用的是Windows环境，所以本篇只讲Windows环境下的安装和使用
- 软件下载 点击hugo下载 访问下载页面，这个地址可以下载到各个环境下的安装包。Windows环境就下载：hugo_0.62.2_Windows-64bit.zip，这个文件就行。如果你爱折腾，并且英文也不错的话，可以尝试按照Hugo官网下载安装教程来安装。
-安装hugo 把你下载下来的zip包解压出来，并把整个文件夹移动到安葬软件常用的目录下。我个人习惯在D盘建一个setup文件夹来统一放置我安装的软件。 下载主题 运行hugo 新建文章 </description>
+      <description>因为目前我使用的是Windows环境，所以本篇只讲Windows环境下的安装和使用
+  如果你第一次配置hugo个人博客，建议完整的按照我这个博客尝试一遍，尝试完后，再看其他的博客参考参考。不要东边一个博客西边一篇笔记的拼凑，这样容易学混乱掉。其次，我这篇博客不适合电脑小白，需要有一点git和cmd命令行的基础。
+ 软件下载 点击hugo下载访问下载页面，这个地址可以下载到各个环境下的安装包。Windows环境就下载：hugo_0.62.2_Windows-64bit.zip，这个文件就行。如果你爱折腾，并且英文也不错的话，可以尝试按照Hugo官网下载安装教程来安装。
+安装hugo 把你下载下来的zip包解压出来，并把整个文件夹移动到安葬软件常用的目录下。我个人习惯在D盘建一个setup文件夹来统一放置我安装的软件。
+然后把hugo.exe文件所在目录路径添加到电脑环境变量中。如果不会添加的，请查看添加windows环境变量。
+新建Hugo项目 使用cmd或者powershell来新建项目，使用快捷键win+r打开运行窗口，然后输入cmd来打开命令行窗口，如果习惯Linux指令的，就输入powershell来打开PowerShell。
+打开命令行窗口[或PowerShell]后，进入到你要创建Hugo项目的目录，使用下面这个指令即可创建一个Huge基础项目。这个myblog就是你的项目名，可以自由命名。
+hugo new site myblog  执行完命令后，你就可以看到一个myblog文件夹，点击进入后，就可以看到Hugo的目录结构。
+d----- archetypes 文件夹：存放模板文件，现在里面有个默认的格式的md文件，你使用Hugo创建的md文件都是使用这个模板，你也可以自己改模板。 d----- content 你的所有md文件存放的目录，放到这里面才会被编译成静态文件提供访问。 d----- data 存放数据文件，暂时不用管 d----- layouts 存放样式文件，如：sass这些。 d----- static 存放静态文件，如：图片等。 d----- themes 主题目录，很重要，你下载的各种主题都需要放到这里。 -a---- config.toml 配置文件，整个项目的配置文件，有兴趣可以钻研一下。  下载主题 接下来是下载主题，有兴趣可以去官网主题慢慢找喜欢的主题，我个人比较喜欢yuki主题，比较清爽。我学习的时候参考的一篇博客使用的Dream主题，十分绚丽好看，可以尝试一下。这里下载都是使用git下载，不知道如何下载的，请自行百度，这里只简单指导一下下载yuki主题的命令。进入到项目中的themes目录下，使用git bash执行下面这个命令，yuki主题就会被下载下来。
+git clone https://github.com/iCyris/hugo-theme-yuki.git  主题下载下来后，主题目录下会有一个exampleSite文件夹，把文件夹中的config.toml文件和content文件夹复制出来，粘贴到myblog项目的根目录下，替换原有的即可。
+运行hugo 上面都配置完后，使用cmd命令行或者PowerShell进入到项目根目录，即myblog目录下，然后执行下面这个命令来运行hugo个人博客网站。
+hugo server 执行成功后，你将会看到与下面类似的日志
+Building sites … | EN +------------------+-----+ Pages | 109 Paginator pages | 5 Non-page files | 1 Static files | 18 Processed images | 0 Aliases | 36 Sitemaps | 1 Cleaned | 0 Built in 38 ms Watching for changes in E:\document\noteBlog\myHugoGitBlog\{archetypes,content,data,layouts,static,themes} Watching for config changes in E:\document\noteBlog\myHugoGitBlog\config.</description>
     </item>
     
     <item>
