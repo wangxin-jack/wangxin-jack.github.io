@@ -33,7 +33,7 @@
   </url>
   
   <url>
-    <loc>http://wangxin-nebular.com/post/hugo&#43;githubpage%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/</loc>
+    <loc>http://wangxin-nebular.com/post/hugo&#43;githubpage-build-self-website/</loc>
     <lastmod>2020-01-24T09:17:20+08:00</lastmod>
   </url>
   
@@ -53,7 +53,12 @@
   </url>
   
   <url>
-    <loc>http://wangxin-nebular.com/post/hugo%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A801-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>http://wangxin-nebular.com/post/hugo-command/</loc>
+    <lastmod>2020-01-24T08:25:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wangxin-nebular.com/post/hugo-frame01-build-self-local-website/</loc>
     <lastmod>2020-01-19T19:50:51+08:00</lastmod>
   </url>
   
@@ -240,16 +245,6 @@
   <url>
     <loc>http://wangxin-nebular.com/2018/01/02/nginmesh-install/</loc>
     <lastmod>2018-01-02T12:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://wangxin-nebular.com/post/hellotext-copy/</loc>
-    <lastmod>2018-01-02T16:01:23+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://wangxin-nebular.com/post/hellotext/</loc>
-    <lastmod>2018-01-02T16:01:23+08:00</lastmod>
   </url>
   
   <url>

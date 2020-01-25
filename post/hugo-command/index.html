@@ -71,41 +71,85 @@
 <div class="main">
 
 <div class="main-content">
-    <div class="main-content__title title-type__custom u-font">
+    <div class="main-content__date">
+        <h4 id="date"> 2020.01.24 08:25 </h4>
     </div>
+    <div class="main-content__title">
+        <h1 id="title">Hugo命令集合</h1>
+    </div>
+    <div class="main-content__article">
+        <article id="content">
+            <blockquote>
+<p>本文主要把我其他Hugo文章中的Hugo命令都在这里显示，免得找一下命令都要翻几篇博客</p>
+</blockquote>
+<h2 id="hugo命令合集">Hugo命令合集</h2>
+<p>创建新的Hugo项目</p>
+<pre><code>hugo new site 项目名
+hugo new site myBlog
+</code></pre>
+<p>运行Hugo</p>
+<pre><code>hugo server
+</code></pre>
+<p>新建Hugo文章</p>
+<pre><code>hugo new 路径+文章名
+hugo new post/test.md
+</code></pre>
+<p>把项目编译成静态文件</p>
+<pre><code>hugo --theme=主题名 --buildDrafts
+hugo --theme=hugo-theme-yuki --buildDrafts
 
-    <article>
-        <div class="main-content__posts index-posts">
+hugo --theme=主题名 --baseUrl=&quot;你的github访问地址&quot; --buildDrafts
+hugo --theme=hugo-theme-yuki --baseUrl=&quot;https://zhangsan.github.io/&quot; --buildDrafts</code></pre>
+
+        </article>
+    </div>
+    <div class="main-content__tags u-font">
+        
+        
+        <span><a href="http://wangxin-nebular.com/tags/hugo">Hugo</a></span>
+        
+        
+    </div>
+</div>
+<div class="main-profile">
+    <div class="main-profile__avatar">
+        
+            <img src="http://wangxin-nebular.com/head.jpg">
+        
+    </div>
+    <div class="main-profile__body">
+        <div class="main-profile__author">
             
-            <div class="index-posts__list">
-                <div class="l-time"><a href="http://wangxin-nebular.com/posts/hellotext/">2018.01.01 16:01</a></div>
-                <div class="l-title"><a href="http://wangxin-nebular.com/posts/hellotext/">An Example Post</a></div>
-            </div>
+            <span> Wang Xin </span>
             
-
-            <div class="index-paginate">
-                
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
         </div>
-    </article>
+        <div class="main-profile__description">
+            
+            <p> 从小白向大神之路进发 </p>
+            
+        </div>
+    </div>
+</div>
+<div class="main-line"></div>
+<div class="main-pn">
+    
+    <a class="previous" href="http://wangxin-nebular.com/post/hugo-frame01-build-self-local-website/">
+        <div class="pn-dec"></div>
+        <div class="pn-els">
+            <div class="pn-el__1"> 2020.01.19 19:29 </div>
+            <div class="pn-el__2"> Hugo框架使用01 搭建本地个人博客 </div>
+        </div>
+    </a>
+    
+    
+    <a class="next" href="http://wangxin-nebular.com/post/hugo&#43;githubpage-build-self-website/">
+        <div class="pn-dec"></div>
+        <div class="pn-els">
+            <div class="pn-el__1"> 2020.01.24 09:17 </div>
+            <div class="pn-el__2"> Hugo&#43;githubPage搭建个人网站 </div>
+        </div>
+    </a>
+    
 </div>
 
 </div>
@@ -119,3 +163,4 @@
 </body>
 <script src="http://wangxin-nebular.com/js/page.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+

@@ -14,24 +14,6 @@
     
     <item>
       <title>An Example Post</title>
-      <link>http://wangxin-nebular.com/post/hellotext-copy/</link>
-      <pubDate>Mon, 01 Jan 2018 16:01:23 +0800</pubDate>
-      
-      <guid>http://wangxin-nebular.com/post/hellotext-copy/</guid>
-      <description>hello</description>
-    </item>
-    
-    <item>
-      <title>An Example Post</title>
-      <link>http://wangxin-nebular.com/post/hellotext/</link>
-      <pubDate>Mon, 01 Jan 2018 16:01:23 +0800</pubDate>
-      
-      <guid>http://wangxin-nebular.com/post/hellotext/</guid>
-      <description>hello</description>
-    </item>
-    
-    <item>
-      <title>An Example Post</title>
       <link>http://wangxin-nebular.com/posts/hellotext/</link>
       <pubDate>Mon, 01 Jan 2018 16:01:23 +0800</pubDate>
       

@@ -14,10 +14,10 @@
     
     <item>
       <title>Hugo&#43;githubPage搭建个人网站</title>
-      <link>http://wangxin-nebular.com/post/hugo&#43;githubpage%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/</link>
+      <link>http://wangxin-nebular.com/post/hugo&#43;githubpage-build-self-website/</link>
       <pubDate>Fri, 24 Jan 2020 09:17:20 +0800</pubDate>
       
-      <guid>http://wangxin-nebular.com/post/hugo&#43;githubpage%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/</guid>
+      <guid>http://wangxin-nebular.com/post/hugo&#43;githubpage-build-self-website/</guid>
       <description>本文主要介绍如何把本地搭建好的hugo项目，布置到github page上，让全球人访问。
  准备Hugo 如果不清楚如何配置一个本地hugo项目，请看我的Hugo专题中的Hugo框架使用01 搭建本地个人博客，这篇文章介绍了如何一步一步搭建本地Hugo项目。这里就不重复说明了。
 准备github page 登陆/注册github账户 登陆这里就不讲了。如果没有github账户的话就需要先去注册github账户，这里注册的时候，有一个类似输入验证码的步骤，这里需要翻墙才可以。不过我使用google浏览器，没有翻墙也可以验证。

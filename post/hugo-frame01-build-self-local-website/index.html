@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>
+        
+        nebular的个人博客
+        
+    </title>
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+    <link rel='icon' type='image/x-icon' href="http://wangxin-nebular.com/images/logo.png" />
+    <link rel="apple-touch-icon" href="http://wangxin-nebular.com/images/logo.png"><link rel="stylesheet" href="http://wangxin-nebular.com/scss/style.css">
+    
+    <link rel="stylesheet" href="http://wangxin-nebular.com/scss/monokai-sublime.min.css">
+    <script src="http://wangxin-nebular.com/js/highlight.min.js"></script>
+    <link rel="stylesheet" href="http://wangxin-nebular.com/scss/highlight.css">
+    
+    <link rel="stylesheet" href="http://wangxin-nebular.com/scss/custom.css">
+    
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'Your Google Analytics tracking id', 'auto');
+        ga('send', 'pageview');
+    </script>
+    
+    
+    <meta name="generator" content="Hugo 0.62.2" /></head>
+
+
+<body>
+<div class="header">
+    <div class="site-logo__wrap">
+        <div id="site-button">
+            <div></div>
+        </div>
+        
+        <div class=' site-logo '>
+            <a href="http://wangxin-nebular.com/"><img src="http://wangxin-nebular.com/images/logo.png" /></a>
+        </div>
+    </div>
+    
+<div class=' site-nav u-font ' id="nav-bar">
+    
+    <div class="site-nav__wrap">
+        <a class="site-nav__el" href="/" >HOME</a>
+    </div>
+    
+    <div class="site-nav__wrap">
+        <a class="site-nav__el" href="/post" >BLOG</a>
+    </div>
+    
+    <div class="site-nav__wrap">
+        <a class="site-nav__el" href="/about" >ABOUT</a>
+    </div>
+    
+    <div class="site-nav__wrap">
+        <a class="site-nav__el" href="/tags/" >TAGS</a>
+    </div>
+    
+    <div class="site-nav__wrap">
+        <a class="site-nav__el" href="/categories/" >CATEGORIES</a>
+    </div>
+    
+</div>
+
+</div>
+<div class="main">
+
+<div class="main-content">
+    <div class="main-content__date">
+        <h4 id="date"> 2020.01.19 19:29 </h4>
+    </div>
+    <div class="main-content__title">
+        <h1 id="title">Hugo框架使用01 搭建本地个人博客</h1>
+    </div>
+    <div class="main-content__article">
+        <article id="content">
+            <blockquote>
+<p>因为目前我使用的是Windows环境，所以本篇只讲Windows环境下的安装和使用</p>
+</blockquote>
+<blockquote>
+<p>如果你第一次配置hugo个人博客，建议完整的按照我这个博客尝试一遍，尝试完后，再看其他的博客参考参考。不要东边一个博客西边一篇笔记的拼凑，这样容易学混乱掉。其次，我这篇博客不适合电脑小白，需要有一点git和cmd命令行的基础。</p>
+</blockquote>
+<h2 id="软件下载">软件下载</h2>
+<p>点击<a href="(https://github.com/gohugoio/hugo/releases)">hugo下载</a>访问下载页面，这个地址可以下载到各个环境下的安装包。Windows环境就下载：<strong>hugo_0.62.2_Windows-64bit.zip</strong>，这个文件就行。如果你爱折腾，并且英文也不错的话，可以尝试按照<a href="(https://gohugo.io/getting-started/installing/)">Hugo官网下载安装教程</a>来安装。</p>
+<h2 id="安装hugo">安装hugo</h2>
+<p>把你下载下来的zip包解压出来，并把整个文件夹移动到安葬软件常用的目录下。我个人习惯在D盘建一个setup文件夹来统一放置我安装的软件。</p>
+<!-- raw HTML omitted -->
+<p><img src="/res/img/hugo/hugoPath.png" alt="我存放hugo软件的位置">
+然后把hugo.exe文件所在目录路径添加到电脑环境变量中。如果不会添加的，请查看<a href="(https://jingyan.baidu.com/article/47a29f24610740c0142399ea.html)">添加windows环境变量</a>。</p>
+<h2 id="新建hugo项目">新建Hugo项目</h2>
+<p>使用cmd或者powershell来新建项目，使用快捷键<!-- raw HTML omitted -->win<!-- raw HTML omitted -->+<!-- raw HTML omitted -->r<!-- raw HTML omitted -->打开运行窗口，然后输入<strong>cmd</strong>来打开命令行窗口，如果习惯Linux指令的，就输入<strong>powershell</strong>来打开PowerShell。<br>
+打开命令行窗口[或PowerShell]后，进入到你要创建Hugo项目的目录，使用下面这个指令即可创建一个Huge基础项目。这个myblog就是你的项目名，可以自由命名。</p>
+<pre><code>hugo new site myblog
+</code></pre>
+<p>执行完命令后，你就可以看到一个myblog文件夹，点击进入后，就可以看到Hugo的目录结构。</p>
+<pre><code>d-----    archetypes        文件夹：存放模板文件，现在里面有个默认的格式的md文件，你使用Hugo创建的md文件都是使用这个模板，你也可以自己改模板。
+d-----    content           你的所有md文件存放的目录，放到这里面才会被编译成静态文件提供访问。
+d-----    data              存放数据文件，暂时不用管
+d-----    layouts           存放样式文件，如：sass这些。
+d-----    static            存放静态文件，如：图片等。
+d-----    themes            主题目录，很重要，你下载的各种主题都需要放到这里。
+-a----    config.toml       配置文件，整个项目的配置文件，有兴趣可以钻研一下。
+</code></pre>
+<h2 id="下载主题">下载主题</h2>
+<p>接下来是下载主题，有兴趣可以去<a href="(https://themes.gohugo.io/)">官网主题</a>慢慢找喜欢的主题，我个人比较喜欢<a href="(https://themes.gohugo.io/hugo-theme-yuki/)">yuki主题</a>，比较清爽。我学习的时候参考的一篇博客使用的<a href="(https://themes.gohugo.io/hugo-theme-dream/)">Dream主题</a>，十分绚丽好看，可以尝试一下。这里下载都是使用git下载，不知道如何下载的，请自行百度，这里只简单指导一下下载yuki主题的命令。进入到项目中的themes目录下，使用git bash执行下面这个命令，yuki主题就会被下载下来。</p>
+<pre><code>git clone https://github.com/iCyris/hugo-theme-yuki.git
+</code></pre>
+<p>主题下载下来后，主题目录下会有一个<strong>exampleSite</strong>文件夹，把文件夹中的<strong>config.toml</strong>文件和<strong>content</strong>文件夹复制出来，粘贴到myblog项目的根目录下，替换原有的即可。</p>
+<h2 id="运行hugo">运行hugo</h2>
+<p>上面都配置完后，使用cmd命令行或者PowerShell进入到项目根目录，即myblog目录下，然后执行下面这个命令来运行hugo个人博客网站。</p>
+<p>hugo server
+执行成功后，你将会看到与下面类似的日志</p>
+<pre><code>Building sites …
+                | EN
++------------------+-----+
+Pages            | 109
+Paginator pages  |   5
+Non-page files   |   1
+Static files     |  18
+Processed images |   0
+Aliases          |  36
+Sitemaps         |   1
+Cleaned          |   0
+
+Built in 38 ms
+Watching for changes in E:\document\noteBlog\myHugoGitBlog\{archetypes,content,data,layouts,static,themes}
+Watching for config changes in E:\document\noteBlog\myHugoGitBlog\config.toml
+Environment: &quot;development&quot;
+Serving pages from memory
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Press Ctrl+C to stop
+</code></pre>
+<p>日志中的地址http://localhost:1313/ 就是你项目的地址，复制到浏览器中访问，你就可以看到你的个人网站了。</p>
+<h2 id="新建文章">新建文章</h2>
+<p>看到你的个人网站运行起来后，接下来就是写一篇自己的博客了。另起一个cmd命令行或PowerShell，进入到项目根目录。或者使用<!-- raw HTML omitted -->Ctrl<!-- raw HTML omitted -->+<!-- raw HTML omitted -->C<!-- raw HTML omitted -->停止Hugo项目运行。然后使用下面这个命令行创建一个新的博客文件。</p>
+<pre><code>hugo  new  post/test.md
+</code></pre>
+<p>然后使用文本编辑器，或者markdown编辑器打开这个文件。这个文件在项目根目录下的content/post/目录下。随意在文本最后输入一些字符，如：hello world。保存后，运行项目，在浏览器上访问，你就可以在博客HOME和BLOG看到这篇博客。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+        </article>
+    </div>
+    <div class="main-content__tags u-font">
+        
+        
+        <span><a href="http://wangxin-nebular.com/tags/hugo">Hugo</a></span>
+        
+        
+    </div>
+</div>
+<div class="main-profile">
+    <div class="main-profile__avatar">
+        
+            <img src="http://wangxin-nebular.com/head.jpg">
+        
+    </div>
+    <div class="main-profile__body">
+        <div class="main-profile__author">
+            
+            <span> Wang Xin </span>
+            
+        </div>
+        <div class="main-profile__description">
+            
+            <p> 从小白向大神之路进发 </p>
+            
+        </div>
+    </div>
+</div>
+<div class="main-line"></div>
+<div class="main-pn">
+    
+    <a class="previous" href="http://wangxin-nebular.com/post/readme/">
+        <div class="pn-dec"></div>
+        <div class="pn-els">
+            <div class="pn-el__1"> 2019.01.09 00:00 </div>
+            <div class="pn-el__2"> Clean White Theme for Hugo </div>
+        </div>
+    </a>
+    
+    
+    <a class="next" href="http://wangxin-nebular.com/post/hugo-command/">
+        <div class="pn-dec"></div>
+        <div class="pn-els">
+            <div class="pn-el__1"> 2020.01.24 08:25 </div>
+            <div class="pn-el__2"> Hugo命令集合 </div>
+        </div>
+    </a>
+    
+</div>
+
+</div>
+<div class="footer">
+    <div class="copyright-wrap">
+        <p class="copyright u-font">
+            <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">复制请注明来源</a>
+        </p>
+    </div>
+</div>
+</body>
+<script src="http://wangxin-nebular.com/js/page.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+

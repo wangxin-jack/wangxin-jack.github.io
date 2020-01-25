@@ -35,10 +35,10 @@ We&#39;ll start with creating a new site with a very basic template.</descriptio
     
     <item>
       <title>Hugo&#43;githubPage搭建个人网站</title>
-      <link>http://wangxin-nebular.com/post/hugo&#43;githubpage%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/</link>
+      <link>http://wangxin-nebular.com/post/hugo&#43;githubpage-build-self-website/</link>
       <pubDate>Fri, 24 Jan 2020 09:17:20 +0800</pubDate>
       
-      <guid>http://wangxin-nebular.com/post/hugo&#43;githubpage%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/</guid>
+      <guid>http://wangxin-nebular.com/post/hugo&#43;githubpage-build-self-website/</guid>
       <description>本文主要介绍如何把本地搭建好的hugo项目，布置到github page上，让全球人访问。
  准备Hugo 如果不清楚如何配置一个本地hugo项目，请看我的Hugo专题中的Hugo框架使用01 搭建本地个人博客，这篇文章介绍了如何一步一步搭建本地Hugo项目。这里就不重复说明了。
 准备github page 登陆/注册github账户 登陆这里就不讲了。如果没有github账户的话就需要先去注册github账户，这里注册的时候，有一个类似输入验证码的步骤，这里需要翻墙才可以。不过我使用google浏览器，没有翻墙也可以验证。
@@ -53,11 +53,25 @@ git init git remote add origin https://github.com/你的用户名/你的用户�
     </item>
     
     <item>
+      <title>Hugo命令集合</title>
+      <link>http://wangxin-nebular.com/post/hugo-command/</link>
+      <pubDate>Fri, 24 Jan 2020 08:25:34 +0800</pubDate>
+      
+      <guid>http://wangxin-nebular.com/post/hugo-command/</guid>
+      <description> 本文主要把我其他Hugo文章中的Hugo命令都在这里显示，免得找一下命令都要翻几篇博客
+ Hugo命令合集 创建新的Hugo项目
+hugo new site 项目名 hugo new site myBlog  运行Hugo
+hugo server  新建Hugo文章
+hugo new 路径+文章名 hugo new post/test.md  把项目编译成静态文件
+hugo --theme=主题名 --buildDrafts hugo --theme=hugo-theme-yuki --buildDrafts hugo --theme=主题名 --baseUrl=&amp;quot;你的github访问地址&amp;quot; --buildDrafts hugo --theme=hugo-theme-yuki --baseUrl=&amp;quot;https://zhangsan.github.io/&amp;quot; --buildDrafts </description>
+    </item>
+    
+    <item>
       <title>Hugo框架使用01 搭建本地个人博客</title>
-      <link>http://wangxin-nebular.com/post/hugo%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A801-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+      <link>http://wangxin-nebular.com/post/hugo-frame01-build-self-local-website/</link>
       <pubDate>Sun, 19 Jan 2020 19:29:51 +0800</pubDate>
       
-      <guid>http://wangxin-nebular.com/post/hugo%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A801-%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <guid>http://wangxin-nebular.com/post/hugo-frame01-build-self-local-website/</guid>
       <description>因为目前我使用的是Windows环境，所以本篇只讲Windows环境下的安装和使用
   如果你第一次配置hugo个人博客，建议完整的按照我这个博客尝试一遍，尝试完后，再看其他的博客参考参考。不要东边一个博客西边一篇笔记的拼凑，这样容易学混乱掉。其次，我这篇博客不适合电脑小白，需要有一点git和cmd命令行的基础。
  软件下载 点击hugo下载访问下载页面，这个地址可以下载到各个环境下的安装包。Windows环境就下载：hugo_0.62.2_Windows-64bit.zip，这个文件就行。如果你爱折腾，并且英文也不错的话，可以尝试按照Hugo官网下载安装教程来安装。
@@ -348,24 +362,6 @@ Either do a newgrp docker or log out/in to activate the changes to groups. </des
       <guid>http://wangxin-nebular.com/2018/01/02/nginmesh-install/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;Nginmesh是NGINX的Service Mesh开源项目，用于Istio服务网格平台中的数据面代理。它旨在提供七层负载均衡和服务路由功能，与Istio集成作为sidecar部署，并将以“标准，可靠和安全的方式”使得服务间通信更容易。Nginmesh在今年底已经连续发布了0.2和0.3版本，提供了服务发现，请求转发，路由规则，性能指标收集等功能。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>An Example Post</title>
-      <link>http://wangxin-nebular.com/post/hellotext-copy/</link>
-      <pubDate>Mon, 01 Jan 2018 16:01:23 +0800</pubDate>
-      
-      <guid>http://wangxin-nebular.com/post/hellotext-copy/</guid>
-      <description>hello</description>
-    </item>
-    
-    <item>
-      <title>An Example Post</title>
-      <link>http://wangxin-nebular.com/post/hellotext/</link>
-      <pubDate>Mon, 01 Jan 2018 16:01:23 +0800</pubDate>
-      
-      <guid>http://wangxin-nebular.com/post/hellotext/</guid>
-      <description>hello</description>
     </item>
     
     <item>
