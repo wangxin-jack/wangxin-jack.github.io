@@ -41,7 +41,8 @@ We&#39;ll start with creating a new site with a very basic template.</descriptio
       <guid>http://wangxin-nebular.com/post/hugo&#43;githubpage-build-self-website/</guid>
       <description>本文主要介绍如何把本地搭建好的hugo项目，布置到github page上，让全球人访问。
  准备Hugo 如果不清楚如何配置一个本地hugo项目，请看我的Hugo专题中的Hugo框架使用01 搭建本地个人博客，这篇文章介绍了如何一步一步搭建本地Hugo项目。这里就不重复说明了。
-准备github page 登陆/注册github账户 登陆这里就不讲了。如果没有github账户的话就需要先去注册github账户，这里注册的时候，有一个类似输入验证码的步骤，这里需要翻墙才可以。不过我使用google浏览器，没有翻墙也可以验证。
+准备github page 如果喜欢折腾的话，可以查看github-page官方教程来布置自己的github。
+登陆/注册github账户 登陆这里就不讲了。如果没有github账户的话就需要先去注册github账户，这里注册的时候，有一个类似输入验证码的步骤，这里需要翻墙才可以。不过我使用google浏览器，没有翻墙也可以验证。
 创建一个github page的资源库 新建一个资源库，需要注意以下几点：
  资源库的名字必须是你的用户名.github.io，如果你的用户名是zhangsan，那么你这个资源库的名字就是 zhangsan.github.io 创建的时候，把创建README.md一起勾选上。 github 只为每个账户提供了一个可供访问的github page资源库。如果想有多个，就需要创建多个github账户。 如果你的资源库地址填错了，那么修改一下资源库的名字，或者删除这个资源库，再重新创建一个就行。  创建一个index.html文件 上一步完成后，其实就可以访问了，等一会儿之后，使用 http://你的用户名.github.io 就可以访问，如果没有访问到，就把http改为https重新访问。这里会访问到readme.md文件中的内容。如果还是不能访问的话，就直接进行下一步。
 但是正经的来说，github page是提供一个静态网站供我们访问。所以，在github资源库中新建一个index.html文件，在文件中输入一个“hello world”的字符串就行。然后保存提交。 访问github page 在浏览器中输入 http://你的用户名.github.io 就可以访问你的网站，如果访问不到，就把http改为https重新访问。如果这样都访问不到的话，你需要检查一下你的资源库名字是否拼写正确了。以及你的网址是否拼写正确了。

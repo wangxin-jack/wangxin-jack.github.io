@@ -86,12 +86,12 @@
 <p>如果你第一次配置hugo个人博客，建议完整的按照我这个博客尝试一遍，尝试完后，再看其他的博客参考参考。不要东边一个博客西边一篇笔记的拼凑，这样容易学混乱掉。其次，我这篇博客不适合电脑小白，需要有一点git和cmd命令行的基础。</p>
 </blockquote>
 <h2 id="软件下载">软件下载</h2>
-<p>点击<a href="(https://github.com/gohugoio/hugo/releases)">hugo下载</a>访问下载页面，这个地址可以下载到各个环境下的安装包。Windows环境就下载：<strong>hugo_0.62.2_Windows-64bit.zip</strong>，这个文件就行。如果你爱折腾，并且英文也不错的话，可以尝试按照<a href="(https://gohugo.io/getting-started/installing/)">Hugo官网下载安装教程</a>来安装。</p>
+<p>点击<a href="https://github.com/gohugoio/hugo/releases">hugo下载</a>访问下载页面，这个地址可以下载到各个环境下的安装包。Windows环境就下载：<strong>hugo_0.62.2_Windows-64bit.zip</strong>，这个文件就行。如果你爱折腾，并且英文也不错的话，可以尝试按照<a href="https://gohugo.io/getting-started/installing/">Hugo官网下载安装教程</a>来安装。</p>
 <h2 id="安装hugo">安装hugo</h2>
 <p>把你下载下来的zip包解压出来，并把整个文件夹移动到安葬软件常用的目录下。我个人习惯在D盘建一个setup文件夹来统一放置我安装的软件。</p>
 <!-- raw HTML omitted -->
 <p><img src="/res/img/hugo/hugoPath.png" alt="我存放hugo软件的位置">
-然后把hugo.exe文件所在目录路径添加到电脑环境变量中。如果不会添加的，请查看<a href="(https://jingyan.baidu.com/article/47a29f24610740c0142399ea.html)">添加windows环境变量</a>。</p>
+然后把hugo.exe文件所在目录路径添加到电脑环境变量中。如果不会添加的，请查看<a href="https://jingyan.baidu.com/article/47a29f24610740c0142399ea.html">添加windows环境变量</a>。</p>
 <h2 id="新建hugo项目">新建Hugo项目</h2>
 <p>使用cmd或者powershell来新建项目，使用快捷键<!-- raw HTML omitted -->win<!-- raw HTML omitted -->+<!-- raw HTML omitted -->r<!-- raw HTML omitted -->打开运行窗口，然后输入<strong>cmd</strong>来打开命令行窗口，如果习惯Linux指令的，就输入<strong>powershell</strong>来打开PowerShell。<br>
 打开命令行窗口[或PowerShell]后，进入到你要创建Hugo项目的目录，使用下面这个指令即可创建一个Huge基础项目。这个myblog就是你的项目名，可以自由命名。</p>
@@ -107,7 +107,7 @@ d-----    themes            主题目录，很重要，你下载的各种主题�
 -a----    config.toml       配置文件，整个项目的配置文件，有兴趣可以钻研一下。
 </code></pre>
 <h2 id="下载主题">下载主题</h2>
-<p>接下来是下载主题，有兴趣可以去<a href="(https://themes.gohugo.io/)">官网主题</a>慢慢找喜欢的主题，我个人比较喜欢<a href="(https://themes.gohugo.io/hugo-theme-yuki/)">yuki主题</a>，比较清爽。我学习的时候参考的一篇博客使用的<a href="(https://themes.gohugo.io/hugo-theme-dream/)">Dream主题</a>，十分绚丽好看，可以尝试一下。这里下载都是使用git下载，不知道如何下载的，请自行百度，这里只简单指导一下下载yuki主题的命令。进入到项目中的themes目录下，使用git bash执行下面这个命令，yuki主题就会被下载下来。</p>
+<p>接下来是下载主题，有兴趣可以去<a href="https://themes.gohugo.io/">官网主题</a>慢慢找喜欢的主题，我个人比较喜欢<a href="https://themes.gohugo.io/hugo-theme-yuki/">yuki主题</a>，比较清爽。我学习的时候参考的一篇博客使用的<a href="https://themes.gohugo.io/hugo-theme-dream/">Dream主题</a>，十分绚丽好看，可以尝试一下。这里下载都是使用git下载，不知道如何下载的，请自行百度，这里只简单指导一下下载yuki主题的命令。进入到项目中的themes目录下，使用git bash执行下面这个命令，yuki主题就会被下载下来。</p>
 <pre><code>git clone https://github.com/iCyris/hugo-theme-yuki.git
 </code></pre>
 <p>主题下载下来后，主题目录下会有一个<strong>exampleSite</strong>文件夹，把文件夹中的<strong>config.toml</strong>文件和<strong>content</strong>文件夹复制出来，粘贴到myblog项目的根目录下，替换原有的即可。</p>
